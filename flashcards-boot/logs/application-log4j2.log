@@ -1,0 +1,518 @@
+2023-01-01 15:19:15.533 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : Starting FlashcardsBootApplication using Java 18.0.1 on mac with PID 178593 (/home/waldemar/Projects/flashcards-boot/flashcards-boot/target/classes started by waldemar in /home/waldemar/Projects/flashcards-boot/flashcards-boot)
+2023-01-01 15:19:15.553 [DEBUG] [           main] p.v.f.FlashcardsBootApplication          : Running with Spring Boot v2.7.7, Spring v5.3.24
+2023-01-01 15:19:15.554 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-01-01 15:19:16.419 [ INFO] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-01 15:19:16.509 [ INFO] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 78 ms. Found 2 JPA repository interfaces.
+2023-01-01 15:19:17.176 [ INFO] [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2023-01-01 15:19:17.177 [ INFO] [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2023-01-01 15:19:17.177 [ INFO] [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-01-01 15:19:17.292 [ INFO] [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2023-01-01 15:19:17.341 [ INFO] [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2023-01-01 15:19:17.625 [ INFO] [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2023-01-01 15:19:17.962 [ INFO] [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-01 15:19:18.128 [ INFO] [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-01-01 15:19:18.460 [ INFO] [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-01 15:19:18.618 [ INFO] [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-01-01 15:19:19.375 [ INFO] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-01 15:19:19.384 [ INFO] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-01 15:19:20.615 [ INFO] [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2023-01-01 15:19:20.656 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : Started FlashcardsBootApplication in 5.687 seconds (JVM running for 7.416)
+2023-01-01 15:19:20.659 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : FlashcardsBootApplication started successfully with Log4j2 configuration
+2023-01-01 15:21:05.677 [ INFO] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-01 15:21:05.681 [ INFO] [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2023-01-01 15:21:05.684 [ INFO] [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2023-01-01 15:21:14.579 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : Starting FlashcardsBootApplication using Java 18.0.1 on mac with PID 178773 (/home/waldemar/Projects/flashcards-boot/flashcards-boot/target/classes started by waldemar in /home/waldemar/Projects/flashcards-boot/flashcards-boot)
+2023-01-01 15:21:14.598 [DEBUG] [           main] p.v.f.FlashcardsBootApplication          : Running with Spring Boot v2.7.7, Spring v5.3.24
+2023-01-01 15:21:14.600 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-01-01 15:21:15.373 [ INFO] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-01 15:21:15.451 [ INFO] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 64 ms. Found 2 JPA repository interfaces.
+2023-01-01 15:21:16.112 [ INFO] [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2023-01-01 15:21:16.115 [ INFO] [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2023-01-01 15:21:16.116 [ INFO] [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-01-01 15:21:16.221 [ INFO] [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2023-01-01 15:21:16.262 [ INFO] [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2023-01-01 15:21:16.463 [ INFO] [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2023-01-01 15:21:16.705 [ INFO] [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-01 15:21:16.756 [ INFO] [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-01-01 15:21:16.943 [ INFO] [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-01 15:21:17.062 [ INFO] [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-01-01 15:21:17.598 [ INFO] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-01 15:21:17.607 [ INFO] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-01 15:21:18.269 [ INFO] [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2023-01-01 15:21:18.295 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : Started FlashcardsBootApplication in 4.327 seconds (JVM running for 5.874)
+2023-01-01 15:21:18.298 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : FlashcardsBootApplication started successfully with Log4j2 configuration
+2023-01-01 15:22:32.626 [ INFO] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-01 15:22:32.629 [ INFO] [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2023-01-01 15:22:32.631 [ INFO] [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2023-01-01 16:46:49.624 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : Starting FlashcardsBootApplication using Java 18.0.1 on mac with PID 180348 (/home/waldemar/Projects/flashcards-boot/flashcards-boot/target/classes started by waldemar in /home/waldemar/Projects/flashcards-boot/flashcards-boot)
+2023-01-01 16:46:49.641 [DEBUG] [           main] p.v.f.FlashcardsBootApplication          : Running with Spring Boot v2.7.7, Spring v5.3.24
+2023-01-01 16:46:49.643 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-01-01 16:46:50.643 [ INFO] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-01 16:46:50.688 [ INFO] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 2 JPA repository interfaces.
+2023-01-01 16:46:51.299 [ INFO] [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2023-01-01 16:46:51.300 [ INFO] [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2023-01-01 16:46:51.301 [ INFO] [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-01-01 16:46:51.410 [ INFO] [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2023-01-01 16:46:51.455 [ INFO] [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2023-01-01 16:46:51.684 [ INFO] [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2023-01-01 16:46:51.934 [ INFO] [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-01 16:46:51.979 [ INFO] [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-01-01 16:46:52.153 [ INFO] [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-01 16:46:52.276 [ INFO] [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-01-01 16:46:52.839 [ INFO] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-01 16:46:52.848 [ INFO] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-01 16:46:53.531 [ INFO] [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2023-01-01 16:46:53.564 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : Started FlashcardsBootApplication in 4.83 seconds (JVM running for 6.68)
+2023-01-01 16:46:53.569 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : FlashcardsBootApplication started successfully with Log4j2 configuration
+2023-01-01 16:47:29.482 [ INFO] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-01 16:47:29.485 [ INFO] [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2023-01-01 16:47:29.488 [ INFO] [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2023-01-01 16:47:43.061 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : Starting FlashcardsBootApplication using Java 18.0.1 on mac with PID 180541 (/home/waldemar/Projects/flashcards-boot/flashcards-boot/target/classes started by waldemar in /home/waldemar/Projects/flashcards-boot/flashcards-boot)
+2023-01-01 16:47:43.071 [DEBUG] [           main] p.v.f.FlashcardsBootApplication          : Running with Spring Boot v2.7.7, Spring v5.3.24
+2023-01-01 16:47:43.073 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-01-01 16:47:44.172 [ INFO] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-01 16:47:44.257 [ INFO] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62 ms. Found 2 JPA repository interfaces.
+2023-01-01 16:47:44.840 [ INFO] [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2023-01-01 16:47:44.842 [ INFO] [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2023-01-01 16:47:44.842 [ INFO] [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-01-01 16:47:44.944 [ INFO] [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2023-01-01 16:47:44.992 [ INFO] [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2023-01-01 16:47:45.217 [ INFO] [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2023-01-01 16:47:45.444 [ INFO] [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-01 16:47:45.496 [ INFO] [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-01-01 16:47:45.666 [ INFO] [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-01 16:47:45.775 [ INFO] [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-01-01 16:47:46.332 [ INFO] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-01 16:47:46.341 [ INFO] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-01 16:47:47.021 [ INFO] [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2023-01-01 16:47:47.048 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : Started FlashcardsBootApplication in 4.709 seconds (JVM running for 6.727)
+2023-01-01 16:47:47.052 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : FlashcardsBootApplication started successfully with Log4j2 configuration
+2023-01-01 16:48:38.815 [ INFO] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-01 16:48:38.818 [ INFO] [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2023-01-01 16:48:38.822 [ INFO] [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2023-01-01 17:08:04.704 [ INFO] [kground-preinit] o.h.v.i.u.Version                        : HV000001: Hibernate Validator 6.2.5.Final
+2023-01-01 17:08:04.832 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : Starting FlashcardsBootApplication using Java 18.0.1 on mac with PID 181899 (/home/waldemar/Projects/flashcards-boot/flashcards-boot/target/classes started by waldemar in /home/waldemar/Projects/flashcards-boot/flashcards-boot)
+2023-01-01 17:08:04.845 [DEBUG] [           main] p.v.f.FlashcardsBootApplication          : Running with Spring Boot v2.7.7, Spring v5.3.24
+2023-01-01 17:08:04.850 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-01-01 17:08:06.686 [ INFO] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-01 17:08:06.765 [ INFO] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 61 ms. Found 2 JPA repository interfaces.
+2023-01-01 17:08:07.651 [ INFO] [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2023-01-01 17:08:07.652 [ INFO] [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2023-01-01 17:08:07.652 [ INFO] [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-01-01 17:08:07.807 [ INFO] [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2023-01-01 17:08:07.859 [ INFO] [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2023-01-01 17:08:08.194 [ INFO] [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2023-01-01 17:08:08.484 [ INFO] [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-01 17:08:08.591 [ INFO] [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-01-01 17:08:08.854 [ INFO] [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-01 17:08:09.072 [ INFO] [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-01-01 17:08:09.897 [ INFO] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-01 17:08:09.910 [ INFO] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-01 17:08:11.709 [ INFO] [           main] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@55c581e4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@eaa07bb, org.springframework.security.web.context.SecurityContextPersistenceFilter@5114c8a1, org.springframework.security.web.header.HeaderWriterFilter@4e553d60, org.springframework.security.web.csrf.CsrfFilter@92de794, org.springframework.security.web.authentication.logout.LogoutFilter@b272860, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6c930e7e, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@322f84fd, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@6eae3730, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@493250cf, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3b95fce9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@f26cd76, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@42095996, org.springframework.security.web.session.SessionManagementFilter@45f6181a, org.springframework.security.web.access.ExceptionTranslationFilter@28b7646, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@f348e10]
+2023-01-01 17:08:11.795 [ INFO] [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2023-01-01 17:08:11.828 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : Started FlashcardsBootApplication in 9.374 seconds (JVM running for 14.09)
+2023-01-01 17:08:11.832 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : FlashcardsBootApplication started successfully with Log4j2 configuration
+2023-01-01 17:08:20.007 [ INFO] [nio-8080-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-01 17:08:20.007 [ INFO] [nio-8080-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2023-01-01 17:08:20.011 [ INFO] [nio-8080-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 2 ms
+2023-01-01 17:09:59.658 [ INFO] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-01 17:09:59.661 [ INFO] [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2023-01-01 17:09:59.664 [ INFO] [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2023-01-01 17:10:28.526 [ INFO] [kground-preinit] o.h.v.i.u.Version                        : HV000001: Hibernate Validator 6.2.5.Final
+2023-01-01 17:10:28.584 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : Starting FlashcardsBootApplication using Java 18.0.1 on mac with PID 182298 (/home/waldemar/Projects/flashcards-boot/flashcards-boot/target/classes started by waldemar in /home/waldemar/Projects/flashcards-boot/flashcards-boot)
+2023-01-01 17:10:28.588 [DEBUG] [           main] p.v.f.FlashcardsBootApplication          : Running with Spring Boot v2.7.7, Spring v5.3.24
+2023-01-01 17:10:28.589 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-01-01 17:10:29.545 [ INFO] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-01 17:10:29.598 [ INFO] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 2 JPA repository interfaces.
+2023-01-01 17:10:30.209 [ INFO] [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2023-01-01 17:10:30.210 [ INFO] [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2023-01-01 17:10:30.211 [ INFO] [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-01-01 17:10:30.322 [ INFO] [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2023-01-01 17:10:30.364 [ INFO] [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2023-01-01 17:10:30.640 [ INFO] [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2023-01-01 17:10:30.853 [ INFO] [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-01 17:10:30.913 [ INFO] [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-01-01 17:10:31.086 [ INFO] [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-01 17:10:31.204 [ INFO] [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-01-01 17:10:31.806 [ INFO] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-01 17:10:31.815 [ INFO] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-01 17:10:33.051 [ INFO] [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2023-01-01 17:10:33.079 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : Started FlashcardsBootApplication in 5.095 seconds (JVM running for 7.004)
+2023-01-01 17:10:33.082 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : FlashcardsBootApplication started successfully with Log4j2 configuration
+2023-01-01 17:10:44.715 [ INFO] [nio-8080-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-01 17:10:44.717 [ INFO] [nio-8080-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2023-01-01 17:10:44.725 [ INFO] [nio-8080-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 7 ms
+2023-01-01 17:11:46.611 [ INFO] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-01 17:11:46.614 [ INFO] [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2023-01-01 17:11:46.616 [ INFO] [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2023-01-01 18:47:47.869 [ INFO] [kground-preinit] o.h.v.i.u.Version                        : HV000001: Hibernate Validator 6.2.5.Final
+2023-01-01 18:47:48.167 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : Starting FlashcardsBootApplication using Java 18.0.1 on mac with PID 186844 (/home/waldemar/Projects/flashcards-boot/flashcards-boot/target/classes started by waldemar in /home/waldemar/Projects/flashcards-boot/flashcards-boot)
+2023-01-01 18:47:48.175 [DEBUG] [           main] p.v.f.FlashcardsBootApplication          : Running with Spring Boot v2.7.7, Spring v5.3.24
+2023-01-01 18:47:48.178 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-01-01 18:47:50.336 [ INFO] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-01 18:47:50.466 [ INFO] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 112 ms. Found 3 JPA repository interfaces.
+2023-01-01 18:47:51.454 [ INFO] [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2023-01-01 18:47:51.456 [ INFO] [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2023-01-01 18:47:51.456 [ INFO] [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-01-01 18:47:51.719 [ INFO] [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2023-01-01 18:47:51.779 [ INFO] [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2023-01-01 18:47:52.127 [ INFO] [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2023-01-01 18:47:52.421 [ INFO] [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-01 18:47:52.530 [ INFO] [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-01-01 18:47:52.808 [ INFO] [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-01 18:47:52.997 [ INFO] [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-01-01 18:47:53.784 [ INFO] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-01 18:47:53.792 [ INFO] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-01 18:47:55.387 [ WARN] [           main] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-01-01 18:47:55.388 [ INFO] [           main] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/webjars/**']
+2023-01-01 18:47:55.389 [ WARN] [           main] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/images/*']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-01-01 18:47:55.389 [ INFO] [           main] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/images/*']
+2023-01-01 18:47:55.389 [ WARN] [           main] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/css/*']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-01-01 18:47:55.390 [ INFO] [           main] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/css/*']
+2023-01-01 18:47:55.390 [ WARN] [           main] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/h2-console/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-01-01 18:47:55.390 [ INFO] [           main] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/h2-console/**']
+2023-01-01 18:47:55.468 [ INFO] [           main] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2f3d5cd, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5dd12c19, org.springframework.security.web.context.SecurityContextPersistenceFilter@5edaa572, org.springframework.security.web.header.HeaderWriterFilter@2fbd47b7, org.springframework.security.web.csrf.CsrfFilter@564fc235, org.springframework.security.web.authentication.logout.LogoutFilter@44d2bbc0, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@e2696e8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@460df441, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@568fd3de, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@40696fc6, org.springframework.security.web.session.SessionManagementFilter@27bc2650, org.springframework.security.web.access.ExceptionTranslationFilter@3df681cc, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5837cb9e]
+2023-01-01 18:47:55.527 [ INFO] [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2023-01-01 18:47:55.588 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : Started FlashcardsBootApplication in 8.573 seconds (JVM running for 10.944)
+2023-01-01 18:47:55.592 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : FlashcardsBootApplication started successfully with Log4j2 configuration
+2023-01-01 18:48:35.987 [ INFO] [nio-8080-exec-5] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-01 18:48:35.989 [ INFO] [nio-8080-exec-5] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2023-01-01 18:48:35.993 [ INFO] [nio-8080-exec-5] o.s.w.s.DispatcherServlet                : Completed initialization in 4 ms
+2023-01-01 18:50:36.551 [ INFO] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-01 18:50:36.583 [ INFO] [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2023-01-01 18:50:36.655 [ INFO] [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2023-01-01 20:13:42.851 [ INFO] [kground-preinit] o.h.v.i.u.Version                        : HV000001: Hibernate Validator 6.2.5.Final
+2023-01-01 20:13:42.908 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : Starting FlashcardsBootApplication using Java 18.0.1 on mac with PID 9841 (/home/waldemar/Projects/flashcards-boot/flashcards-boot/target/classes started by waldemar in /home/waldemar/Projects/flashcards-boot/flashcards-boot)
+2023-01-01 20:13:42.912 [DEBUG] [           main] p.v.f.FlashcardsBootApplication          : Running with Spring Boot v2.7.7, Spring v5.3.24
+2023-01-01 20:13:42.913 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-01-01 20:13:44.072 [ INFO] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-01 20:13:44.176 [ INFO] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 89 ms. Found 3 JPA repository interfaces.
+2023-01-01 20:13:45.058 [ INFO] [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2023-01-01 20:13:45.059 [ INFO] [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2023-01-01 20:13:45.060 [ INFO] [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-01-01 20:13:45.202 [ INFO] [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2023-01-01 20:13:45.263 [ INFO] [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2023-01-01 20:13:45.621 [ INFO] [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2023-01-01 20:13:46.002 [ INFO] [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-01 20:13:46.121 [ INFO] [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-01-01 20:13:46.419 [ INFO] [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-01 20:13:46.656 [ INFO] [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-01-01 20:13:47.735 [ INFO] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-01 20:13:47.746 [ INFO] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-01 20:13:49.449 [ WARN] [           main] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-01-01 20:13:49.450 [ INFO] [           main] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/webjars/**']
+2023-01-01 20:13:49.451 [ WARN] [           main] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/images/*']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-01-01 20:13:49.451 [ INFO] [           main] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/images/*']
+2023-01-01 20:13:49.451 [ WARN] [           main] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/css/*']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-01-01 20:13:49.451 [ INFO] [           main] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/css/*']
+2023-01-01 20:13:49.451 [ WARN] [           main] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/h2-console/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-01-01 20:13:49.452 [ INFO] [           main] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/h2-console/**']
+2023-01-01 20:13:49.525 [ INFO] [           main] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@70cdbd18, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@38d895e8, org.springframework.security.web.context.SecurityContextPersistenceFilter@5c40402c, org.springframework.security.web.header.HeaderWriterFilter@3df681cc, org.springframework.security.web.csrf.CsrfFilter@7bbd0006, org.springframework.security.web.authentication.logout.LogoutFilter@41538150, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@188ab96, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5edaa572, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@71c91121, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2f3d5cd, org.springframework.security.web.session.SessionManagementFilter@2fbd47b7, org.springframework.security.web.access.ExceptionTranslationFilter@4220468, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@79d3c655]
+2023-01-01 20:13:49.582 [ INFO] [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2023-01-01 20:13:49.644 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : Started FlashcardsBootApplication in 7.256 seconds (JVM running for 10.0)
+2023-01-01 20:13:49.647 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : FlashcardsBootApplication started successfully with Log4j2 configuration
+2023-01-01 20:14:00.725 [ INFO] [nio-8080-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-01 20:14:00.725 [ INFO] [nio-8080-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2023-01-01 20:14:00.727 [ INFO] [nio-8080-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 1 ms
+2023-01-01 20:14:57.500 [ERROR] [nio-8080-exec-9] o.t.TemplateEngine                       : [THYMELEAF][http-nio-8080-exec-9] Exception processing template "index": Exception evaluating SpringEL expression: "#lists.size(courses)" (template: "index" - line 45, col 18)
+org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "#lists.size(courses)" (template: "index" - line 45, col 18)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:292)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.expression.EqualsExpression.executeEquals(EqualsExpression.java:73)
+	at org.thymeleaf.standard.expression.ComplexExpression.executeComplex(ComplexExpression.java:95)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:112)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:125)
+	at org.thymeleaf.standard.processor.StandardCaseTagProcessor.isVisible(StandardCaseTagProcessor.java:106)
+	at org.thymeleaf.standard.processor.AbstractStandardConditionalVisibilityTagProcessor.doProcess(AbstractStandardConditionalVisibilityTagProcessor.java:61)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.TemplateModel.process(TemplateModel.java:136)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:661)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:366)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:190)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1405)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1149)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:670)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:67)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:337)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:223)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:217)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:112)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:82)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:221)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:186)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:891)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1784)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.IllegalArgumentException: Cannot get list size of null
+	at org.thymeleaf.util.Validate.notNull(Validate.java:37)
+	at org.thymeleaf.util.ListUtils.size(ListUtils.java:68)
+	at org.thymeleaf.expression.Lists.size(Lists.java:52)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.expression.spel.support.ReflectiveMethodExecutor.execute(ReflectiveMethodExecutor.java:139)
+	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:139)
+	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)
+	at org.springframework.expression.spel.ast.MethodReference$MethodValueRef.getValue(MethodReference.java:386)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:338)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:265)
+	... 115 more
+2023-01-01 20:14:57.506 [ERROR] [nio-8080-exec-9] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "#lists.size(courses)" (template: "index" - line 45, col 18)] with root cause
+java.lang.IllegalArgumentException: Cannot get list size of null
+	at org.thymeleaf.util.Validate.notNull(Validate.java:37)
+	at org.thymeleaf.util.ListUtils.size(ListUtils.java:68)
+	at org.thymeleaf.expression.Lists.size(Lists.java:52)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.expression.spel.support.ReflectiveMethodExecutor.execute(ReflectiveMethodExecutor.java:139)
+	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:139)
+	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)
+	at org.springframework.expression.spel.ast.MethodReference$MethodValueRef.getValue(MethodReference.java:386)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:338)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:265)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.expression.EqualsExpression.executeEquals(EqualsExpression.java:73)
+	at org.thymeleaf.standard.expression.ComplexExpression.executeComplex(ComplexExpression.java:95)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:112)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:125)
+	at org.thymeleaf.standard.processor.StandardCaseTagProcessor.isVisible(StandardCaseTagProcessor.java:106)
+	at org.thymeleaf.standard.processor.AbstractStandardConditionalVisibilityTagProcessor.doProcess(AbstractStandardConditionalVisibilityTagProcessor.java:61)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.TemplateModel.process(TemplateModel.java:136)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:661)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:366)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:190)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1405)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1149)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:670)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:67)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:337)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:223)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:217)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:112)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:82)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:221)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:186)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:891)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1784)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-01-01 20:15:11.507 [ INFO] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-01 20:15:11.509 [ INFO] [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2023-01-01 20:15:11.512 [ INFO] [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2023-01-01 20:34:13.031 [ INFO] [kground-preinit] o.h.v.i.u.Version                        : HV000001: Hibernate Validator 6.2.5.Final
+2023-01-01 20:34:13.115 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : Starting FlashcardsBootApplication using Java 18.0.1 on mac with PID 10660 (/home/waldemar/Projects/flashcards-boot/flashcards-boot/target/classes started by waldemar in /home/waldemar/Projects/flashcards-boot/flashcards-boot)
+2023-01-01 20:34:13.120 [DEBUG] [           main] p.v.f.FlashcardsBootApplication          : Running with Spring Boot v2.7.7, Spring v5.3.24
+2023-01-01 20:34:13.122 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-01-01 20:34:14.276 [ INFO] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-01 20:34:14.351 [ INFO] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 3 JPA repository interfaces.
+2023-01-01 20:34:15.414 [ INFO] [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2023-01-01 20:34:15.415 [ INFO] [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2023-01-01 20:34:15.416 [ INFO] [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-01-01 20:34:15.599 [ INFO] [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2023-01-01 20:34:15.666 [ INFO] [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2023-01-01 20:34:16.061 [ INFO] [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2023-01-01 20:34:16.460 [ INFO] [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-01 20:34:16.562 [ INFO] [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-01-01 20:34:16.808 [ INFO] [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-01 20:34:17.080 [ INFO] [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-01-01 20:34:17.895 [ INFO] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-01 20:34:17.906 [ INFO] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-01 20:34:19.625 [ WARN] [           main] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-01-01 20:34:19.626 [ INFO] [           main] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/webjars/**']
+2023-01-01 20:34:19.626 [ WARN] [           main] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/images/*']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-01-01 20:34:19.627 [ INFO] [           main] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/images/*']
+2023-01-01 20:34:19.627 [ WARN] [           main] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/css/*']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-01-01 20:34:19.627 [ INFO] [           main] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/css/*']
+2023-01-01 20:34:19.627 [ WARN] [           main] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/h2-console/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-01-01 20:34:19.627 [ INFO] [           main] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/h2-console/**']
+2023-01-01 20:34:19.696 [ INFO] [           main] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3ce2c5f6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@20a3321a, org.springframework.security.web.context.SecurityContextPersistenceFilter@761f1a28, org.springframework.security.web.header.HeaderWriterFilter@5c40402c, org.springframework.security.web.csrf.CsrfFilter@5bbc033f, org.springframework.security.web.authentication.logout.LogoutFilter@4a1c14a6, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@38d895e8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@71c91121, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1ecd09d5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@744673f3, org.springframework.security.web.session.SessionManagementFilter@5edaa572, org.springframework.security.web.access.ExceptionTranslationFilter@2ecd2aa4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@188ab96]
+2023-01-01 20:34:19.748 [ INFO] [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2023-01-01 20:34:19.784 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : Started FlashcardsBootApplication in 7.358 seconds (JVM running for 9.51)
+2023-01-01 20:34:19.787 [ INFO] [           main] p.v.f.FlashcardsBootApplication          : FlashcardsBootApplication started successfully with Log4j2 configuration
+2023-01-01 20:34:30.133 [ INFO] [nio-8080-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-01 20:34:30.133 [ INFO] [nio-8080-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2023-01-01 20:34:30.136 [ INFO] [nio-8080-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 1 ms
+2023-01-01 20:35:47.254 [ INFO] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-01 20:35:47.259 [ INFO] [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2023-01-01 20:35:47.264 [ INFO] [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.

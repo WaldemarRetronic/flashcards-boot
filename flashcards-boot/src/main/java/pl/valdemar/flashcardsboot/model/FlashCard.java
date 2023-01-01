@@ -1,9 +1,15 @@
 package pl.valdemar.flashcardsboot.model;
 
 import com.google.common.base.Objects;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 
+@Getter
+@Setter
+@ToString
 @Entity
 @Table()
 public class FlashCard {
@@ -43,62 +49,6 @@ public class FlashCard {
         this.variety = variety;
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getNativeName() {
-        return nativeName;
-    }
-
-    public void setNativeName(String nativeName) {
-        this.nativeName = nativeName;
-    }
-
-    public String getForeignName() {
-        return foreignName;
-    }
-
-    public void setForeignName(String foreignName) {
-        this.foreignName = foreignName;
-    }
-
-    public long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
-    public long getDeckId() {
-        return deckId;
-    }
-
-    public void setDeckId(int deckId) {
-        this.deckId = deckId;
-    }
-
-    public String getVariety() {
-        return variety;
-    }
-
-    public void setVariety(String variety) {
-        this.variety = variety;
-    }
-
-    public String getDeckName() {
-        return deckName;
-    }
-
-    public void setDeckName(String deckName) {
-        this.deckName = deckName;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -112,16 +62,4 @@ public class FlashCard {
         return Objects.hashCode(nativeName, foreignName);
     }
 
-    @Override
-    public String toString() {
-        return "FlashCard{" +
-                "id=" + id +
-                ", nativeName='" + nativeName + '\'' +
-                ", foreignName='" + foreignName + '\'' +
-                ", userId=" + userId +
-                ", deckId=" + deckId +
-                ", variety='" + variety + '\'' +
-                ", deckName='" + deckName + '\'' +
-                '}';
-    }
 }
