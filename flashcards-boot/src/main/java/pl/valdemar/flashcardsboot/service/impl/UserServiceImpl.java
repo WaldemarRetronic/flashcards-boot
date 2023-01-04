@@ -13,19 +13,17 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepository userRepository;
-    
+
     @Autowired
     private PasswordEncoder passwordEncoder;
 
     public ApplicationUser createUser(UserDto userDto) {
-       ApplicationUser applicationUser = new ApplicationUser();
-//       applicationUser.setFirstName(userDto.getFirstName());
-//       applicationUser.setLastName(userDto.getLastName());
-       applicationUser.setEmail(userDto.getEmail());
-       applicationUser.setUsername(userDto.getUsername());
-       applicationUser.setPassword(passwordEncoder.encode(userDto.getPassword()));
+        ApplicationUser applicationUser = new ApplicationUser();
+        applicationUser.setEmail(userDto.getEmail());
+        applicationUser.setUsername(userDto.getUsername());
+        applicationUser.setPassword(passwordEncoder.encode(userDto.getPassword()));
 
-       return userRepository.save(applicationUser);
+        return userRepository.save(applicationUser);
     }
 
     public ApplicationUser save(ApplicationUser applicationUser) {

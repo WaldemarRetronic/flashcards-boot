@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import pl.valdemar.flashcardsboot.model.ApplicationUser;
 import pl.valdemar.flashcardsboot.service.EmailVerificationService;
 import pl.valdemar.flashcardsboot.service.UserService;
+import pl.valdemar.flashcardsboot.util.Mappings;
 
 import java.util.Base64;
 
@@ -19,7 +20,7 @@ public class EmailVerificationController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/verify/email")
+    @GetMapping(Mappings.VERIFY_EMAIL)
     public String verifyEmail(@RequestParam String id) {
     	byte[] actualId = Base64.getDecoder().decode(id.getBytes());
         String username = verificationService.getUsernameForVerificationId(new String(actualId));
@@ -27,8 +28,8 @@ public class EmailVerificationController {
             ApplicationUser user = userService.findByUsername(username);
             user.setVerified(true);
             userService.save(user);
-            return "redirect:/login-verified";
+            return "redirect:" + Mappings.LOGIN_VERIFIED;
         }
-        return "redirect:/login-error";
+        return "redirect:" + Mappings.LOGIN_ERROR;
     }
 }

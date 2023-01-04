@@ -17,8 +17,6 @@ public class ApplicationUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-//    private String firstName;
-//    private String lastName;
     private String username;
     private String email;
     private String password;
@@ -27,20 +25,19 @@ public class ApplicationUser {
     @Column(name = "ACC_CRED_EXPIRED")
     private boolean accountCredentialsExpired;
 
-//    public ApplicationUser(String firstName, String lastName, String username, String email, String password) {
-//        this.firstName = firstName;
-//        this.lastName = lastName;
-//        this.username = username;
-//        this.email = email;
-//        this.password = password;
-//    }
     public ApplicationUser(String username, String email, String password) {
         this.username = username;
         this.email = email;
         this.password = password;
     }
 
-    public ApplicationUser() {}
+    public ApplicationUser(String username, String email) {
+        this.username = username;
+        this.email = email;
+    }
+
+    public ApplicationUser() {
+    }
 
     @Override
     public boolean equals(Object o) {

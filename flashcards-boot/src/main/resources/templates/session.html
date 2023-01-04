@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Error</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/custom.css" th:href="@{/css/flashcard.css}"/>
+
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+</head>
+<body>
+
+<div class="wrapper container-fluid my-5">
+    <div class="row">
+        <div class="col-md-3 "></div>
+        <div class="col-md-6 card my-5 border-info text-center">
+            <div class="card-header">
+                Deck Name
+            </div>
+            <div class="card-body">
+
+                <div id="message">
+                    <h5 class="card-text mb-5">Message</h5>
+                </div>
+
+                <div id="front" hidden="hidden">
+                    <h5 class="card-text mb-5">Front</h5>
+                </div>
+
+                <div id="back" hidden="hidden">
+                    <hr class="dividing-line" />
+                    <h5 class="card-text mb-5">Back</h5>
+                </div>
+
+            </div>
+            <div class="card-footer text-muted">
+
+                <div id="answer" hidden="hidden">
+                    <button type="button" class="btn custom-btn btn-danger ">Oops!</button>
+                    <button type="button" class="btn custom-btn btn-success">Got it!</button>
+                </div>
+
+                <div id="check" hidden="hidden">
+                    <button type="button" class="btn custom-btn btn-info ">Check</button>
+                </div>
+
+                <div id="next">
+                    <button type="button" class="btn custom-btn btn-primary ">Next</button>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+
+</div>
+
+<script src="http://cdn.jsdelivr.net/webjars/jquery/3.3.1/jquery.min.js"
+        th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script src="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/js/bootstrap.min.js"
+        th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
+</body>
+</html>

@@ -29,17 +29,15 @@
         </RollingFile>
     </Appenders>
     <Loggers>
-        <Logger name="pl.valdemar.flashcardsboot" level="debug" additivity="false">
-            <AppenderRef ref="FileAppender"/>
-        </Logger>
         <Logger name="pl.valdemar.flashcardsboot" level="info" additivity="false">
             <AppenderRef ref="ConsoleAppender"/>
+            <AppenderRef ref="FileAppender"/>
         </Logger>
 
         <Logger name="org.springframework.boot" level="info" additivity="false">
             <AppenderRef ref="ConsoleAppender"/>
         </Logger>
-        <Root level="info">
+        <Root level="debug">
             <AppenderRef ref="FileAppender"/>
             <AppenderRef ref="ConsoleAppender"/>
         </Root>
