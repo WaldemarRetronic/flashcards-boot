@@ -21,8 +21,6 @@ import java.io.IOException;
 @Slf4j
 public class Oauth2AuthenticationSuccessHandler implements AuthenticationSuccessHandler {
 
-   // private UserRepository userRepository = new
-
     @Autowired
     private UserService userService;
 

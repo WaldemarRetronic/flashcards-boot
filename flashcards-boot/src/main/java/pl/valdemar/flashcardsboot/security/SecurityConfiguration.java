@@ -56,26 +56,4 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 //        return new BCryptPasswordEncoder();
 //    }
 
-//    @Bean
-//    public PrincipalExtractor principalExtractor(UserRepository userRepository) {
-//        return map -> {
-//            String principalId = (String) map.get("id");
-//            User user = userRepository.findByPrincipalId(principalId);
-//            if (user == null) {
-//                LOGGER.info("No user found, generating profile for {}", principalId);
-//                user = new User();
-//                user.setPrincipalId(principalId);
-//                user.setCreated(LocalDateTime.now());
-//                user.setEmail((String) map.get("email"));
-//                user.setFullName((String) map.get("name"));
-//                user.setPhoto((String) map.get("picture"));
-//                user.setLoginType(UserLoginType.GOOGLE);
-//                user.setLastLogin(LocalDateTime.now());
-//            } else {
-//            }
-//            userRepository.save(user);
-//            return user;
-//        };
-//    }
-
 }
