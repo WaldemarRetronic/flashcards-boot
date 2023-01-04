@@ -32,6 +32,7 @@ public class RegistrationController {
     @GetMapping("/adduser")
     public String register(Model model) {
         model.addAttribute("user", new UserDto());
+        logger.info("model: {}", model);
         return "add-user";
     }
 
@@ -40,10 +41,38 @@ public class RegistrationController {
         if(result.hasErrors()) {
             return "add-user";
         }
+        logger.info("called adduser POST");
+        if (!userDto.getPassword().equals(userDto.getConfirmPassword())) {
+            logger.info("password equals");
+            return "redirect:adduser?error";
+        }
+        if(userService.findByUsername(userDto.getUsername()) != null) {
+            if (userService.findByUsername(userDto.getUsername()).isVerified()) {
+                return "redirect:adduser?success";
+            } else {
+                return "redirect:adduser?validate";
+            }
 
+        }
         ApplicationUser applicationUser = userService.createUser(userDto);
         logger.info(String.valueOf(applicationUser));
         eventPublisher.publishEvent(new UserRegistrationEvent(applicationUser));
         return "redirect:adduser?validate";
     }
+
+    @GetMapping("/adduser-password-error")
+    public String registerPasswordError(Model model) {
+        model.addAttribute("user", new UserDto());
+        model.addAttribute("passwordError", true);
+        return "add-user";
+    }
+
+    @GetMapping("/adduser-username-error")
+    public String registerUsernameError(Model model) {
+        model.addAttribute("user", new UserDto());
+        model.addAttribute("usernameError", true);
+        return "add-user";
+    }
+
+
 }

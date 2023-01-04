@@ -5,3 +5,21 @@
 .brand-text {
     font-size: x-large;
 }
+
+.dividing-line {
+    color: #0E3D59;
+    width: 85%;
+}
+
+.custom-btn {
+    width: 150px;
+}
+
+.card div {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.card-body {
+    min-height: 150px;
+}

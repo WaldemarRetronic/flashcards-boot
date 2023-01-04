@@ -39,8 +39,9 @@ public class EmailVerificationListener implements ApplicationListener<UserRegist
     private String getText(ApplicationUser user, String verificationId) {
     	String encodedVerificationId = new String(Base64.getEncoder().encode(verificationId.getBytes()));
     	StringBuffer buffer = new StringBuffer();
-    	buffer.append("Dear ").append(user.getFirstName()).append(" ").append(user.getLastName()).append(",").append(System.lineSeparator()).append(System.lineSeparator());
-    	buffer.append("Your account has been successfully created in the Flashcards application. ");
+//        buffer.append("Dear ").append(user.getFirstName()).append(" ").append(user.getLastName()).append(",").append(System.lineSeparator()).append(System.lineSeparator());
+        buffer.append("Dear ").append(user.getUsername()).append(" ").append(",").append(System.lineSeparator()).append(System.lineSeparator());
+        buffer.append("Your account has been successfully created in the Flashcards application. ");
 
         // buffer.append("Activate your account by clicking the following link: https://valdemar.pl/course/verify/email?id=").append(encodedVerificationId);
         buffer.append("Activate your account by clicking the following link: http://localhost:8080/verify/email?id=").append(encodedVerificationId);

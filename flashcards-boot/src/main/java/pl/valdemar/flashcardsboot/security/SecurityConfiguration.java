@@ -23,7 +23,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.requiresChannel().anyRequest().requiresSecure()
                 .and()
                 .authorizeRequests()
-                .antMatchers("/adduser", "/login", "/login-error", "/login-verified", "/login-disabled", "/verify/email")
+                .antMatchers("/adduser", "/login", "/login-error", "/login-verified", "/login-disabled",
+                        "/verify/email", "/adduser-password-error", "/adduser-username-error")
                 .permitAll().anyRequest().authenticated()
                 .and()
                 .formLogin().loginPage("/login").failureHandler(customAuthenticationFailureHandler)

@@ -18,7 +18,8 @@ public class EmailVerification {
     @Id
     @GeneratedValue(generator = "UUID_GENERATOR")
     @GenericGenerator(name = "UUID_GENERATOR", strategy = "org.hibernate.id.UUIDGenerator")
-    private String verificationId;    
+    private String verificationId;
+
     private String username;
 
     public EmailVerification(String username) {

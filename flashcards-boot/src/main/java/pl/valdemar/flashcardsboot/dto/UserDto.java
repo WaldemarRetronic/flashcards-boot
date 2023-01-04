@@ -5,14 +5,16 @@ import javax.validation.constraints.NotEmpty;
 
 public class UserDto {
 
-    @NotEmpty(message="Enter your firstname")
-    private String firstName;
+//    @NotEmpty(message="Enter your firstname")
+//    private String firstName;
+//
+//    @NotEmpty(message="Enter your lastname")
+//    private String lastName;
+//
 
-    @NotEmpty(message="Enter your lastname")
-    private String lastName;
     @NotEmpty(message="Enter a username")
-
     private String username;
+
     @NotEmpty(message="Enter an email")
     @Email(message="Email is not valid")
     private String email;
@@ -27,30 +29,37 @@ public class UserDto {
     public UserDto() {
     }
 
-    public UserDto(String firstName, String lastName, String username, String email, String password, String confirmPassword) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public UserDto(String username, String email, String password, String confirmPassword) {
         this.username = username;
         this.email = email;
         this.password = password;
         this.confirmPassword = confirmPassword;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
+    //    public UserDto(String firstName, String lastName, String username, String email, String password, String confirmPassword) {
+//        this.firstName = firstName;
+//        this.lastName = lastName;
+//        this.username = username;
+//        this.email = email;
+//        this.password = password;
+//        this.confirmPassword = confirmPassword;
+//    }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+//    public String getFirstName() {
+//        return firstName;
+//    }
+//
+//    public void setFirstName(String firstName) {
+//        this.firstName = firstName;
+//    }
+//
+//    public String getLastName() {
+//        return lastName;
+//    }
+//
+//    public void setLastName(String lastName) {
+//        this.lastName = lastName;
+//    }
 
     public String getUsername() {
         return username;

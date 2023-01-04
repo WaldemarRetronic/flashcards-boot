@@ -32,6 +32,10 @@
         <Logger name="pl.valdemar.flashcardsboot" level="debug" additivity="false">
             <AppenderRef ref="FileAppender"/>
         </Logger>
+        <Logger name="pl.valdemar.flashcardsboot" level="info" additivity="false">
+            <AppenderRef ref="ConsoleAppender"/>
+        </Logger>
+
         <Logger name="org.springframework.boot" level="info" additivity="false">
             <AppenderRef ref="ConsoleAppender"/>
         </Logger>
