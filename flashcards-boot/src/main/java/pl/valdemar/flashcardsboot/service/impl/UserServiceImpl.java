@@ -19,7 +19,6 @@ public class UserServiceImpl implements UserService {
 
     public ApplicationUser createUser(UserDto userDto) {
         ApplicationUser applicationUser = new ApplicationUser();
-        applicationUser.setEmail(userDto.getEmail());
         applicationUser.setUsername(userDto.getUsername());
         applicationUser.setPassword(passwordEncoder.encode(userDto.getPassword()));
 

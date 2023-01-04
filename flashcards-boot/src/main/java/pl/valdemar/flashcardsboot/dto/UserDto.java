@@ -5,12 +5,9 @@ import javax.validation.constraints.NotEmpty;
 
 public class UserDto {
 
-    @NotEmpty(message = "Enter a username")
-    private String username;
-
     @NotEmpty(message = "Enter an email")
     @Email(message = "Email is not valid")
-    private String email;
+    private String username;
 
     @NotEmpty(message = "Enter a password")
     private String password;
@@ -22,9 +19,8 @@ public class UserDto {
     public UserDto() {
     }
 
-    public UserDto(String username, String email, String password, String confirmPassword) {
+    public UserDto(String username, String password, String confirmPassword) {
         this.username = username;
-        this.email = email;
         this.password = password;
         this.confirmPassword = confirmPassword;
     }
@@ -35,14 +31,6 @@ public class UserDto {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getPassword() {

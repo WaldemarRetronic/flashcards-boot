@@ -27,12 +27,12 @@ public class EmailVerificationListener implements ApplicationListener<UserRegist
     	ApplicationUser user = event.getUser();
         String username = user.getUsername();
         String verificationId = verificationService.generateVerification(username);
-        String email = event.getUser().getEmail();
+        // String email = event.getUser().getEmail();
 
         SimpleMailMessage message = new SimpleMailMessage();
         message.setSubject("Flashcards Account Verification");
         message.setText(getText(user, verificationId));
-        message.setTo(email);
+        message.setTo(username);
         mailSender.send(message);
     }
     

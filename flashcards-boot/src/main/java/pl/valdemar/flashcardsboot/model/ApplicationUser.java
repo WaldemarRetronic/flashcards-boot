@@ -18,22 +18,19 @@ public class ApplicationUser {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String username;
-    private String email;
     private String password;
     private boolean verified;
     private boolean locked;
     @Column(name = "ACC_CRED_EXPIRED")
     private boolean accountCredentialsExpired;
 
-    public ApplicationUser(String username, String email, String password) {
+    public ApplicationUser(String username, String password) {
         this.username = username;
-        this.email = email;
         this.password = password;
     }
 
-    public ApplicationUser(String username, String email) {
+    public ApplicationUser(String username) {
         this.username = username;
-        this.email = email;
     }
 
     public ApplicationUser() {

@@ -19,7 +19,6 @@ public class CrudRepositoryTests {
     @Test
     public void givenCreateDeckWhenLoadTheDeckThenExpectSameDeck() {
         Deck deck = new Deck("Norwegian Level A1-04", "Familiar everyday expressions and very basic phrases", 1);
-        System.out.println("test");
         Deck savedDeck = deckRepository.save(deck);
         assertThat(deckRepository.findById(savedDeck.getId()).get()).isEqualTo(deck);
     }

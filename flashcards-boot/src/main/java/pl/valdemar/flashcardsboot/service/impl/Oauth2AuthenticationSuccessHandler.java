@@ -31,7 +31,7 @@ public class Oauth2AuthenticationSuccessHandler implements AuthenticationSuccess
         DefaultOAuth2User user = (DefaultOAuth2User) authentication.getPrincipal();
         String username = user.getAttribute("email");
         if (userService.findByUsername(username) == null) {
-            ApplicationUser applicationUser = new ApplicationUser(username, username);
+            ApplicationUser applicationUser = new ApplicationUser(username);
             applicationUser.setVerified(true);
             userService.save(applicationUser);
         }
