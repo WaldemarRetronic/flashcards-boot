@@ -1,16 +1,19 @@
 package pl.valdemar.flashcardsboot.service;
 
+import pl.valdemar.flashcardsboot.dto.DeckDto;
 import pl.valdemar.flashcardsboot.model.Deck;
 
 import java.util.Optional;
 
 public interface DeckService {
 
-    Deck createDeck(Deck deck);
+    Deck createDeck(DeckDto deckDto, Long userId);
 
-    Optional<Deck> findCourseById(Long deckId);
+    Optional<Deck> findDeckById(Long deckId);
 
-    Iterable<Deck> findAllDecks();
+    Optional<Deck> findDeckByDeckName(String deckName);
+
+    Iterable<Deck> findDecksByUserId(Long userId);
 
     Deck updateDeck(Deck deck);
 

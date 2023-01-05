@@ -9,7 +9,7 @@ public final class ViewNames {
     public static final String WORK = "work";
     public static final String ADD_USER = "add-user";
     public static final String DECKS = "decks";
-    public static final String ADD_DECK = "newDeck";
+    public static final String ADD_DECK = "add-deck";
     public static final String ADD_FLASHCARD = "newFlashcard";
     public static final String FLASHCARDS = "flashcards";
     public static final String STUDY_SESSION = "studySession";

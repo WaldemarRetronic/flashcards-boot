@@ -17,6 +17,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Map;
+import java.util.stream.Stream;
 
 @Slf4j
 public class Oauth2AuthenticationSuccessHandler implements AuthenticationSuccessHandler {
@@ -29,7 +31,11 @@ public class Oauth2AuthenticationSuccessHandler implements AuthenticationSuccess
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
     	redirectStrategy.sendRedirect(request, response, "/index");
         DefaultOAuth2User user = (DefaultOAuth2User) authentication.getPrincipal();
-        String username = user.getAttribute("email");
+        Stream<Map.Entry<String, Object>> attributes = user.getAttributes().entrySet().stream();
+        attributes
+                .forEach(e -> log.info("{} --- {}", e.getKey(), e.getValue()));
+
+        String username = user.getAttribute("sub");
         if (userService.findByUsername(username) == null) {
             ApplicationUser applicationUser = new ApplicationUser(username);
             applicationUser.setVerified(true);

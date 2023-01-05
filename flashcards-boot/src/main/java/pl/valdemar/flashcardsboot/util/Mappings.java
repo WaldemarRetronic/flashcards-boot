@@ -5,7 +5,7 @@ public final class Mappings {
     public static final String LOGIN = "/login";
     public static final String ADD_USER = "/adduser";
     public static final String DECKS = "/decks";
-    public static final String ADD_DECK = "/decks/addDeck";
+    public static final String ADD_DECK = "/adddeck";
     public static final String ADD_FLASHCARD = "/addFlashcard";
     public static final String HOME = "/";
     public static final String ABOUT = "/about";

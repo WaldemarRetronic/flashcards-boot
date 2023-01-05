@@ -2,6 +2,8 @@ package pl.valdemar.flashcardsboot.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pl.valdemar.flashcardsboot.dto.DeckDto;
+import pl.valdemar.flashcardsboot.model.ApplicationUser;
 import pl.valdemar.flashcardsboot.model.Deck;
 import pl.valdemar.flashcardsboot.repository.DeckRepository;
 import pl.valdemar.flashcardsboot.service.DeckService;
@@ -19,16 +21,27 @@ public class DeckServiceImpl implements DeckService {
     }
 
     @Override
-    public Deck createDeck(Deck deck) {
+    public Deck createDeck(DeckDto deckDto, Long userId) {
+        Deck deck = new Deck();
+        deck.setDeckName(deckDto.getDeckName());
+        deck.setDescription(deckDto.getDescription());
+        deck.setUserId(userId);
         return deckRepository.save(deck);
     }
 
     @Override
-    public Optional<Deck> findCourseById(Long deckId) {
+    public Optional<Deck> findDeckById(Long deckId) {
         return deckRepository.findById(deckId);
     }
 
     @Override
+    public Optional<Deck> findDeckByDeckName(String deckName) { return deckRepository.findByDeckName(deckName); }
+
+    @Override
+    public Iterable<Deck> findDecksByUserId(Long userId) {
+        return deckRepository.findDecksByUserId(userId);
+    }
+
     public Iterable<Deck> findAllDecks() {
         return deckRepository.findAll();
     }
