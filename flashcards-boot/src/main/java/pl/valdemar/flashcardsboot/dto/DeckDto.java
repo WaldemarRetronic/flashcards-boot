@@ -9,4 +9,6 @@ public class DeckDto {
 
     private String description;
 
+    private String category;
+
 }

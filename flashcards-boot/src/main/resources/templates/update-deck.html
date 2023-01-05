@@ -3,10 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Add Course</title>
+    <title>Update Deck</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
-    <link rel="stylesheet" type="text/css" th:href="@{/css/custom.css}"/>
     <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/css/bootstrap.min.css"
           th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
 
@@ -26,9 +25,8 @@
             <li class="nav-item">
                 <a class="nav-link" href="#" th:href="@{/index}">Home</a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="#" th:href="@{/addcourse}">Add Course <span
-                        class="sr-only">(current)</span></a>
+            <li class="nav-item">
+                <a class="nav-link" href="#" th:href="@{/addcourse}">Add Course</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -43,18 +41,17 @@
 <div class="container my-5">
     <div class="row">
         <div class="col-md-3"></div>
-        <div class="col-md-6"><h2 class="text-center mb-2">Add a Deck</h2></div>
+        <div class="col-md-6">
+            <h2 class="text-center mb-2">Update Deck</h2>
+        </div>
         <div class="col-md-3"></div>
     </div>
+    <h2 class="mb-5"></h2>
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-9">
-
-            <div th:if="${param.already_exist}">
-                <div class="alert alert-danger">Deck already exists.</div>
-            </div>
-
-            <form action="#" th:action="@{/add-deck}" th:object="${deck}" method="post">
+            <form action="#" th:action="@{/update-deck/{id}(id=${deck.id})}" th:object="${deck}" method="post"
+                  th:method="put">
                 <div class="form-row">
                     <div class="form-group col-md-9">
                         <label for="name" class="col-form-label">Name</label>
@@ -63,20 +60,22 @@
                     </div>
                     <div class="form-group col-md-9">
                         <label for="category" class="col-form-label">Category</label>
-                        <input th:field="*{category}" class="form-control" id="category" placeholder="Deck Category"></input>
-                        <span th:if="${#fields.hasErrors('category')}" th:errors="*{category}" class="text-danger"></span>
+                        <input th:field="*{category}" class="form-control" id="category"
+                               placeholder="Deck Category"></input>
+                        <span th:if="${#fields.hasErrors('category')}" th:errors="*{category}"
+                              class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-9">
                         <label for="description" class="col-form-label">Description</label>
                         <textarea th:field="*{description}" class="form-control" id="description"
-                                  placeholder="Deck Description"></textarea>
+                                  placeholder="Course Description"></textarea>
                         <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"
                               class="text-danger"></span>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 mt-2">
-                        <input type="submit" class="btn btn-dark" value="Add Course">
+                        <input type="submit" class="btn btn-dark" value="Update Deck">
                     </div>
                 </div>
             </form>
@@ -84,9 +83,11 @@
         <div class="col-md-3"></div>
     </div>
 </div>
+
 <script src="http://cdn.jsdelivr.net/webjars/jquery/3.3.1/jquery.min.js"
         th:src="@{/webjars/jquery/jquery.min.js}"></script>
 <script src="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/js/bootstrap.min.js"
         th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
 </body>
 </html>

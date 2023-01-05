@@ -29,14 +29,18 @@ public class Deck {
     @Column(name = "USER_ID")
     private long userId;
 
+    @Column(name = "CATEGORY")
+    private String category;
+
     // == constructors ==
     public Deck() {
     }
 
-    public Deck(String deckName, String description, int userId) {
+    public Deck(String deckName, String description, int userId, String category) {
         this.deckName = deckName;
         this.description = description;
         this.userId = userId;
+        this.category = category;
     }
 
     public Deck(String deckName, String description) {

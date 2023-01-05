@@ -11,7 +11,7 @@ public interface DeckService {
 
     Optional<Deck> findDeckById(Long deckId);
 
-    Optional<Deck> findDeckByDeckName(String deckName);
+    Optional<Deck> findDeckByDeckName(String deckName, Long userId);
 
     Iterable<Deck> findDecksByUserId(Long userId);
 

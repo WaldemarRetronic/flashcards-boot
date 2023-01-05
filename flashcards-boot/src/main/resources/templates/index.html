@@ -51,7 +51,8 @@
                     <thead>
                     <tr>
                         <th>Deck Name</th>
-                        <th>Description</th>
+                        <th>Deck Category</th>
+                        <th>Deck Description</th>
                         <th>View</th>
                         <th>Edit</th>
                         <th>Delete</th>
@@ -60,11 +61,12 @@
                     <tbody>
                     <tr th:each="deck : ${decks}">
                         <td th:text="${deck.deckName}"></td>
+                        <td th:text="${deck.category}"></td>
                         <td th:text="${deck.description}"></td>
-                        <td><a th:href="@{/update/{id}(id=${deck.id})}" class="btn btn-dark"><i class="fas fa-search"></i></a></td>
-                        <td><a th:href="@{/update/{id}(id=${deck.id})}" class="btn btn-dark"><i class="fas fa-edit"></i></a></td>
+                        <td><a th:href="@{/update-deck/{id}(id=${deck.id})}" class="btn btn-dark"><i class="fas fa-search"></i></a></td>
+                        <td><a th:href="@{/update-deck/{id}(id=${deck.id})}" class="btn btn-dark"><i class="fas fa-edit"></i></a></td>
                         <td>
-                            <form action="#" th:action="@{/delete/{id}(id=${deck.id})}" th:method="delete">
+                            <form action="#" th:action="@{/delete-deck/{id}(id=${deck.id})}" th:method="delete">
                                 <button type="submit" class="btn btn-danger">
                                     <i class="fas fa-trash"></i>
                                 </button>
@@ -74,7 +76,7 @@
                     </tbody>
                 </table>
             </div>
-            <p class="my-5"><a href="/addcourse" class="btn btn-dark"><i class="fas fa-plus-square"></i></a></p>
+            <p class="my-5"><a href="/add-deck" class="btn btn-dark"><i class="fas fa-plus-square"></i></a></p>
         </div>
         <div class="col-md-1"></div>
     </div>

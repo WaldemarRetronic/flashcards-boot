@@ -26,6 +26,7 @@ public class DeckServiceImpl implements DeckService {
         deck.setDeckName(deckDto.getDeckName());
         deck.setDescription(deckDto.getDescription());
         deck.setUserId(userId);
+        deck.setCategory(deckDto.getCategory());
         return deckRepository.save(deck);
     }
 
@@ -35,7 +36,9 @@ public class DeckServiceImpl implements DeckService {
     }
 
     @Override
-    public Optional<Deck> findDeckByDeckName(String deckName) { return deckRepository.findByDeckName(deckName); }
+    public Optional<Deck> findDeckByDeckName(String deckName, Long userId) {
+        return deckRepository.findByDeckNameAndUserId(deckName, userId);
+    }
 
     @Override
     public Iterable<Deck> findDecksByUserId(Long userId) {

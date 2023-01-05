@@ -9,7 +9,7 @@ import java.util.Optional;
 @Repository
 public interface DeckRepository extends CrudRepository<Deck, Long> {
 
-    Optional<Deck> findByDeckName(String deckName);
+    Optional<Deck> findByDeckNameAndUserId(String deckName, Long userId);
 
     Iterable<Deck> findDecksByUserId(Long userId);
 }
