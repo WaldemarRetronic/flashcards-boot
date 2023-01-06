@@ -7,8 +7,6 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.valdemar.flashcardsboot.dto.DeckDto;
-import pl.valdemar.flashcardsboot.event.UserRegistrationEvent;
-import pl.valdemar.flashcardsboot.model.ApplicationUser;
 import pl.valdemar.flashcardsboot.model.Deck;
 import pl.valdemar.flashcardsboot.service.DeckService;
 import pl.valdemar.flashcardsboot.service.UserService;
@@ -19,7 +17,9 @@ import pl.valdemar.flashcardsboot.util.ViewNames;
 import javax.validation.Valid;
 import java.security.Principal;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @Controller
@@ -34,6 +34,19 @@ public class DeckController {
     public DeckController(DeckService deckService, UserService userService) {
         this.deckService = deckService;
         this.userService = userService;
+    }
+
+    // == model attributes ==
+    @ModelAttribute(name = "paths")
+    public Map<String, String> appPaths() {
+        Map<String, String> paths = new HashMap<>();
+        paths.put("update", Mappings.UPDATE_DECK);
+        paths.put("delete", Mappings.DELETE_DECK);
+        paths.put("index", Mappings.INDEX);
+        paths.put("add-deck", Mappings.ADD_DECK);
+        paths.put("logout", Mappings.LOGOUT);
+        paths.put("flashcards", Mappings.SHOW_FLASHCARDS);
+        return paths;
     }
 
     // == handler methods ==
@@ -51,7 +64,7 @@ public class DeckController {
 
     @GetMapping(Mappings.ADD_DECK)
     public String create(Model model) {
-        model.addAttribute("deck", new DeckDto());
+        model.addAttribute(AttributeNames.DECK, new DeckDto());
         log.info("model: {}", model);
         return ViewNames.ADD_DECK;
     }
@@ -71,28 +84,26 @@ public class DeckController {
 
     @GetMapping(Mappings.UPDATE_DECK)
     public String showUpdateCourseForm(@PathVariable("id") Long id, Model model) {
-        model.addAttribute("deck", deckService.findDeckById(id).get());
+        model.addAttribute(AttributeNames.DECK, deckService.findDeckById(id).get());
         return "update-deck";
     }
 
     @PutMapping(Mappings.UPDATE_DECK)
-    public String updateCourse(@PathVariable("id") Long id, @Valid Deck deck, BindingResult result,
-                               Model model, Principal principal) {
+    public String updateDeck(@PathVariable("id") Long id, @Valid Deck deck, BindingResult result,
+                             Model model, Principal principal) {
         if (result.hasErrors()) {
             deck.setId(id);
             return ViewNames.UPDATE_DECK;
         }
-        deck.setUserId(2);
+        deck.setUserId(getUserId(principal));
         log.info(deck.toString());
         deckService.updateDeck(deck);
-        model.addAttribute("decks", deckService.findDecksByUserId(getUserId(principal)));
         return "redirect:" + Mappings.INDEX;
     }
 
     @DeleteMapping(Mappings.DELETE_DECK)
-    public String deleteCourse(@PathVariable("id") Long id, Model model, Principal principa) {
+    public String deleteCourse(@PathVariable("id") Long id) {
         deckService.deleteDeckById(id);
-        model.addAttribute("courses", deckService.findDecksByUserId(getUserId(principa)));
         return "redirect:" + Mappings.INDEX;
     }
 

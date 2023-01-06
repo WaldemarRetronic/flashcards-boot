@@ -6,12 +6,15 @@ public final class Mappings {
     public static final String ADD_USER = "/adduser";
     public static final String DECKS = "/decks";
     public static final String ADD_DECK = "/add-deck";
-    public static final String ADD_FLASHCARD = "/addFlashcard";
+    public static final String ADD_FLASHCARD = "/add-flashcard";
+    public static final String SHOW_FLASHCARDS = "/show-flashcards";
     public static final String HOME = "/";
     public static final String DELETE_DECK = "/delete-deck/{id}";
+    public static final String DELETE_FLASHCARD = "/delete-flashcard/{id}";
     public static final String INDEX = "/index";
     public static final String UPDATE_DECK = "/update-deck/{id}";
-    public static final String FLASHCARDS = "/flashcards";
+    public static final String UPDATE_FLASHCARD = "/update-flashcard/{id}";
+    public static final String LOGOUT = "/logout";
     public static final String STUDY = "/study";
     public static final String LESSON =  "/lesson";
     public static final String STUDY_SESSION = "/studySession";

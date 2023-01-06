@@ -1,7 +1,10 @@
 package pl.valdemar.flashcardsboot.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.valdemar.flashcardsboot.model.FlashCard;
+import pl.valdemar.flashcardsboot.dto.FlashcardDto;
+import pl.valdemar.flashcardsboot.model.Deck;
+import pl.valdemar.flashcardsboot.model.Flashcard;
 import pl.valdemar.flashcardsboot.repository.FlashcardRepository;
 import pl.valdemar.flashcardsboot.service.FlashcardService;
 
@@ -10,24 +13,34 @@ public class FlashcardServiceImpl implements FlashcardService {
 
     private FlashcardRepository flashcardRepository;
 
+    @Autowired
+    public FlashcardServiceImpl(FlashcardRepository flashcardRepository) {
+        this.flashcardRepository = flashcardRepository;
+    }
 
     @Override
-    public FlashCard createFlashcard(FlashCard flashCard) {
+    public Flashcard createFlashcard(FlashcardDto flashcardDto, Long userId, Long deckId) {
+        Flashcard flashcard = new Flashcard();
+        flashcard.setNativeName(flashcardDto.getNativeName());
+        flashcard.setForeignName(flashcardDto.getForeignName());
+        flashcard.setVariety(flashcardDto.getVariety());
+        flashcard.setUserId(userId);
+        flashcard.setDeckId(deckId);
+        return flashcardRepository.save(flashcard);
+    }
+
+    @Override
+    public Iterable<Flashcard> findFlashcards(Long userId, Long deckId) {
+        return flashcardRepository.findByUserIdAndDeckId(userId, deckId);
+    }
+
+    @Override
+    public Iterable<Flashcard> findAllFlashcards(Long userId) {
         return null;
     }
 
     @Override
-    public Iterable<FlashCard> findByUserDeckId(Long userId, Long deckId) {
-        return null;
-    }
-
-    @Override
-    public Iterable<FlashCard> findAllFlashcards(Long userId) {
-        return null;
-    }
-
-    @Override
-    public FlashCard updateFlashcard(FlashCard flashCard) {
+    public Flashcard updateFlashcard(Flashcard flashCard) {
         return null;
     }
 

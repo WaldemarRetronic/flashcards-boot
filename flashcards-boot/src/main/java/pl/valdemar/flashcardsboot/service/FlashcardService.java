@@ -1,16 +1,17 @@
 package pl.valdemar.flashcardsboot.service;
 
-import pl.valdemar.flashcardsboot.model.FlashCard;
+import pl.valdemar.flashcardsboot.dto.FlashcardDto;
+import pl.valdemar.flashcardsboot.model.Flashcard;
 
 public interface FlashcardService {
 
-    FlashCard createFlashcard(FlashCard flashCard);
+    Flashcard createFlashcard(FlashcardDto flashcardDto, Long userId, Long deckId);
 
-    Iterable<FlashCard> findByUserDeckId(Long userId, Long deckId);
+    Iterable<Flashcard> findFlashcards(Long userId, Long deckId);
 
-    Iterable<FlashCard> findAllFlashcards(Long userId);
+    Iterable<Flashcard> findAllFlashcards(Long userId);
 
-    FlashCard updateFlashcard(FlashCard flashCard);
+    Flashcard updateFlashcard(Flashcard flashCard);
 
     void deleteFlashcardById(Long id);
 }
