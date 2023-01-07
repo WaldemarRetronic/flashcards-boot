@@ -3,7 +3,6 @@ package pl.valdemar.flashcardsboot.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.valdemar.flashcardsboot.dto.FlashcardDto;
-import pl.valdemar.flashcardsboot.model.Deck;
 import pl.valdemar.flashcardsboot.model.Flashcard;
 import pl.valdemar.flashcardsboot.repository.FlashcardRepository;
 import pl.valdemar.flashcardsboot.service.FlashcardService;

@@ -46,6 +46,7 @@ public class DeckController {
         paths.put("add-deck", Mappings.ADD_DECK);
         paths.put("logout", Mappings.LOGOUT);
         paths.put("flashcards", Mappings.SHOW_FLASHCARDS);
+        paths.put("decks", Mappings.DECKS);
         return paths;
     }
 

@@ -53,8 +53,8 @@ public class FlashcardController {
         paths.put("delete", Mappings.DELETE_FLASHCARD);
         paths.put("index", Mappings.INDEX);
         paths.put("logout", Mappings.LOGOUT);
-        paths.put("add-deck", Mappings.ADD_DECK);
         paths.put("add-flashcard", Mappings.ADD_FLASHCARD);
+        paths.put("show-flashcards", Mappings.SHOW_FLASHCARDS);
         return paths;
     }
 
@@ -70,6 +70,7 @@ public class FlashcardController {
     @GetMapping(Mappings.ADD_FLASHCARD)
     public String create(@RequestParam Long deckId, Model model) {
         model.addAttribute(AttributeNames.FLASHCARD, new FlashcardDto(deckId));
+        model.addAttribute(AttributeNames.DECK_ID, deckId);
         log.info("model: {}", model);
         return ViewNames.ADD_FLASHCARD;
     }

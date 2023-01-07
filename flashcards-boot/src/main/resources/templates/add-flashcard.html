@@ -14,8 +14,8 @@
 <body>
 <nav class="navbar navbar-dark bg-dark navbar-expand-sm">
     <a class="navbar-brand brand-text" href="#">
-        <img src="/images/logo.png" width="30" height="30" alt="logo">
-        Course Tracker
+        <img src="/images/logoValdemar.png" width="30" height="30" alt="logo">
+        Flashcards
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,16 +24,16 @@
     <div class="collapse navbar-collapse justify-content-between" id="navbar-list">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="#" th:href="@{/index}">Home</a>
+                <a class="nav-link" href="#" th:href="@{${paths.get('index')}}">Home</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#" th:href="@{/addcourse}">Add Course <span
+                <a class="nav-link" href="#" th:href="@{${paths.get('show-flashcards')}(id=${deckId})}">Flashcards<span
                         class="sr-only">(current)</span></a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <form th:action="@{/logout}" method="post">
+                <form th:action="@{${paths.get('logout')}}" method="post">
                     <button class="btn btn-danger" type="submit">logout</button>
                 </form>
             </li>
@@ -52,25 +52,21 @@
             <form action="#" th:action="@{${paths.get('add-flashcard')}(deckId=*{deckId})}" th:object="${flashcard}" method="post">
                 <div class="form-row">
                     <div class="form-group col-md-9">
-                        <label for="name" class="col-form-label">Front</label>
-                        <input type="text" th:field="*{nativeName}" class="form-control" id="name" placeholder="Front">
-                        <span th:if="${#fields.hasErrors('nativeName')}" th:errors="*{nativeName}" class="text-danger"></span>
+                        <label for="foreignName" class="col-form-label">Front</label>
+                        <input th:field="*{foreignName}" class="form-control" id="foreignName" placeholder="Front"></input>
+                        <span th:if="${#fields.hasErrors('foreignName')}" th:errors="*{foreignName}" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-9">
-                        <label for="category" class="col-form-label">Back</label>
-                        <input th:field="*{foreignName}" class="form-control" id="category"
-                               placeholder="Back"></input>
-                        <span th:if="${#fields.hasErrors('foreignName')}" th:errors="*{foreignName}"
-                              class="text-danger"></span>
+                        <label for="nativeName" class="col-form-label">Back</label>
+                        <input type="text" th:field="*{nativeName}" class="form-control" id="nativeName" placeholder="Back">
+                        <span th:if="${#fields.hasErrors('nativeName')}" th:errors="*{nativeName}" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-9">
                         <label for="variety" class="col-form-label">Flashcard Variety</label>
                         <select th:field="*{variety}" class="form-control" id="variety">
-                            <option th:value="1">1 (Lowest)</option>
-                            <option th:value="2">2</option>
-                            <option th:value="3">3</option>
-                            <option th:value="4">4</option>
-                            <option th:value="5">5 (Highest)</option>
+                            <option th:value="basic">Basic</option>
+                            <option th:value="reversed">Reversed</option>
+                            <option th:value="type_in_answer">Type In Answer</option>
                         </select>
                     </div>
                 </div>

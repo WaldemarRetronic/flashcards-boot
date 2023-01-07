@@ -13,7 +13,7 @@
 <body>
 <nav class="navbar navbar-dark bg-dark navbar-expand-sm">
     <a class="navbar-brand brand-text" href="#">
-        <img src="/images/logo.png" width="30" height="30" alt="logo">
+        <img src="/images/logoValdemar.png" width="30" height="30" alt="logo">
         Flashcards
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list"
@@ -26,7 +26,7 @@
                 <a class="nav-link" href="#" th:href="@{${paths.get('index')}}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" th:href="@{${paths.get('add-deck')}}">Add Course</a>
+                <a class="nav-link" href="#" th:href="@{${paths.get('add-deck')}}">Add Deck</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -68,7 +68,7 @@
                     <div class="form-group col-md-9">
                         <label for="description" class="col-form-label">Description</label>
                         <textarea th:field="*{description}" class="form-control" id="description"
-                                  placeholder="Course Description"></textarea>
+                                  placeholder="Deck Description"></textarea>
                         <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"
                               class="text-danger"></span>
                     </div>

@@ -24,7 +24,7 @@
                 <a class="nav-link" href="#" th:href="@{${paths.get('index')}}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" th:href="@{${paths.get('add-deck')}}">Add Course</a>
+                <a class="nav-link" href="#" th:href="@{${paths.get('add-deck')}}">Add Deck</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -64,11 +64,9 @@
                     <div class="form-group col-md-9">
                         <label for="variety" class="col-form-label">Flashcard Variety</label>
                         <select th:field="*{variety}" class="form-control" id="variety">
-                            <option th:value="1">1 (Lowest)</option>
-                            <option th:value="2">2</option>
-                            <option th:value="3">3</option>
-                            <option th:value="4">4</option>
-                            <option th:value="5">5 (Highest)</option>
+                            <option th:value="basic">Basic</option>
+                            <option th:value="reversed">Reversed</option>
+                            <option th:value="type_in_answer">Type In Answer</option>
                         </select>
                     </div>
                 </div>

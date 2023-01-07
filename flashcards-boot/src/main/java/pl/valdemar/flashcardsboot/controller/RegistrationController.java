@@ -19,6 +19,8 @@ import pl.valdemar.flashcardsboot.util.Mappings;
 import pl.valdemar.flashcardsboot.util.ViewNames;
 
 import javax.validation.Valid;
+import java.util.HashMap;
+import java.util.Map;
 
 @Slf4j
 @Controller
@@ -29,6 +31,16 @@ public class RegistrationController {
 
     @Autowired
     private ApplicationEventPublisher eventPublisher;
+
+    // == model attributes ==
+    @ModelAttribute(name = "paths")
+    public Map<String, String> appPaths() {
+        Map<String, String> paths = new HashMap<>();
+        paths.put("index", Mappings.INDEX);
+        paths.put("login", Mappings.LOGIN);
+        paths.put("add-user", Mappings.ADD_USER);
+        return paths;
+    }
 
     @GetMapping(Mappings.ADD_USER)
     public String register(Model model) {
