@@ -84,31 +84,34 @@ public class FlashcardController {
         flashCardService.createFlashcard(flashcardDto, userId, deckId);
         return "redirect:" + Mappings.SHOW_FLASHCARDS + "?id=" + deckId;
     }
-//
-//    @GetMapping(Mappings.UPDATE_DECK)
-//    public String showUpdateCourseForm(@PathVariable("id") Long id, Model model) {
-//        model.addAttribute(AttributeNames.DECK, deckService.findDeckById(id).get());
-//        return "update-deck";
-//    }
-//
-//    @PutMapping(Mappings.UPDATE_DECK)
-//    public String updateDeck(@PathVariable("id") Long id, @Valid Deck deck, BindingResult result,
-//                             Model model, Principal principal) {
-//        if (result.hasErrors()) {
-//            deck.setId(id);
-//            return ViewNames.UPDATE_DECK;
-//        }
-//        deck.setUserId(getUserId(principal));
-//        log.info(deck.toString());
-//        deckService.updateDeck(deck);
-//        return "redirect:" + Mappings.INDEX;
-//    }
-//
-//    @DeleteMapping(Mappings.DELETE_DECK)
-//    public String deleteCourse(@PathVariable("id") Long id) {
-//        deckService.deleteDeckById(id);
-//        return "redirect:" + Mappings.INDEX;
-//    }
+
+    @GetMapping(Mappings.UPDATE_FLASHCARD)
+    public String showUpdateFlashcardForm(@RequestParam("id") Long id, @RequestParam("deckId") Long deckId, Model model) {
+        model.addAttribute(AttributeNames.FLASHCARD, flashCardService.findFlashcardById(id).get());
+        model.addAttribute(AttributeNames.DECK_ID, deckId);
+        return ViewNames.UPDATE_FLASHCARD;
+    }
+
+    @PutMapping(Mappings.UPDATE_FLASHCARD)
+    public String updateFlashcard(@RequestParam("id") Long id, @RequestParam("deckId") Long deckId, @Valid Flashcard flashcard, BindingResult result,
+                             Model model, Principal principal) {
+        if (result.hasErrors()) {
+            flashcard.setId(id);
+            return ViewNames.UPDATE_FLASHCARD;
+        }
+        flashcard.setUserId(getUserId(principal));
+        flashcard.setDeckId(deckId);
+        log.info(flashcard.toString());
+        flashCardService.updateFlashcard(flashcard);
+        return "redirect:" + Mappings.SHOW_FLASHCARDS + "?id=" + deckId;
+    }
+
+    @DeleteMapping(Mappings.DELETE_FLASHCARD)
+    public String deleteFlashcard(@RequestParam("id") Long id, @RequestParam("deckId") Long deckId) {
+        log.info("called deleteFlashcard");
+        flashCardService.deleteFlashcardById(id);
+        return "redirect:" + Mappings.SHOW_FLASHCARDS + "?id=" + deckId;
+    }
 
 //
 //    @GetMapping(Mappings.ADD_FLASHCARD)

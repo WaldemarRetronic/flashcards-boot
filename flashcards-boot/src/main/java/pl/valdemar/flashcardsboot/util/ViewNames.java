@@ -7,6 +7,7 @@ public final class ViewNames {
     public static final String ABOUT = "about";
     public static final String INDEX = "index";
     public static final String UPDATE_DECK = "update-deck";
+    public static final String UPDATE_FLASHCARD = "update-flashcard";
     public static final String ADD_USER = "add-user";
     public static final String DECKS = "decks";
     public static final String ADD_DECK = "add-deck";

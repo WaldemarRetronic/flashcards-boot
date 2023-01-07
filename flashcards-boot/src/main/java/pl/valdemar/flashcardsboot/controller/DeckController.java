@@ -85,7 +85,7 @@ public class DeckController {
     @GetMapping(Mappings.UPDATE_DECK)
     public String showUpdateCourseForm(@PathVariable("id") Long id, Model model) {
         model.addAttribute(AttributeNames.DECK, deckService.findDeckById(id).get());
-        return "update-deck";
+        return ViewNames.UPDATE_DECK;
     }
 
     @PutMapping(Mappings.UPDATE_DECK)
@@ -102,7 +102,7 @@ public class DeckController {
     }
 
     @DeleteMapping(Mappings.DELETE_DECK)
-    public String deleteCourse(@PathVariable("id") Long id) {
+    public String deleteDeck(@PathVariable("id") Long id) {
         deckService.deleteDeckById(id);
         return "redirect:" + Mappings.INDEX;
     }

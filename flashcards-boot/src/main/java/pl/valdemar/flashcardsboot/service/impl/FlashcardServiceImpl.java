@@ -8,6 +8,8 @@ import pl.valdemar.flashcardsboot.model.Flashcard;
 import pl.valdemar.flashcardsboot.repository.FlashcardRepository;
 import pl.valdemar.flashcardsboot.service.FlashcardService;
 
+import java.util.Optional;
+
 @Service
 public class FlashcardServiceImpl implements FlashcardService {
 
@@ -35,17 +37,17 @@ public class FlashcardServiceImpl implements FlashcardService {
     }
 
     @Override
-    public Iterable<Flashcard> findAllFlashcards(Long userId) {
-        return null;
+    public Optional<Flashcard> findFlashcardById(Long id) {
+        return flashcardRepository.findById(id);
     }
 
     @Override
     public Flashcard updateFlashcard(Flashcard flashCard) {
-        return null;
+        return flashcardRepository.save(flashCard);
     }
 
     @Override
     public void deleteFlashcardById(Long id) {
-
+        flashcardRepository.deleteById(id);
     }
 }

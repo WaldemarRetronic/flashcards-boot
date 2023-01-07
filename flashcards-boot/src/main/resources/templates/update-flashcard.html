@@ -3,12 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Update Deck</title>
+    <title>Update Course</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
-    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/css/bootstrap.min.css"
-          th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
-
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
 </head>
 <body>
 <nav class="navbar navbar-dark bg-dark navbar-expand-sm">
@@ -42,7 +40,7 @@
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">
-            <h2 class="text-center mb-2">Update Deck</h2>
+            <h2 class="text-center mb-2">Update Flashcard</h2>
         </div>
         <div class="col-md-3"></div>
     </div>
@@ -50,32 +48,33 @@
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-9">
-            <form action="#" th:action="@{${paths.get('update')}(id=${deck.id})}" th:object="${deck}" method="post"
+            <form action="#" th:action="@{${paths.get('update')}(id=${flashcard.id},deckId=${deckId})}" th:object="${flashcard}" method="post"
                   th:method="put">
                 <div class="form-row">
                     <div class="form-group col-md-9">
-                        <label for="name" class="col-form-label">Name</label>
-                        <input type="text" th:field="*{deckName}" class="form-control" id="name" placeholder="Deck Name">
-                        <span th:if="${#fields.hasErrors('deckName')}" th:errors="*{deckName}" class="text-danger"></span>
+                        <label for="nativeName" class="col-form-label">Top</label>
+                        <input type="text" th:field="*{nativeName}" class="form-control" id="nativeName" placeholder="Top">
+                        <span th:if="${#fields.hasErrors('nativeName')}" th:errors="*{nativeName}" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-9">
-                        <label for="category" class="col-form-label">Category</label>
-                        <input th:field="*{category}" class="form-control" id="category"
-                               placeholder="Deck Category"></input>
-                        <span th:if="${#fields.hasErrors('category')}" th:errors="*{category}"
-                              class="text-danger"></span>
+                        <label for="foreignName" class="col-form-label">Back</label>
+                        <input type="text" th:field="*{foreignName}" class="form-control" id="foreignName" placeholder="Back"></input>
+                        <span th:if="${#fields.hasErrors('foreignName')}" th:errors="*{foreignName}" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-9">
-                        <label for="description" class="col-form-label">Description</label>
-                        <textarea th:field="*{description}" class="form-control" id="description"
-                                  placeholder="Course Description"></textarea>
-                        <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"
-                              class="text-danger"></span>
+                        <label for="variety" class="col-form-label">Flashcard Variety</label>
+                        <select th:field="*{variety}" class="form-control" id="variety">
+                            <option th:value="1">1 (Lowest)</option>
+                            <option th:value="2">2</option>
+                            <option th:value="3">3</option>
+                            <option th:value="4">4</option>
+                            <option th:value="5">5 (Highest)</option>
+                        </select>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 mt-2">
-                        <input type="submit" class="btn btn-dark" value="Update Deck">
+                        <input type="submit" class="btn btn-dark" value="Update Flashcard">
                     </div>
                 </div>
             </form>
@@ -84,10 +83,9 @@
     </div>
 </div>
 
-<script src="http://cdn.jsdelivr.net/webjars/jquery/3.3.1/jquery.min.js"
-        th:src="@{/webjars/jquery/jquery.min.js}"></script>
 <script src="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/js/bootstrap.min.js"
         th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
-
+<script src="http://cdn.jsdelivr.net/webjars/jquery/3.3.1/jquery.min.js"
+        th:src="@{/webjars/jquery/jquery.min.js}"></script>
 </body>
 </html>

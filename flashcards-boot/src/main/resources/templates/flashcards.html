@@ -62,9 +62,9 @@
                         <td th:text="${flashcard.nativeName}"></td>
                         <td th:text="${flashcard.foreignName}"></td>
                         <td th:text="${flashcard.variety}"></td>
-                        <td><a th:href="@{${paths.get('update')}(id=${flashcard.id})}" class="btn btn-dark"><i class="fas fa-edit"></i></a></td>
+                        <td><a th:href="@{${paths.get('update')}(id=${flashcard.id},deckId=${deckId})}" class="btn btn-dark"><i class="fas fa-edit"></i></a></td>
                         <td>
-                            <form action="#" th:action="@{${paths.get('delete')}(id=${flashcard.id})}" th:method="delete">
+                            <form action="#" th:action="@{${paths.get('delete')}(id=${flashcard.id}, deckId=${deckId})}" th:method="delete">
                                 <button type="submit" class="btn btn-danger">
                                     <i class="fas fa-trash"></i>
                                 </button>
