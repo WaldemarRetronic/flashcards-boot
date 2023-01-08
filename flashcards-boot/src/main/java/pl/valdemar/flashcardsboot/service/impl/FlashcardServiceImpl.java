@@ -49,4 +49,9 @@ public class FlashcardServiceImpl implements FlashcardService {
     public void deleteFlashcardById(Long id) {
         flashcardRepository.deleteById(id);
     }
+
+    @Override
+    public Iterable<Flashcard> findAll(Long userId) {
+        return flashcardRepository.findByUserId(userId);
+    }
 }

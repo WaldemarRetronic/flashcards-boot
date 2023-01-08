@@ -16,4 +16,6 @@ public interface FlashcardService {
     Flashcard updateFlashcard(Flashcard flashCard);
 
     void deleteFlashcardById(Long id);
+
+    Iterable<Flashcard> findAll(Long userId);
 }

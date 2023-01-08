@@ -20,6 +20,7 @@ public class LoginController {
         paths.put("index", Mappings.INDEX);
         paths.put("login", Mappings.LOGIN);
         paths.put("add-user", Mappings.ADD_USER);
+        paths.put("search", Mappings.SEARCH);
         return paths;
     }
 

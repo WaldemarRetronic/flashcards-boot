@@ -7,7 +7,6 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.valdemar.flashcardsboot.dto.FlashcardDto;
-import pl.valdemar.flashcardsboot.model.Deck;
 import pl.valdemar.flashcardsboot.model.Flashcard;
 import pl.valdemar.flashcardsboot.service.DeckService;
 import pl.valdemar.flashcardsboot.service.FlashcardService;
@@ -22,6 +21,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Controller
@@ -41,11 +41,6 @@ public class FlashcardController {
     }
 
     // == model attributes ==
-//    @ModelAttribute(name = AttributeNames.DECKS)
-//    public List<Deck> deckList(Principal principal) {
-//        return (List<Deck>) deckService.findDecksByUserId(getUserId(principal));
-//    }
-    // == model attributes ==
     @ModelAttribute(name = "paths")
     public Map<String, String> appPaths() {
         Map<String, String> paths = new HashMap<>();
@@ -55,6 +50,7 @@ public class FlashcardController {
         paths.put("logout", Mappings.LOGOUT);
         paths.put("add-flashcard", Mappings.ADD_FLASHCARD);
         paths.put("show-flashcards", Mappings.SHOW_FLASHCARDS);
+        paths.put("search", Mappings.SEARCH);
         return paths;
     }
 
@@ -87,79 +83,59 @@ public class FlashcardController {
     }
 
     @GetMapping(Mappings.UPDATE_FLASHCARD)
-    public String showUpdateFlashcardForm(@RequestParam("id") Long id, @RequestParam("deckId") Long deckId, Model model) {
-        model.addAttribute(AttributeNames.FLASHCARD, flashCardService.findFlashcardById(id).get());
-        model.addAttribute(AttributeNames.DECK_ID, deckId);
+    public String showUpdateFlashcardForm(@RequestParam("id") Long id, Model model) {
+        Flashcard flashcard = flashCardService.findFlashcardById(id).get();
+        model.addAttribute(AttributeNames.FLASHCARD, flashcard);
+        model.addAttribute(AttributeNames.DECK_ID, flashcard.getDeckId());
         return ViewNames.UPDATE_FLASHCARD;
     }
 
     @PutMapping(Mappings.UPDATE_FLASHCARD)
-    public String updateFlashcard(@RequestParam("id") Long id, @RequestParam("deckId") Long deckId, @Valid Flashcard flashcard, BindingResult result,
-                             Model model, Principal principal) {
+    public String updateFlashcard(@RequestParam("id") Long id, @Valid Flashcard flashcard, BindingResult result,
+                                  Model model, Principal principal) {
         if (result.hasErrors()) {
             flashcard.setId(id);
             return ViewNames.UPDATE_FLASHCARD;
         }
+        log.info("called updateFlashcard", flashcard.toString());
         flashcard.setUserId(getUserId(principal));
-        flashcard.setDeckId(deckId);
         log.info(flashcard.toString());
         flashCardService.updateFlashcard(flashcard);
-        return "redirect:" + Mappings.SHOW_FLASHCARDS + "?id=" + deckId;
+        return "redirect:" + Mappings.SHOW_FLASHCARDS + "?id=" + flashcard.getDeckId();
     }
 
     @DeleteMapping(Mappings.DELETE_FLASHCARD)
-    public String deleteFlashcard(@RequestParam("id") Long id, @RequestParam("deckId") Long deckId) {
+    public String deleteFlashcard(@RequestParam("id") Long id){
         log.info("called deleteFlashcard");
+        Long deckId = flashCardService.findFlashcardById(id).get().getDeckId();
         flashCardService.deleteFlashcardById(id);
         return "redirect:" + Mappings.SHOW_FLASHCARDS + "?id=" + deckId;
     }
 
-//
-//    @GetMapping(Mappings.ADD_FLASHCARD)
-//    public String createFlashcard(Model model) {
-//        model.addAttribute("addFlashcardForm", new AddFlashcardForm());
-//        return ViewNames.ADD_FLASHCARD;
-//    }
-//
-//    @PostMapping(Mappings.ADD_FLASHCARD)
-//    public String createFlashcard(@ModelAttribute(AttributeNames.ADD_FLASHCARD_FORM) AddFlashcardForm addFlashcardForm,
-//                                  Model model, Authentication authentication) {
-//        User user = (User) authentication.getPrincipal();
-//        Flashcard flashCard = new Flashcard(addFlashcardForm.getNativeName(), addFlashcardForm.getForeignName(),
-//                user.getId(), Integer.parseInt(addFlashcardForm.getDeckId()), addFlashcardForm.getVariety());
-//        flashCardService.save(flashCard);
-//        return "redirect:" + Mappings.ADD_FLASHCARD;
-//    }
-//
-//    @GetMapping(Mappings.DELETE_FC)
-//    public String delete(@RequestParam int id, @RequestParam int deckId) {
-//        log.info("Deleting flashcard with id={}", id);
-//        flashCardService.deleteFC(id);
-//        return "redirect:" + Mappings.FLASHCARDS + "/?deckId=" + deckId;
-//    }
-//
-//    @GetMapping(Mappings.SEARCH)
-//    public String search() {
-//        return ViewNames.SEARCH;
-//    }
-//
-//    @PostMapping(Mappings.SEARCH)
-//    public String search(@RequestParam String keyword, Authentication authentication, Model model) {
-//        log.info("search called with keyword: {}", keyword);
-//        User user = (User) authentication.getPrincipal();
-//        List<Flashcard> foundFlashcards =
-//                flashCardService.findAll(user.getId())
-//                        .stream()
-//                        .filter(flashCard -> flashCard.getForeignName().equals(keyword) || flashCard.getNativeName().equals(keyword))
-//                        .map(flashCard -> {
-//                            flashCard.setDeckName(deckService.getDeck(flashCard.getDeckId()).getDeckName());
-//                            return flashCard;
-//                        })
-//                                .collect(Collectors.toList());
-//        log.info("foundFlashcards: {}", foundFlashcards.size());
-//        model.addAttribute("foundFlashcards", foundFlashcards);
-//        return ViewNames.SEARCH;
-//    }
+    @GetMapping(Mappings.SEARCH)
+    public String search(Model model) {
+        model.addAttribute(AttributeNames.FLASHCARDS, Collections.EMPTY_LIST);
+        model.addAttribute("hidden", "true");
+        return ViewNames.SEARCH;
+    }
+
+    @PostMapping(Mappings.SEARCH)
+    public String search(@RequestParam String keyword, Principal principal, Model model) {
+        log.info("search called with keyword: {}", keyword);
+        List<Flashcard> foundFlashcards =
+                ((List<Flashcard>) flashCardService.findAll(getUserId(principal)))
+                        .stream()
+                        .filter(flashCard -> flashCard.getForeignName().equals(keyword) || flashCard.getNativeName().equals(keyword))
+                        .map(flashCard -> {
+                            flashCard.setDeckName(deckService.findDeckById(flashCard.getDeckId()).get().getDeckName());
+                            return flashCard;
+                        })
+                        .collect(Collectors.toList());
+        log.info("foundFlashcards: {}", foundFlashcards.size());
+        model.addAttribute("hidden", "false");
+        model.addAttribute(AttributeNames.FLASHCARDS, foundFlashcards.isEmpty() ? Collections.EMPTY_LIST : foundFlashcards);
+        return ViewNames.SEARCH;
+    }
 
 
     private Long getUserId(Principal principal) {

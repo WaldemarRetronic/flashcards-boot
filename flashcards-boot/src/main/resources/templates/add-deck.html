@@ -14,7 +14,7 @@
 <body>
 <nav class="navbar navbar-dark bg-dark navbar-expand-sm">
     <a class="navbar-brand brand-text" href="#">
-        <img src="/images/logoValdemar.png" width="30" height="30" alt="logo">
+        <img src="/images/logo.png" width="30" height="30" alt="logo">
         Flashcards
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list"
@@ -54,7 +54,7 @@
                 <div class="alert alert-danger">Deck already exists.</div>
             </div>
 
-            <form action="#" th:action="@{/add-deck}" th:object="${deck}" method="post">
+            <form action="#" th:action="@{${paths.get('add-deck')}}" th:object="${deck}" method="post">
                 <div class="form-row">
                     <div class="form-group col-md-9">
                         <label for="name" class="col-form-label">Name</label>
