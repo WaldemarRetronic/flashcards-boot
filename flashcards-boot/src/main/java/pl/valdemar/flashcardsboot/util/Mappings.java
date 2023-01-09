@@ -17,7 +17,7 @@ public final class Mappings {
     public static final String LOGOUT = "/logout";
     public static final String STUDY = "/study";
     public static final String LESSON =  "/lesson";
-    public static final String STUDY_SESSION = "/studySession";
+    public static final String STUDY_SESSION = "/study-session";
     public static final String RESULT_STUDY = "/resultStudy";
     public static final String VIEW = "/decks/view";
     public static final String EDIT = "decks/addDeck";

@@ -33,13 +33,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .formLogin().loginPage("/login").failureHandler(customAuthenticationFailureHandler)
                 .and()
                 .oauth2Login().loginPage("/login").successHandler(oauth2AuthenticationSuccessHandler());
+//                .and()
+//                .csrf().disable().cors();
     }
 
     @Override
     public void configure(WebSecurity web) throws Exception {
         web
                 .ignoring()
-                .antMatchers("/webjars/**", "/images/*", "/css/*", "/h2-console/**");
+                .antMatchers("/webjars/**", "/images/*", "/css/*", "/js/*", "/h2-console/**");
     }
 
     @Bean

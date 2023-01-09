@@ -5,10 +5,11 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Error</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/custom.css" th:href="@{/css/flashcard.css}"/>
 
-    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/css/bootstrap.min.css"
-          th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/custom.css}" />
 </head>
 <body>
 <nav class="navbar navbar-dark bg-dark navbar-expand-sm">
@@ -31,7 +32,7 @@
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <form th:action="@{${paths.get('logout')}}" method="post">
+                <form id="logoutForm" th:action="@{${paths.get('logout')}}" method="post">
                     <button class="btn btn-danger" type="submit">logout</button>
                 </form>
             </li>
@@ -47,33 +48,41 @@
             </div>
             <div class="card-body">
 
-                <div id="message">
-                    <h5 class="card-text mb-5">Message</h5>
+                <div id="messageDiv">
+                    <h5 class="card-text mb-5" th:text="${startMessage}">Message</h5>
                 </div>
 
-                <div id="front" hidden="hidden">
-                    <h5 class="card-text mb-5">Front</h5>
+                <div id="frontDiv" hidden="hidden">
+                    <h5 class="card-text mb-5" id="front">Front</h5>
                 </div>
 
-                <div id="back" hidden="hidden">
+                <div id="backDiv" hidden="hidden">
                     <hr class="dividing-line" />
-                    <h5 class="card-text mb-5">Back</h5>
+                    <h5 class="card-text mb-5" id="back">Back</h5>
+                </div>
+                <!-- typeAnswer div-->
+                <div id="typeAnswerDiv" hidden="hidden">
+                    <input class="centered" type="text" id="typeAnswer" name="typeAnswer" required="required"/>
                 </div>
 
             </div>
             <div class="card-footer text-muted">
 
-                <div id="answer" hidden="hidden">
-                    <button type="button" class="btn custom-btn btn-danger ">Oops!</button>
-                    <button type="button" class="btn custom-btn btn-success">Got it!</button>
+                <div id="answerDiv" hidden="hidden">
+                    <button type="button" id="oops" class="btn custom-btn btn-danger ">Oops!</button>
+                    <button type="button" id="gotIt" class="btn custom-btn btn-success">Got it!</button>
                 </div>
 
-                <div id="check" hidden="hidden">
-                    <button type="button" class="btn custom-btn btn-info ">Check</button>
+                <div id="checkDiv" hidden="hidden">
+                    <button type="button" id="btnCheck" class="btn custom-btn btn-info ">Check</button>
                 </div>
 
-                <div id="next">
-                    <button type="button" class="btn custom-btn btn-primary ">Next</button>
+                <div id="nextDiv" hidden="hidden">
+                    <button type="button" id="btnNext" class="btn custom-btn btn-primary ">Next</button>
+                </div>
+
+                <div id="startDiv">
+                    <button type="button" id="btnStart" class="btn custom-btn btn-primary ">Start</button>
                 </div>
 
             </div>
@@ -88,6 +97,10 @@
         th:src="@{/webjars/jquery/jquery.min.js}"></script>
 <script src="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/js/bootstrap.min.js"
         th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
+<script type="text/javascript" src="js/ajax.js" th:src="@{/js/ajax.js}"></script>
+<script type="text/javascript" src="js/study.js" th:src="@{/js/study.js}"></script>
+<script type="text/javascript" src="js/utilities.js" th:src="@{/js/utilities.js}"></script>
 
 </body>
 </html>

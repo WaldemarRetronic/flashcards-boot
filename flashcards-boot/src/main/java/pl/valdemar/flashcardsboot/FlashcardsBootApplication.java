@@ -4,13 +4,16 @@ import org.apache.catalina.Context;
 import org.apache.catalina.connector.Connector;
 import org.apache.tomcat.util.descriptor.web.SecurityCollection;
 import org.apache.tomcat.util.descriptor.web.SecurityConstraint;
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
+
 
 @SpringBootApplication
 public class FlashcardsBootApplication {
@@ -21,6 +24,11 @@ public class FlashcardsBootApplication {
 
         SpringApplication.run(FlashcardsBootApplication.class, args);
         logger.info("FlashcardsBootApplication started successfully with Log4j2 configuration");
+    }
+
+    @Bean
+    public JSONObject json() {
+        return new JSONObject();
     }
 
     @Bean
@@ -47,4 +55,5 @@ public class FlashcardsBootApplication {
         connector.setRedirectPort(8443);
         return connector;
     }
+
 }

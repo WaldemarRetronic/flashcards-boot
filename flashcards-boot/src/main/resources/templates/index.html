@@ -68,7 +68,7 @@
                         <td th:text="${deck.deckName}"></td>
                         <td th:text="${deck.category}"></td>
                         <td th:text="${deck.description}"></td>
-                        <td><a th:href="@{${paths.get('update')}(id=${deck.id})}" class="btn btn-dark"><i class='fa fa-play' style='color:#4e9a06'></i></a></td>
+                        <td><a th:href="@{${paths.get('study')}(id=${deck.id})}" class="btn btn-dark"><i class='fa fa-play' style='color:#4e9a06'></i></a></td>
                         <td><a th:href="@{${paths.get('update')}(id=${deck.id})}" class="btn btn-dark"><i class="fas fa-edit"></i></a></td>
                         <td><a th:href="@{${paths.get('flashcards')}(id=${deck.id})}" class="btn btn-dark"><i class="fas fa-edit"></i></a></td>
                         <td>
