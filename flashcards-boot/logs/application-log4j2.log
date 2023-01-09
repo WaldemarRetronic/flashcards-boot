@@ -7313,3 +7313,82 @@ org.h2.jdbc.JdbcSQLNonTransientConnectionException: The database is open in excl
 2023-01-08 20:47:37.194 [ WARN] [ionShutdownHook] o.s.b.f.s.DisposableBeanAdapter          : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
 2023-01-08 20:47:37.196 [ INFO] [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
 2023-01-08 20:47:37.246 [ INFO] [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2023-01-09 08:30:06.170 [ INFO] [kground-preinit] o.h.v.i.u.Version                        : HV000001: Hibernate Validator 6.2.5.Final
+2023-01-09 08:30:06.231 [ INFO] [  restartedMain] p.v.f.FlashcardsBootApplication          : Starting FlashcardsBootApplication using Java 18.0.1 on mac with PID 17942 (/home/waldemar/Projects/flashcards-boot/flashcards-boot/target/classes started by waldemar in /home/waldemar/Projects/flashcards-boot/flashcards-boot)
+2023-01-09 08:30:06.238 [ INFO] [  restartedMain] p.v.f.FlashcardsBootApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-01-09 08:30:07.558 [ INFO] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-09 08:30:07.629 [ INFO] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 4 JPA repository interfaces.
+2023-01-09 08:30:08.842 [ INFO] [  restartedMain] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["https-jsse-nio-8443"]
+2023-01-09 08:30:08.844 [ INFO] [  restartedMain] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2023-01-09 08:30:08.850 [ INFO] [  restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2023-01-09 08:30:08.851 [ INFO] [  restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-01-09 08:30:08.952 [ INFO] [  restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2023-01-09 08:30:08.999 [ INFO] [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2023-01-09 08:30:09.317 [ INFO] [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2023-01-09 08:30:09.591 [ INFO] [  restartedMain] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-09 08:30:09.654 [ INFO] [  restartedMain] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-01-09 08:30:09.903 [ INFO] [  restartedMain] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-09 08:30:10.080 [ INFO] [  restartedMain] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-01-09 08:30:10.789 [ INFO] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-09 08:30:10.798 [ INFO] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-09 08:30:13.743 [ WARN] [  restartedMain] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-01-09 08:30:13.744 [ INFO] [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/webjars/**']
+2023-01-09 08:30:13.745 [ WARN] [  restartedMain] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/images/*']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-01-09 08:30:13.745 [ INFO] [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/images/*']
+2023-01-09 08:30:13.745 [ WARN] [  restartedMain] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/css/*']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-01-09 08:30:13.745 [ INFO] [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/css/*']
+2023-01-09 08:30:13.746 [ WARN] [  restartedMain] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/h2-console/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-01-09 08:30:13.746 [ INFO] [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/h2-console/**']
+2023-01-09 08:30:13.799 [ INFO] [  restartedMain] o.s.s.w.a.c.ChannelProcessingFilter      : Validated configuration attributes
+2023-01-09 08:30:13.834 [ INFO] [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1e9d913a, org.springframework.security.web.access.channel.ChannelProcessingFilter@7d2e1657, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1c8af2a8, org.springframework.security.web.context.SecurityContextPersistenceFilter@647d4f1, org.springframework.security.web.header.HeaderWriterFilter@99f4407, org.springframework.security.web.csrf.CsrfFilter@2f3394f1, org.springframework.security.web.authentication.logout.LogoutFilter@5b6993b8, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@44b8c5a4, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@42873999, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7c8ba444, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4c9bbe96, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1c122778, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@67ba4b51, org.springframework.security.web.session.SessionManagementFilter@29f6bba4, org.springframework.security.web.access.ExceptionTranslationFilter@5d82bd02, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@18163ebb]
+2023-01-09 08:30:13.947 [ INFO] [  restartedMain] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["https-jsse-nio-8443"]
+2023-01-09 08:30:14.336 [ INFO] [  restartedMain] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2023-01-09 08:30:14.369 [ INFO] [  restartedMain] p.v.f.FlashcardsBootApplication          : Started FlashcardsBootApplication in 8.723 seconds (JVM running for 10.773)
+2023-01-09 08:30:14.373 [ INFO] [  restartedMain] p.v.f.FlashcardsBootApplication          : FlashcardsBootApplication started successfully with Log4j2 configuration
+2023-01-09 08:30:29.412 [ INFO] [nio-8443-exec-8] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-09 08:30:29.412 [ INFO] [nio-8443-exec-8] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2023-01-09 08:30:29.413 [ INFO] [nio-8443-exec-8] o.s.w.s.DispatcherServlet                : Completed initialization in 1 ms
+2023-01-09 08:30:50.271 [ INFO] [nio-8443-exec-2] p.v.f.c.DeckController                   : Deck(id=1, deckName=Norwegian Level A1-01bmb, description=Familiar everyday expressions and very basic phrases, userId=1, category=NORWEGIAN)
+2023-01-09 08:31:08.280 [ INFO] [nio-8443-exec-1] p.v.f.c.DeckController                   : Deck(id=2, deckName=Norwegian Level A1-02, description=Familiar everyday expressions and very basic phrasesjmbmbkbk, userId=1, category=NORWEGIAN)
+2023-01-09 08:31:26.980 [ INFO] [nio-8443-exec-9] p.v.f.c.FlashcardController              : called updateFlashcard
+2023-01-09 08:31:26.981 [ INFO] [nio-8443-exec-9] p.v.f.c.FlashcardController              : Flashcard(id=1, nativeName=goodbye, foreignName=srel, userId=1, deckId=1, variety=reversed, deckName=null)
+2023-01-09 08:31:30.938 [ INFO] [nio-8443-exec-6] p.v.f.c.FlashcardController              : called deleteFlashcard
+2023-01-09 08:31:33.666 [ INFO] [nio-8443-exec-5] p.v.f.c.FlashcardController              : model: {paths={logout=/logout, search=/search, show-flashcards=/show-flashcards, update=/update-flashcard, index=/index, add-flashcard=/add-flashcard, delete=/delete-flashcard}, flashcard=FlashcardDto(nativeName=null, foreignName=null, variety=null, deckId=1), deckId=1}
+2023-01-09 08:31:45.556 [ INFO] [nio-8443-exec-1] p.v.f.c.FlashcardController              : called updateFlashcard
+2023-01-09 08:31:45.562 [ INFO] [nio-8443-exec-1] p.v.f.c.FlashcardController              : Flashcard(id=9, nativeName=qwohfcl, foreignName=du[pa, userId=1, deckId=1, variety=type_in_answer, deckName=null)
+2023-01-09 08:31:49.212 [ INFO] [nio-8443-exec-2] p.v.f.c.FlashcardController              : called deleteFlashcard
+2023-01-09 08:31:50.873 [ INFO] [nio-8443-exec-3] p.v.f.c.FlashcardController              : called deleteFlashcard
+2023-01-09 08:31:51.898 [ INFO] [nio-8443-exec-7] p.v.f.c.FlashcardController              : called deleteFlashcard
+2023-01-09 08:31:59.515 [ INFO] [nio-8443-exec-7] p.v.f.c.FlashcardController              : search called with keyword: DUPA
+2023-01-09 08:31:59.530 [ INFO] [nio-8443-exec-7] p.v.f.c.FlashcardController              : foundFlashcards: 0
+2023-01-09 08:32:05.181 [ INFO] [nio-8443-exec-9] p.v.f.c.FlashcardController              : search called with keyword: farvel
+2023-01-09 08:32:05.185 [ INFO] [nio-8443-exec-9] p.v.f.c.FlashcardController              : foundFlashcards: 0
+2023-01-09 08:32:08.027 [ INFO] [nio-8443-exec-6] p.v.f.c.FlashcardController              : search called with keyword: natt
+2023-01-09 08:32:08.031 [ INFO] [nio-8443-exec-6] p.v.f.c.FlashcardController              : foundFlashcards: 1
+2023-01-09 08:32:46.002 [ INFO] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-09 08:32:46.173 [ERROR] [onnection adder] c.z.h.p.HikariPool                       : HikariPool-1 - Error thrown while acquiring connection from data source
+org.h2.jdbc.JdbcSQLNonTransientConnectionException: The database is open in exclusive mode; can not open additional connections [90135-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.engine.SessionLocal.checkSuspended(SessionLocal.java:1240)
+	at org.h2.engine.SessionLocal.transitionToState(SessionLocal.java:1232)
+	at org.h2.engine.SessionLocal.waitIfExclusiveModeEnabled(SessionLocal.java:1480)
+	at org.h2.command.Command.executeQuery(Command.java:180)
+	at org.h2.jdbc.JdbcConnection.isReadOnly(JdbcConnection.java:538)
+	at com.zaxxer.hikari.pool.PoolBase.setupConnection(PoolBase.java:408)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.access$100(HikariPool.java:71)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:726)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:712)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-01-09 08:32:46.372 [ WARN] [ionShutdownHook] o.s.b.f.s.DisposableBeanAdapter          : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+2023-01-09 08:32:46.373 [ INFO] [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2023-01-09 08:32:46.426 [ INFO] [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
