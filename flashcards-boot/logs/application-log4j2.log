@@ -13736,3 +13736,489 @@ org.h2.jdbc.JdbcSQLNonTransientConnectionException: The database is open in excl
 2023-01-09 19:10:37.033 [ WARN] [ionShutdownHook] o.s.b.f.s.DisposableBeanAdapter          : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
 2023-01-09 19:10:37.034 [ INFO] [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
 2023-01-09 19:10:37.093 [ INFO] [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2023-01-09 19:20:21.242 [ INFO] [kground-preinit] o.h.v.i.u.Version                        : HV000001: Hibernate Validator 6.2.5.Final
+2023-01-09 19:20:21.329 [ INFO] [  restartedMain] p.v.f.FlashcardsBootApplication          : Starting FlashcardsBootApplication using Java 18.0.1 on mac with PID 50355 (/home/waldemar/Projects/flashcards-boot/flashcards-boot/target/classes started by waldemar in /home/waldemar/Projects/flashcards-boot/flashcards-boot)
+2023-01-09 19:20:21.335 [ INFO] [  restartedMain] p.v.f.FlashcardsBootApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-01-09 19:20:24.644 [ INFO] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-09 19:20:24.803 [ INFO] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 134 ms. Found 4 JPA repository interfaces.
+2023-01-09 19:20:26.377 [ INFO] [  restartedMain] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["https-jsse-nio-8443"]
+2023-01-09 19:20:26.378 [ INFO] [  restartedMain] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2023-01-09 19:20:26.385 [ INFO] [  restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2023-01-09 19:20:26.386 [ INFO] [  restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-01-09 19:20:26.556 [ INFO] [  restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2023-01-09 19:20:26.638 [ INFO] [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2023-01-09 19:20:26.999 [ INFO] [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2023-01-09 19:20:27.129 [ WARN] [  restartedMain] o.a.c.c.C.[.[.[/]                        : Cannot deserialize session attribute [org.springframework.web.context.request.ServletRequestAttributes.DESTRUCTION_CALLBACK.studyServiceImpl] for session [380CD70AEF9FEB4B6D3446F1005D2598]
+2023-01-09 19:20:27.130 [ERROR] [  restartedMain] o.a.c.s.StandardManager                  : Exception loading sessions from persistent storage
+java.lang.ClassCastException: class java.io.ObjectStreamClass cannot be cast to class java.lang.String (java.io.ObjectStreamClass and java.lang.String are in module java.base of loader 'bootstrap')
+	at java.base/java.io.ObjectInputStream.readTypeString(ObjectInputStream.java:1845)
+	at java.base/java.io.ObjectStreamClass.readNonProxy(ObjectStreamClass.java:839)
+	at java.base/java.io.ObjectInputStream.readClassDescriptor(ObjectInputStream.java:1017)
+	at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:2058)
+	at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1933)
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2259)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1768)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:543)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:501)
+	at org.apache.catalina.session.StandardSession.doReadObject(StandardSession.java:1635)
+	at org.apache.catalina.session.StandardSession.readObjectData(StandardSession.java:1050)
+	at org.apache.catalina.session.StandardManager.doLoad(StandardManager.java:219)
+	at org.apache.catalina.session.StandardManager.load(StandardManager.java:162)
+	at org.apache.catalina.session.StandardManager.startInternal(StandardManager.java:356)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5239)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1393)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1383)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:916)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:835)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1393)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1383)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:916)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:265)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:430)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:479)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:211)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:184)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at pl.valdemar.flashcardsboot.FlashcardsBootApplication.main(FlashcardsBootApplication.java:25)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+2023-01-09 19:20:27.587 [ INFO] [  restartedMain] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-09 19:20:27.729 [ INFO] [  restartedMain] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-01-09 19:20:28.300 [ INFO] [  restartedMain] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-09 19:20:28.526 [ INFO] [  restartedMain] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-01-09 19:20:29.683 [ INFO] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-09 19:20:29.701 [ INFO] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-09 19:20:33.268 [ WARN] [  restartedMain] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-01-09 19:20:33.269 [ INFO] [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/webjars/**']
+2023-01-09 19:20:33.271 [ WARN] [  restartedMain] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/images/*']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-01-09 19:20:33.271 [ INFO] [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/images/*']
+2023-01-09 19:20:33.272 [ WARN] [  restartedMain] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/css/*']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-01-09 19:20:33.272 [ INFO] [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/css/*']
+2023-01-09 19:20:33.272 [ WARN] [  restartedMain] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/js/*']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-01-09 19:20:33.273 [ INFO] [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/js/*']
+2023-01-09 19:20:33.273 [ WARN] [  restartedMain] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/h2-console/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-01-09 19:20:33.273 [ INFO] [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/h2-console/**']
+2023-01-09 19:20:33.364 [ INFO] [  restartedMain] o.s.s.w.a.c.ChannelProcessingFilter      : Validated configuration attributes
+2023-01-09 19:20:33.413 [ INFO] [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@27c51c4b, org.springframework.security.web.access.channel.ChannelProcessingFilter@225bee06, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@735ade91, org.springframework.security.web.context.SecurityContextPersistenceFilter@2089ff7e, org.springframework.security.web.header.HeaderWriterFilter@65a2fea3, org.springframework.security.web.csrf.CsrfFilter@b0ea155, org.springframework.security.web.authentication.logout.LogoutFilter@20d6ca, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@4762752f, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@44a429b1, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7be884fc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3523a0a0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@365735f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@16d698ea, org.springframework.security.web.session.SessionManagementFilter@3a65195f, org.springframework.security.web.access.ExceptionTranslationFilter@5ae7c946, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1753de2f]
+2023-01-09 19:20:33.556 [ INFO] [  restartedMain] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["https-jsse-nio-8443"]
+2023-01-09 19:20:33.940 [ INFO] [  restartedMain] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2023-01-09 19:20:33.975 [ INFO] [  restartedMain] p.v.f.FlashcardsBootApplication          : Started FlashcardsBootApplication in 13.428 seconds (JVM running for 17.27)
+2023-01-09 19:20:33.980 [ INFO] [  restartedMain] p.v.f.FlashcardsBootApplication          : FlashcardsBootApplication started successfully with Log4j2 configuration
+2023-01-09 19:20:47.336 [ INFO] [nio-8443-exec-9] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-09 19:20:47.336 [ INFO] [nio-8443-exec-9] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2023-01-09 19:20:47.338 [ INFO] [nio-8443-exec-9] o.s.w.s.DispatcherServlet                : Completed initialization in 2 ms
+2023-01-09 19:21:01.141 [ INFO] [nio-8443-exec-8] p.v.f.s.i.StudyServiceImpl               : StudyServiceImpl created
+2023-01-09 19:21:01.145 [ INFO] [nio-8443-exec-8] p.v.f.m.MessageGeneratorImpl             : studyService = pl.valdemar.flashcardsboot.service.impl.StudyServiceImpl@439eef0d 
+2023-01-09 19:21:01.150 [ INFO] [nio-8443-exec-8] p.v.f.c.StudyControl                     : StudyControl created
+2023-01-09 19:21:01.163 [ INFO] [nio-8443-exec-8] p.v.f.c.StudyControl                     : flashcard method called from Study controller
+2023-01-09 19:21:01.172 [ INFO] [nio-8443-exec-8] p.v.f.c.StudyControl                     : flashcards from database = [Flashcard(id=1, nativeName=goodbye, foreignName=farvel, userId=1, deckId=1, variety=basic, deckName=null), Flashcard(id=2, nativeName=evening, foreignName=kveld, userId=1, deckId=1, variety=basic, deckName=null), Flashcard(id=3, nativeName=small, foreignName=liten, userId=1, deckId=1, variety=reversed, deckName=null)]
+2023-01-09 19:21:01.175 [ INFO] [nio-8443-exec-8] p.v.f.c.StudyControl                     : flashcards from StudyService = [Flashcard(id=0, nativeName=liten, foreignName=small, userId=0, deckId=0, variety=null, deckName=null), Flashcard(id=1, nativeName=goodbye, foreignName=farvel, userId=1, deckId=1, variety=basic, deckName=null), Flashcard(id=2, nativeName=evening, foreignName=kveld, userId=1, deckId=1, variety=basic, deckName=null), Flashcard(id=3, nativeName=small, foreignName=liten, userId=1, deckId=1, variety=reversed, deckName=null)]
+2023-01-09 19:21:01.193 [ INFO] [nio-8443-exec-8] p.v.f.c.StudyControl                     : StudyControl to be deleted
+2023-01-09 19:21:02.559 [ INFO] [nio-8443-exec-2] p.v.f.c.StudyControl                     : StudyControl created
+2023-01-09 19:21:02.620 [ INFO] [nio-8443-exec-2] p.v.f.c.StudyControl                     : getFlashcard method called
+2023-01-09 19:21:02.620 [ INFO] [nio-8443-exec-2] p.v.f.c.StudyControl                     : correct = start
+2023-01-09 19:21:02.621 [ INFO] [nio-8443-exec-2] p.v.f.s.i.StudyServiceImpl               : size = 4
+2023-01-09 19:21:02.621 [ INFO] [nio-8443-exec-2] p.v.f.s.i.StudyServiceImpl               : index = 0
+2023-01-09 19:21:02.621 [ INFO] [nio-8443-exec-2] p.v.f.s.i.StudyServiceImpl               : size = 3
+2023-01-09 19:21:02.622 [ INFO] [nio-8443-exec-2] p.v.f.c.StudyControl                     : frontSide = small
+2023-01-09 19:21:02.622 [ INFO] [nio-8443-exec-2] p.v.f.c.StudyControl                     : backSide = liten
+2023-01-09 19:21:02.631 [ INFO] [nio-8443-exec-2] p.v.f.c.StudyControl                     : StudyControl to be deleted
+2023-01-09 19:21:05.979 [ INFO] [nio-8443-exec-6] p.v.f.c.StudyControl                     : StudyControl created
+2023-01-09 19:21:05.983 [ INFO] [nio-8443-exec-6] p.v.f.c.StudyControl                     : getFlashcard method called
+2023-01-09 19:21:05.983 [ INFO] [nio-8443-exec-6] p.v.f.c.StudyControl                     : correct = yes
+2023-01-09 19:21:05.983 [ INFO] [nio-8443-exec-6] p.v.f.s.i.StudyServiceImpl               : size = 3
+2023-01-09 19:21:05.983 [ INFO] [nio-8443-exec-6] p.v.f.s.i.StudyServiceImpl               : index = 1
+2023-01-09 19:21:05.984 [ INFO] [nio-8443-exec-6] p.v.f.s.i.StudyServiceImpl               : size = 2
+2023-01-09 19:21:05.984 [ INFO] [nio-8443-exec-6] p.v.f.c.StudyControl                     : frontSide = kveld
+2023-01-09 19:21:05.984 [ INFO] [nio-8443-exec-6] p.v.f.c.StudyControl                     : backSide = evening
+2023-01-09 19:21:05.987 [ INFO] [nio-8443-exec-6] p.v.f.c.StudyControl                     : StudyControl to be deleted
+2023-01-09 19:21:07.820 [ INFO] [io-8443-exec-10] p.v.f.c.StudyControl                     : StudyControl created
+2023-01-09 19:21:07.826 [ INFO] [io-8443-exec-10] p.v.f.c.StudyControl                     : getFlashcard method called
+2023-01-09 19:21:07.826 [ INFO] [io-8443-exec-10] p.v.f.c.StudyControl                     : correct = yes
+2023-01-09 19:21:07.826 [ INFO] [io-8443-exec-10] p.v.f.s.i.StudyServiceImpl               : size = 2
+2023-01-09 19:21:07.827 [ INFO] [io-8443-exec-10] p.v.f.s.i.StudyServiceImpl               : index = 0
+2023-01-09 19:21:07.827 [ INFO] [io-8443-exec-10] p.v.f.s.i.StudyServiceImpl               : size = 1
+2023-01-09 19:21:07.827 [ INFO] [io-8443-exec-10] p.v.f.c.StudyControl                     : frontSide = farvel
+2023-01-09 19:21:07.827 [ INFO] [io-8443-exec-10] p.v.f.c.StudyControl                     : backSide = goodbye
+2023-01-09 19:21:07.830 [ INFO] [io-8443-exec-10] p.v.f.c.StudyControl                     : StudyControl to be deleted
+2023-01-09 19:21:09.764 [ INFO] [nio-8443-exec-3] p.v.f.c.StudyControl                     : StudyControl created
+2023-01-09 19:21:09.768 [ INFO] [nio-8443-exec-3] p.v.f.c.StudyControl                     : getFlashcard method called
+2023-01-09 19:21:09.768 [ INFO] [nio-8443-exec-3] p.v.f.c.StudyControl                     : correct = yes
+2023-01-09 19:21:09.768 [ INFO] [nio-8443-exec-3] p.v.f.s.i.StudyServiceImpl               : size = 1
+2023-01-09 19:21:09.768 [ INFO] [nio-8443-exec-3] p.v.f.s.i.StudyServiceImpl               : index = 0
+2023-01-09 19:21:09.768 [ INFO] [nio-8443-exec-3] p.v.f.s.i.StudyServiceImpl               : size = 0
+2023-01-09 19:21:09.769 [ INFO] [nio-8443-exec-3] p.v.f.c.StudyControl                     : frontSide = liten
+2023-01-09 19:21:09.769 [ INFO] [nio-8443-exec-3] p.v.f.c.StudyControl                     : backSide = small
+2023-01-09 19:21:09.771 [ INFO] [nio-8443-exec-3] p.v.f.c.StudyControl                     : StudyControl to be deleted
+2023-01-09 19:21:11.849 [ INFO] [nio-8443-exec-9] p.v.f.c.StudyControl                     : StudyControl created
+2023-01-09 19:21:11.851 [ INFO] [nio-8443-exec-9] p.v.f.c.StudyControl                     : getFlashcard method called
+2023-01-09 19:21:11.852 [ INFO] [nio-8443-exec-9] p.v.f.c.StudyControl                     : correct = yes
+2023-01-09 19:21:11.852 [ INFO] [nio-8443-exec-9] p.v.f.s.i.StudyServiceImpl               : size = 0
+2023-01-09 19:21:11.855 [ INFO] [nio-8443-exec-9] p.v.f.c.StudyControl                     : StudyControl to be deleted
+2023-01-09 19:21:24.075 [ INFO] [nio-8443-exec-8] p.v.f.c.FlashcardController              : called updateFlashcard
+2023-01-09 19:21:24.076 [ INFO] [nio-8443-exec-8] p.v.f.c.FlashcardController              : Flashcard(id=1, nativeName=goodbye, foreignName=farvel, userId=1, deckId=1, variety=type_in_answer, deckName=null)
+2023-01-09 19:21:27.349 [ INFO] [nio-8443-exec-8] p.v.f.c.FlashcardController              : called updateFlashcard
+2023-01-09 19:21:27.352 [ INFO] [nio-8443-exec-8] p.v.f.c.FlashcardController              : Flashcard(id=1, nativeName=goodbye, foreignName=farvel, userId=1, deckId=1, variety=type_in_answer, deckName=null)
+2023-01-09 19:21:31.655 [ INFO] [nio-8443-exec-8] p.v.f.c.FlashcardController              : called updateFlashcard
+2023-01-09 19:21:31.657 [ INFO] [nio-8443-exec-8] p.v.f.c.FlashcardController              : Flashcard(id=2, nativeName=evening, foreignName=kveld, userId=1, deckId=1, variety=type_in_answer, deckName=null)
+2023-01-09 19:21:35.897 [ INFO] [nio-8443-exec-8] p.v.f.c.FlashcardController              : called updateFlashcard
+2023-01-09 19:21:35.898 [ INFO] [nio-8443-exec-8] p.v.f.c.FlashcardController              : Flashcard(id=3, nativeName=small, foreignName=liten, userId=1, deckId=1, variety=type_in_answer, deckName=null)
+2023-01-09 19:21:42.171 [ INFO] [nio-8443-exec-3] p.v.f.c.StudyControl                     : StudyControl created
+2023-01-09 19:21:42.172 [ INFO] [nio-8443-exec-3] p.v.f.c.StudyControl                     : flashcard method called from Study controller
+2023-01-09 19:21:42.176 [ INFO] [nio-8443-exec-3] p.v.f.c.StudyControl                     : flashcards from database = [Flashcard(id=1, nativeName=goodbye, foreignName=farvel, userId=1, deckId=1, variety=type_in_answer, deckName=null), Flashcard(id=2, nativeName=evening, foreignName=kveld, userId=1, deckId=1, variety=type_in_answer, deckName=null), Flashcard(id=3, nativeName=small, foreignName=liten, userId=1, deckId=1, variety=type_in_answer, deckName=null)]
+2023-01-09 19:21:42.180 [ INFO] [nio-8443-exec-3] p.v.f.c.StudyControl                     : flashcards from StudyService = [Flashcard(id=1, nativeName=goodbye, foreignName=farvel, userId=1, deckId=1, variety=type_in_answer, deckName=null), Flashcard(id=2, nativeName=evening, foreignName=kveld, userId=1, deckId=1, variety=type_in_answer, deckName=null), Flashcard(id=3, nativeName=small, foreignName=liten, userId=1, deckId=1, variety=type_in_answer, deckName=null)]
+2023-01-09 19:21:42.193 [ INFO] [nio-8443-exec-3] p.v.f.c.StudyControl                     : StudyControl to be deleted
+2023-01-09 19:21:43.748 [ INFO] [nio-8443-exec-3] p.v.f.c.StudyControl                     : StudyControl created
+2023-01-09 19:21:43.750 [ INFO] [nio-8443-exec-3] p.v.f.c.StudyControl                     : getFlashcard method called
+2023-01-09 19:21:43.750 [ INFO] [nio-8443-exec-3] p.v.f.c.StudyControl                     : correct = start
+2023-01-09 19:21:43.751 [ INFO] [nio-8443-exec-3] p.v.f.s.i.StudyServiceImpl               : size = 3
+2023-01-09 19:21:43.751 [ INFO] [nio-8443-exec-3] p.v.f.s.i.StudyServiceImpl               : index = 1
+2023-01-09 19:21:43.751 [ INFO] [nio-8443-exec-3] p.v.f.s.i.StudyServiceImpl               : size = 2
+2023-01-09 19:21:43.751 [ INFO] [nio-8443-exec-3] p.v.f.c.StudyControl                     : frontSide = kveld
+2023-01-09 19:21:43.752 [ INFO] [nio-8443-exec-3] p.v.f.c.StudyControl                     : backSide = evening
+2023-01-09 19:21:43.756 [ INFO] [nio-8443-exec-3] p.v.f.c.StudyControl                     : StudyControl to be deleted
+2023-01-09 19:24:28.089 [ INFO] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-09 19:24:28.250 [ERROR] [onnection adder] c.z.h.p.HikariPool                       : HikariPool-1 - Error thrown while acquiring connection from data source
+org.h2.jdbc.JdbcSQLNonTransientConnectionException: The database is open in exclusive mode; can not open additional connections [90135-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.engine.SessionLocal.checkSuspended(SessionLocal.java:1240)
+	at org.h2.engine.SessionLocal.transitionToState(SessionLocal.java:1232)
+	at org.h2.engine.SessionLocal.waitIfExclusiveModeEnabled(SessionLocal.java:1480)
+	at org.h2.command.Command.executeQuery(Command.java:180)
+	at org.h2.jdbc.JdbcConnection.isReadOnly(JdbcConnection.java:538)
+	at com.zaxxer.hikari.pool.PoolBase.setupConnection(PoolBase.java:408)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.access$100(HikariPool.java:71)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:726)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:712)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-01-09 19:24:28.448 [ WARN] [ionShutdownHook] o.s.b.f.s.DisposableBeanAdapter          : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+2023-01-09 19:24:28.449 [ INFO] [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2023-01-09 19:24:28.502 [ INFO] [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2023-01-09 19:27:48.484 [ INFO] [kground-preinit] o.h.v.i.u.Version                        : HV000001: Hibernate Validator 6.2.5.Final
+2023-01-09 19:27:48.533 [ INFO] [  restartedMain] p.v.f.FlashcardsBootApplication          : Starting FlashcardsBootApplication using Java 18.0.1 on mac with PID 50735 (/home/waldemar/Projects/flashcards-boot/flashcards-boot/target/classes started by waldemar in /home/waldemar/Projects/flashcards-boot/flashcards-boot)
+2023-01-09 19:27:48.539 [ INFO] [  restartedMain] p.v.f.FlashcardsBootApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-01-09 19:27:49.673 [ INFO] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-09 19:27:49.756 [ INFO] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 73 ms. Found 4 JPA repository interfaces.
+2023-01-09 19:27:50.869 [ INFO] [  restartedMain] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["https-jsse-nio-8443"]
+2023-01-09 19:27:50.870 [ INFO] [  restartedMain] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2023-01-09 19:27:50.872 [ INFO] [  restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2023-01-09 19:27:50.873 [ INFO] [  restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-01-09 19:27:50.963 [ INFO] [  restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2023-01-09 19:27:51.010 [ INFO] [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2023-01-09 19:27:51.282 [ INFO] [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2023-01-09 19:27:51.363 [ WARN] [  restartedMain] o.a.c.c.C.[.[.[/]                        : Cannot deserialize session attribute [org.springframework.web.context.request.ServletRequestAttributes.DESTRUCTION_CALLBACK.studyServiceImpl] for session [27C818132CB0624FFA8D9359CA57FDFD]
+2023-01-09 19:27:51.364 [ERROR] [  restartedMain] o.a.c.s.StandardManager                  : Exception loading sessions from persistent storage
+java.lang.ClassCastException: class java.io.ObjectStreamClass cannot be cast to class java.lang.String (java.io.ObjectStreamClass and java.lang.String are in module java.base of loader 'bootstrap')
+	at java.base/java.io.ObjectInputStream.readTypeString(ObjectInputStream.java:1845)
+	at java.base/java.io.ObjectStreamClass.readNonProxy(ObjectStreamClass.java:839)
+	at java.base/java.io.ObjectInputStream.readClassDescriptor(ObjectInputStream.java:1017)
+	at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:2058)
+	at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1933)
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2259)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1768)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:543)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:501)
+	at org.apache.catalina.session.StandardSession.doReadObject(StandardSession.java:1635)
+	at org.apache.catalina.session.StandardSession.readObjectData(StandardSession.java:1050)
+	at org.apache.catalina.session.StandardManager.doLoad(StandardManager.java:219)
+	at org.apache.catalina.session.StandardManager.load(StandardManager.java:162)
+	at org.apache.catalina.session.StandardManager.startInternal(StandardManager.java:356)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5239)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1393)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1383)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:916)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:835)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1393)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1383)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:916)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:265)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:430)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:479)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:211)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:184)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at pl.valdemar.flashcardsboot.FlashcardsBootApplication.main(FlashcardsBootApplication.java:25)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+2023-01-09 19:27:51.567 [ INFO] [  restartedMain] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-09 19:27:51.662 [ INFO] [  restartedMain] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-01-09 19:27:51.895 [ INFO] [  restartedMain] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-09 19:27:52.049 [ INFO] [  restartedMain] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-01-09 19:27:52.794 [ INFO] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-09 19:27:52.802 [ INFO] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-09 19:27:55.534 [ WARN] [  restartedMain] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-01-09 19:27:55.535 [ INFO] [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/webjars/**']
+2023-01-09 19:27:55.536 [ WARN] [  restartedMain] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/images/*']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-01-09 19:27:55.536 [ INFO] [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/images/*']
+2023-01-09 19:27:55.536 [ WARN] [  restartedMain] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/css/*']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-01-09 19:27:55.536 [ INFO] [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/css/*']
+2023-01-09 19:27:55.536 [ WARN] [  restartedMain] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/js/*']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-01-09 19:27:55.536 [ INFO] [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/js/*']
+2023-01-09 19:27:55.537 [ WARN] [  restartedMain] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/h2-console/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-01-09 19:27:55.537 [ INFO] [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/h2-console/**']
+2023-01-09 19:27:55.586 [ INFO] [  restartedMain] o.s.s.w.a.c.ChannelProcessingFilter      : Validated configuration attributes
+2023-01-09 19:27:55.623 [ INFO] [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7fe43e04, org.springframework.security.web.access.channel.ChannelProcessingFilter@41d47ed2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6af9d949, org.springframework.security.web.context.SecurityContextPersistenceFilter@362416a, org.springframework.security.web.header.HeaderWriterFilter@2bfb52da, org.springframework.security.web.csrf.CsrfFilter@3068baf0, org.springframework.security.web.authentication.logout.LogoutFilter@44e27135, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@42caf841, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@42d6301b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@692de009, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6a6c1859, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@25c1c9a7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@19dc7ae5, org.springframework.security.web.session.SessionManagementFilter@48a34c7e, org.springframework.security.web.access.ExceptionTranslationFilter@5424d5b5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@681e200b]
+2023-01-09 19:27:55.698 [ INFO] [  restartedMain] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["https-jsse-nio-8443"]
+2023-01-09 19:27:56.000 [ INFO] [  restartedMain] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2023-01-09 19:27:56.019 [ INFO] [  restartedMain] p.v.f.FlashcardsBootApplication          : Started FlashcardsBootApplication in 8.066 seconds (JVM running for 9.908)
+2023-01-09 19:27:56.022 [ INFO] [  restartedMain] p.v.f.FlashcardsBootApplication          : FlashcardsBootApplication started successfully with Log4j2 configuration
+2023-01-09 19:28:02.716 [ INFO] [nio-8443-exec-9] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-09 19:28:02.717 [ INFO] [nio-8443-exec-9] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2023-01-09 19:28:02.719 [ INFO] [nio-8443-exec-9] o.s.w.s.DispatcherServlet                : Completed initialization in 2 ms
+2023-01-09 19:28:17.730 [ INFO] [nio-8443-exec-5] p.v.f.s.i.StudyServiceImpl               : StudyServiceImpl created
+2023-01-09 19:28:17.733 [ INFO] [nio-8443-exec-5] p.v.f.m.MessageGeneratorImpl             : studyService = pl.valdemar.flashcardsboot.service.impl.StudyServiceImpl@1f623762 
+2023-01-09 19:28:17.737 [ INFO] [nio-8443-exec-5] p.v.f.c.StudyControl                     : StudyControl created
+2023-01-09 19:28:17.750 [ INFO] [nio-8443-exec-5] p.v.f.c.StudyControl                     : flashcard method called from Study controller
+2023-01-09 19:28:17.761 [ INFO] [nio-8443-exec-5] p.v.f.c.StudyControl                     : flashcards from database = [Flashcard(id=1, nativeName=goodbye, foreignName=farvel, userId=1, deckId=1, variety=basic, deckName=null), Flashcard(id=2, nativeName=evening, foreignName=kveld, userId=1, deckId=1, variety=basic, deckName=null), Flashcard(id=3, nativeName=small, foreignName=liten, userId=1, deckId=1, variety=reversed, deckName=null)]
+2023-01-09 19:28:17.765 [ INFO] [nio-8443-exec-5] p.v.f.c.StudyControl                     : flashcards from StudyService = [Flashcard(id=0, nativeName=liten, foreignName=small, userId=0, deckId=0, variety=null, deckName=null), Flashcard(id=1, nativeName=goodbye, foreignName=farvel, userId=1, deckId=1, variety=basic, deckName=null), Flashcard(id=2, nativeName=evening, foreignName=kveld, userId=1, deckId=1, variety=basic, deckName=null), Flashcard(id=3, nativeName=small, foreignName=liten, userId=1, deckId=1, variety=reversed, deckName=null)]
+2023-01-09 19:28:17.789 [ INFO] [nio-8443-exec-5] p.v.f.c.StudyControl                     : StudyControl to be deleted
+2023-01-09 19:28:21.723 [ INFO] [io-8443-exec-10] p.v.f.c.StudyControl                     : StudyControl created
+2023-01-09 19:28:21.756 [ INFO] [io-8443-exec-10] p.v.f.c.StudyControl                     : getFlashcard method called
+2023-01-09 19:28:21.756 [ INFO] [io-8443-exec-10] p.v.f.c.StudyControl                     : correct = start
+2023-01-09 19:28:21.757 [ INFO] [io-8443-exec-10] p.v.f.s.i.StudyServiceImpl               : size = 4
+2023-01-09 19:28:21.757 [ INFO] [io-8443-exec-10] p.v.f.s.i.StudyServiceImpl               : index = 0
+2023-01-09 19:28:21.757 [ INFO] [io-8443-exec-10] p.v.f.s.i.StudyServiceImpl               : size = 3
+2023-01-09 19:28:21.757 [ INFO] [io-8443-exec-10] p.v.f.c.StudyControl                     : frontSide = small
+2023-01-09 19:28:21.758 [ INFO] [io-8443-exec-10] p.v.f.c.StudyControl                     : backSide = liten
+2023-01-09 19:28:21.764 [ INFO] [io-8443-exec-10] p.v.f.c.StudyControl                     : StudyControl to be deleted
+2023-01-09 19:28:25.147 [ INFO] [nio-8443-exec-2] p.v.f.c.StudyControl                     : StudyControl created
+2023-01-09 19:28:25.149 [ INFO] [nio-8443-exec-2] p.v.f.c.StudyControl                     : getFlashcard method called
+2023-01-09 19:28:25.149 [ INFO] [nio-8443-exec-2] p.v.f.c.StudyControl                     : correct = yes
+2023-01-09 19:28:25.149 [ INFO] [nio-8443-exec-2] p.v.f.s.i.StudyServiceImpl               : size = 3
+2023-01-09 19:28:25.150 [ INFO] [nio-8443-exec-2] p.v.f.s.i.StudyServiceImpl               : index = 0
+2023-01-09 19:28:25.150 [ INFO] [nio-8443-exec-2] p.v.f.s.i.StudyServiceImpl               : size = 2
+2023-01-09 19:28:25.150 [ INFO] [nio-8443-exec-2] p.v.f.c.StudyControl                     : frontSide = farvel
+2023-01-09 19:28:25.150 [ INFO] [nio-8443-exec-2] p.v.f.c.StudyControl                     : backSide = goodbye
+2023-01-09 19:28:25.153 [ INFO] [nio-8443-exec-2] p.v.f.c.StudyControl                     : StudyControl to be deleted
+2023-01-09 19:29:16.564 [ INFO] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-09 19:29:16.742 [ERROR] [onnection adder] c.z.h.p.HikariPool                       : HikariPool-1 - Error thrown while acquiring connection from data source
+org.h2.jdbc.JdbcSQLNonTransientConnectionException: The database is open in exclusive mode; can not open additional connections [90135-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.engine.SessionLocal.checkSuspended(SessionLocal.java:1240)
+	at org.h2.engine.SessionLocal.transitionToState(SessionLocal.java:1232)
+	at org.h2.engine.SessionLocal.waitIfExclusiveModeEnabled(SessionLocal.java:1480)
+	at org.h2.command.Command.executeQuery(Command.java:180)
+	at org.h2.jdbc.JdbcConnection.isReadOnly(JdbcConnection.java:538)
+	at com.zaxxer.hikari.pool.PoolBase.setupConnection(PoolBase.java:408)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.access$100(HikariPool.java:71)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:726)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:712)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-01-09 19:29:16.939 [ WARN] [ionShutdownHook] o.s.b.f.s.DisposableBeanAdapter          : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+2023-01-09 19:29:16.940 [ INFO] [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2023-01-09 19:29:16.994 [ INFO] [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2023-01-09 19:29:54.887 [ INFO] [kground-preinit] o.h.v.i.u.Version                        : HV000001: Hibernate Validator 6.2.5.Final
+2023-01-09 19:29:54.954 [ INFO] [  restartedMain] p.v.f.FlashcardsBootApplication          : Starting FlashcardsBootApplication using Java 18.0.1 on mac with PID 50995 (/home/waldemar/Projects/flashcards-boot/flashcards-boot/target/classes started by waldemar in /home/waldemar/Projects/flashcards-boot/flashcards-boot)
+2023-01-09 19:29:54.963 [ INFO] [  restartedMain] p.v.f.FlashcardsBootApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-01-09 19:29:56.025 [ INFO] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-09 19:29:56.093 [ INFO] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59 ms. Found 4 JPA repository interfaces.
+2023-01-09 19:29:57.137 [ INFO] [  restartedMain] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["https-jsse-nio-8443"]
+2023-01-09 19:29:57.139 [ INFO] [  restartedMain] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2023-01-09 19:29:57.142 [ INFO] [  restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2023-01-09 19:29:57.142 [ INFO] [  restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-01-09 19:29:57.256 [ INFO] [  restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2023-01-09 19:29:57.300 [ INFO] [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2023-01-09 19:29:57.542 [ INFO] [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2023-01-09 19:29:57.620 [ WARN] [  restartedMain] o.a.c.c.C.[.[.[/]                        : Cannot deserialize session attribute [org.springframework.web.context.request.ServletRequestAttributes.DESTRUCTION_CALLBACK.studyServiceImpl] for session [A122A145A36A16B82D4B5155ED53CD96]
+2023-01-09 19:29:57.621 [ERROR] [  restartedMain] o.a.c.s.StandardManager                  : Exception loading sessions from persistent storage
+java.lang.ClassCastException: class java.io.ObjectStreamClass cannot be cast to class java.lang.String (java.io.ObjectStreamClass and java.lang.String are in module java.base of loader 'bootstrap')
+	at java.base/java.io.ObjectInputStream.readTypeString(ObjectInputStream.java:1845)
+	at java.base/java.io.ObjectStreamClass.readNonProxy(ObjectStreamClass.java:839)
+	at java.base/java.io.ObjectInputStream.readClassDescriptor(ObjectInputStream.java:1017)
+	at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:2058)
+	at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1933)
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2259)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1768)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:543)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:501)
+	at org.apache.catalina.session.StandardSession.doReadObject(StandardSession.java:1635)
+	at org.apache.catalina.session.StandardSession.readObjectData(StandardSession.java:1050)
+	at org.apache.catalina.session.StandardManager.doLoad(StandardManager.java:219)
+	at org.apache.catalina.session.StandardManager.load(StandardManager.java:162)
+	at org.apache.catalina.session.StandardManager.startInternal(StandardManager.java:356)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5239)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1393)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1383)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:916)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:835)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1393)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1383)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:916)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:265)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:430)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:479)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:211)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:184)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at pl.valdemar.flashcardsboot.FlashcardsBootApplication.main(FlashcardsBootApplication.java:25)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+2023-01-09 19:29:57.802 [ INFO] [  restartedMain] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-09 19:29:57.880 [ INFO] [  restartedMain] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-01-09 19:29:58.085 [ INFO] [  restartedMain] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-09 19:29:58.227 [ INFO] [  restartedMain] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-01-09 19:29:59.071 [ INFO] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-09 19:29:59.080 [ INFO] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-09 19:30:01.667 [ WARN] [  restartedMain] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-01-09 19:30:01.668 [ INFO] [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/webjars/**']
+2023-01-09 19:30:01.669 [ WARN] [  restartedMain] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/images/*']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-01-09 19:30:01.669 [ INFO] [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/images/*']
+2023-01-09 19:30:01.669 [ WARN] [  restartedMain] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/css/*']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-01-09 19:30:01.669 [ INFO] [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/css/*']
+2023-01-09 19:30:01.669 [ WARN] [  restartedMain] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/js/*']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-01-09 19:30:01.670 [ INFO] [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/js/*']
+2023-01-09 19:30:01.670 [ WARN] [  restartedMain] o.s.s.c.a.w.b.WebSecurity                : You are asking Spring Security to ignore Ant [pattern='/h2-console/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-01-09 19:30:01.670 [ INFO] [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will not secure Ant [pattern='/h2-console/**']
+2023-01-09 19:30:01.720 [ INFO] [  restartedMain] o.s.s.w.a.c.ChannelProcessingFilter      : Validated configuration attributes
+2023-01-09 19:30:01.752 [ INFO] [  restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@18cc174, org.springframework.security.web.access.channel.ChannelProcessingFilter@b621f38, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@75a59641, org.springframework.security.web.context.SecurityContextPersistenceFilter@f8b4811, org.springframework.security.web.header.HeaderWriterFilter@12512a6a, org.springframework.security.web.csrf.CsrfFilter@3ab07fbe, org.springframework.security.web.authentication.logout.LogoutFilter@63b36c8, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@3f896a9e, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@33fa0bb7, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@749e2041, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6c428c31, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4e232655, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@16618cf1, org.springframework.security.web.session.SessionManagementFilter@4214b6e1, org.springframework.security.web.access.ExceptionTranslationFilter@5dddeb09, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@75ea2d7b]
+2023-01-09 19:30:01.829 [ INFO] [  restartedMain] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["https-jsse-nio-8443"]
+2023-01-09 19:30:02.142 [ INFO] [  restartedMain] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2023-01-09 19:30:02.162 [ INFO] [  restartedMain] p.v.f.FlashcardsBootApplication          : Started FlashcardsBootApplication in 7.744 seconds (JVM running for 9.329)
+2023-01-09 19:30:02.165 [ INFO] [  restartedMain] p.v.f.FlashcardsBootApplication          : FlashcardsBootApplication started successfully with Log4j2 configuration
+2023-01-09 19:30:08.008 [ INFO] [nio-8443-exec-9] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-09 19:30:08.009 [ INFO] [nio-8443-exec-9] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2023-01-09 19:30:08.011 [ INFO] [nio-8443-exec-9] o.s.w.s.DispatcherServlet                : Completed initialization in 2 ms
+2023-01-09 19:30:31.167 [ INFO] [io-8443-exec-10] p.v.f.c.FlashcardController              : called updateFlashcard
+2023-01-09 19:30:31.168 [ INFO] [io-8443-exec-10] p.v.f.c.FlashcardController              : Flashcard(id=1, nativeName=goodbye, foreignName=farvel, userId=1, deckId=1, variety=type_in_answer, deckName=null)
+2023-01-09 19:30:34.849 [ INFO] [nio-8443-exec-9] p.v.f.c.FlashcardController              : called updateFlashcard
+2023-01-09 19:30:34.852 [ INFO] [nio-8443-exec-9] p.v.f.c.FlashcardController              : Flashcard(id=2, nativeName=evening, foreignName=kveld, userId=1, deckId=1, variety=type_in_answer, deckName=null)
+2023-01-09 19:30:36.689 [ INFO] [nio-8443-exec-6] p.v.f.c.FlashcardController              : called updateFlashcard
+2023-01-09 19:30:36.692 [ INFO] [nio-8443-exec-6] p.v.f.c.FlashcardController              : Flashcard(id=3, nativeName=small, foreignName=liten, userId=1, deckId=1, variety=reversed, deckName=null)
+2023-01-09 19:30:40.443 [ INFO] [nio-8443-exec-9] p.v.f.c.FlashcardController              : called updateFlashcard
+2023-01-09 19:30:40.445 [ INFO] [nio-8443-exec-9] p.v.f.c.FlashcardController              : Flashcard(id=3, nativeName=small, foreignName=liten, userId=1, deckId=1, variety=type_in_answer, deckName=null)
+2023-01-09 19:30:43.993 [ INFO] [io-8443-exec-10] p.v.f.s.i.StudyServiceImpl               : StudyServiceImpl created
+2023-01-09 19:30:43.995 [ INFO] [io-8443-exec-10] p.v.f.m.MessageGeneratorImpl             : studyService = pl.valdemar.flashcardsboot.service.impl.StudyServiceImpl@52201866 
+2023-01-09 19:30:43.997 [ INFO] [io-8443-exec-10] p.v.f.c.StudyControl                     : StudyControl created
+2023-01-09 19:30:44.003 [ INFO] [io-8443-exec-10] p.v.f.c.StudyControl                     : flashcard method called from Study controller
+2023-01-09 19:30:44.007 [ INFO] [io-8443-exec-10] p.v.f.c.StudyControl                     : flashcards from database = [Flashcard(id=1, nativeName=goodbye, foreignName=farvel, userId=1, deckId=1, variety=type_in_answer, deckName=null), Flashcard(id=2, nativeName=evening, foreignName=kveld, userId=1, deckId=1, variety=type_in_answer, deckName=null), Flashcard(id=3, nativeName=small, foreignName=liten, userId=1, deckId=1, variety=type_in_answer, deckName=null)]
+2023-01-09 19:30:44.011 [ INFO] [io-8443-exec-10] p.v.f.c.StudyControl                     : flashcards from StudyService = [Flashcard(id=1, nativeName=goodbye, foreignName=farvel, userId=1, deckId=1, variety=type_in_answer, deckName=null), Flashcard(id=2, nativeName=evening, foreignName=kveld, userId=1, deckId=1, variety=type_in_answer, deckName=null), Flashcard(id=3, nativeName=small, foreignName=liten, userId=1, deckId=1, variety=type_in_answer, deckName=null)]
+2023-01-09 19:30:44.026 [ INFO] [io-8443-exec-10] p.v.f.c.StudyControl                     : StudyControl to be deleted
+2023-01-09 19:30:45.896 [ INFO] [nio-8443-exec-6] p.v.f.c.StudyControl                     : StudyControl created
+2023-01-09 19:30:45.926 [ INFO] [nio-8443-exec-6] p.v.f.c.StudyControl                     : getFlashcard method called
+2023-01-09 19:30:45.927 [ INFO] [nio-8443-exec-6] p.v.f.c.StudyControl                     : correct = start
+2023-01-09 19:30:45.927 [ INFO] [nio-8443-exec-6] p.v.f.s.i.StudyServiceImpl               : size = 3
+2023-01-09 19:30:45.927 [ INFO] [nio-8443-exec-6] p.v.f.s.i.StudyServiceImpl               : index = 1
+2023-01-09 19:30:45.928 [ INFO] [nio-8443-exec-6] p.v.f.s.i.StudyServiceImpl               : size = 2
+2023-01-09 19:30:45.928 [ INFO] [nio-8443-exec-6] p.v.f.c.StudyControl                     : frontSide = kveld
+2023-01-09 19:30:45.928 [ INFO] [nio-8443-exec-6] p.v.f.c.StudyControl                     : backSide = evening
+2023-01-09 19:30:45.937 [ INFO] [nio-8443-exec-6] p.v.f.c.StudyControl                     : StudyControl to be deleted
+2023-01-09 19:31:03.430 [ INFO] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-09 19:31:03.587 [ERROR] [onnection adder] c.z.h.p.HikariPool                       : HikariPool-1 - Error thrown while acquiring connection from data source
+org.h2.jdbc.JdbcSQLNonTransientConnectionException: The database is open in exclusive mode; can not open additional connections [90135-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.engine.SessionLocal.checkSuspended(SessionLocal.java:1240)
+	at org.h2.engine.SessionLocal.transitionToState(SessionLocal.java:1232)
+	at org.h2.engine.SessionLocal.setCurrentCommand(SessionLocal.java:1210)
+	at org.h2.engine.SessionLocal.endStatement(SessionLocal.java:1693)
+	at org.h2.command.Command.executeQuery(Command.java:227)
+	at org.h2.jdbc.JdbcConnection.isReadOnly(JdbcConnection.java:538)
+	at com.zaxxer.hikari.pool.PoolBase.setupConnection(PoolBase.java:408)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.access$100(HikariPool.java:71)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:726)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:712)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-01-09 19:31:03.784 [ WARN] [ionShutdownHook] o.s.b.f.s.DisposableBeanAdapter          : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+2023-01-09 19:31:03.786 [ INFO] [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2023-01-09 19:31:03.839 [ INFO] [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
