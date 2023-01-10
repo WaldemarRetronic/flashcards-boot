@@ -9,9 +9,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pl.valdemar.flashcardsboot.model.Flashcard;
 import pl.valdemar.flashcardsboot.model.MessageGenerator;
+import pl.valdemar.flashcardsboot.service.DeckService;
 import pl.valdemar.flashcardsboot.service.FlashcardService;
 import pl.valdemar.flashcardsboot.service.StudyService;
 import pl.valdemar.flashcardsboot.service.UserService;
+import pl.valdemar.flashcardsboot.util.AttributeNames;
 import pl.valdemar.flashcardsboot.util.Mappings;
 import pl.valdemar.flashcardsboot.util.ViewNames;
 
@@ -41,13 +43,15 @@ public class StudyControl {
     private final JSONObject json;
     private final MessageGenerator messageGenerator;
     private final UserService userService;
+    private final DeckService deckService;
 
     // == constructors ==
-    public StudyControl(FlashcardService flashcardService, JSONObject json, MessageGenerator messageGenerator, UserService userService) {
+    public StudyControl(FlashcardService flashcardService, JSONObject json, MessageGenerator messageGenerator, UserService userService, DeckService deckService) {
         this.flashcardService = flashcardService;
         this.json = json;
         this.messageGenerator = messageGenerator;
         this.userService = userService;
+        this.deckService = deckService;
     }
 
     // == model attributes ==
@@ -65,15 +69,17 @@ public class StudyControl {
     public String flashcard(@RequestParam long id, Model model, Principal principal) {
         log.info("flashcard method called from Study controller");
         log.info("flashcards from database = {}", flashcardService.findFlashcards(getUserId(principal), id).toString());
-        studyService.setFlashcards((List<Flashcard>) flashcardService.findFlashcards(getUserId(principal), id));
+        String deckName = deckService.findDeckById(id).get().getDeckName();
+        model.addAttribute(AttributeNames.DECK_NAME, deckName);
+                studyService.setFlashcards((List<Flashcard>) flashcardService.findFlashcards(getUserId(principal), id));
         List<Flashcard> flashcards = studyService.getFlashcards();
         log.info("flashcards from StudyService = {}", flashcards.toString());
         if (flashcards.isEmpty()) {
             log.info("flashcards is empty");
-            model.addAttribute("mainMessage", messageGenerator.getEmptyDeckMessage());
-            return ViewNames.RESULT_STUDY;
+            model.addAttribute(AttributeNames.MAIN_MESSAGE, messageGenerator.getEmptyDeckMessage());
+            return ViewNames.STUDY_RESULT;
         }
-        model.addAttribute("startMessage", messageGenerator.getStartMessage());
+        model.addAttribute(AttributeNames.START_MESSAGE, messageGenerator.getStartMessage());
         return ViewNames.STUDY_SESSION;
     }
 
@@ -102,13 +108,14 @@ public class StudyControl {
         return json.toString();
     }
 
-    @GetMapping(Mappings.RESULT_STUDY)
+    @GetMapping(Mappings.STUDY_RESULT)
     public String result(Model model) {
-        model.addAttribute("mainMessage", messageGenerator.getMainMessage());
-        model.addAttribute("resultMessage", messageGenerator.getResultMessage());
+        model.addAttribute(AttributeNames.MAIN_MESSAGE, messageGenerator.getMainMessage());
+        model.addAttribute(AttributeNames.RESULT_MESSAGE, messageGenerator.getResultMessage());
+        model.addAttribute(AttributeNames.RESULT_MESSAGE, messageGenerator.getResultMessage());
         studyService.reset();
         log.info("result method called");
-        return ViewNames.RESULT_STUDY;
+        return ViewNames.STUDY_RESULT;
     }
 
     private Long getUserId(Principal principal) {

@@ -1,20 +1,6 @@
-// study.js
-// Skrypt wykonuje żądanie Ajax i uaktualnia stronę WWW otrzymanym wynikiem.
-
-function sendAjax() {
-
-}
-
 // Ustaw podstawową funkcjonalność po wczytaniu strony:
 window.onload = function () {
     'use strict';
-
-    //jQuery
-    // var token = $("meta[name='_csrf']").attr("content");
-    // var header = $("meta[name='_csrf_header']").attr("content");
-    //
-    // console.log("token: ", token);
-    // console.log("header: ", header);
 
     // Utwórz obiekt Ajax:
     var ajax = getXMLHttpRequestObject();
@@ -37,7 +23,7 @@ window.onload = function () {
                         U.$("typeAnswerDiv").removeAttribute("hidden");
                     }
                 } else {
-                    window.location.replace('/flash-cards/resultStudy');
+                    window.location.replace('/study-result');
                 }
             } else { // Błędny status!
                // document.getElementById('output').innerHTML = ajax.statusText;
@@ -142,21 +128,4 @@ window.onload = function () {
 
 
     }
-
-    // // JavaScript function to get cookie by name; retrieved from https://docs.djangoproject.com/en/3.1/ref/csrf/
-    // function getCookie(name) {
-    //     let cookieValue = null;
-    //     if (document.cookie && document.cookie !== '') {
-    //         const cookies = document.cookie.split(';');
-    //         for (let i = 0; i < cookies.length; i++) {
-    //             const cookie = cookies[i].trim();
-    //             // Does this cookie string begin with the name we want?
-    //             if (cookie.substring(0, name.length + 1) === (name + '=')) {
-    //                 cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-    //                 break;
-    //             }
-    //         }
-    //     }
-    //     return cookieValue;
-    // }
 }; // Koniec funkcji anonimowej dla onload.

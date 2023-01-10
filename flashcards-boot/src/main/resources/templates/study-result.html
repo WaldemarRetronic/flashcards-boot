@@ -47,47 +47,19 @@
         <div class="col-md-3 "></div>
         <div class="col-md-6 card my-5 border-info text-center">
             <div class="card-header">
-                <h5 th:text="${deckName}">Deck Name</h5>
+                <h5>Study Result</h5>
             </div>
             <div class="card-body">
 
                 <div id="messageDiv">
-                    <h5 class="card-text mb-5" th:text="${startMessage}">Message</h5>
+                    <h5 class="card-text mb-5" th:text="${mainMessage}">Main Message</h5>
+                    <h5 class="card-text mb-5" th:text="${resultMessage}">Result Message</h5>
                 </div>
-
-                <div id="frontDiv" hidden="hidden">
-                    <h5 class="card-text mb-5" id="front">Front</h5>
-                </div>
-
-                <div id="backDiv" hidden="hidden">
-                    <hr class="dividing-line" />
-                    <h5 class="card-text mb-5" id="back">Back</h5>
-                </div>
-                <!-- typeAnswer div-->
-                <div id="typeAnswerDiv" hidden="hidden">
-                    <input class="type-in-answer" type="text" id="typeAnswer" name="typeAnswer" required="required"/>
-                </div>
-
             </div>
             <div class="card-footer text-muted">
-
-                <div id="answerDiv" hidden="hidden">
-                    <button type="button" id="oops" class="btn custom-btn btn-danger ">Oops!</button>
-                    <button type="button" id="gotIt" class="btn custom-btn btn-success">Got it!</button>
+                <div class="text-center">
+                    <a class="btn btn-success" href="#" th:href="@{${paths.get('index')}}">Finish</a>
                 </div>
-
-                <div id="checkDiv" hidden="hidden">
-                    <button type="button" id="btnCheck" class="btn custom-btn btn-info ">Check</button>
-                </div>
-
-                <div id="nextDiv" hidden="hidden">
-                    <button type="button" id="btnNext" class="btn custom-btn btn-primary ">Next</button>
-                </div>
-
-                <div id="startDiv">
-                    <button type="button" id="btnStart" class="btn custom-btn btn-primary ">Start</button>
-                </div>
-
             </div>
         </div>
         <div class="col-md-3"></div>

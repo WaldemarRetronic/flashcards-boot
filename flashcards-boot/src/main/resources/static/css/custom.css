@@ -34,15 +34,33 @@
     font-style: italic;
 }
 
-.type-in-answer {
+input[type=text].type-in-answer,select{
+    width:70%;
+    border:1px solid #aaa;
+    border-radius:4px;
+    margin:8px 50px;
+    outline:none;
+    padding:2px;
+    box-sizing:border-box;
+    transition:.3s;
+}
+
+
+input[type=text]:focus.type-in-answer{
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+}
+
+input[type=text].type-in-answer {
     font-family: "Times New Roman", Times, serif;
-    font-size: 25px;
+    font-size: 20px;
     letter-spacing: 2px;
     word-spacing: 2px;
     color: #000000;
-    font-weight: 700;
+    font-weight: 400;
     text-decoration: none;
     font-style: normal;
     font-variant: normal;
     text-transform: none;
 }
+

@@ -51,6 +51,7 @@ public class FlashcardController {
         paths.put("add-flashcard", Mappings.ADD_FLASHCARD);
         paths.put("show-flashcards", Mappings.SHOW_FLASHCARDS);
         paths.put("search", Mappings.SEARCH);
+        paths.put("add-deck", Mappings.ADD_DECK);
         return paths;
     }
 
