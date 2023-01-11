@@ -22,7 +22,9 @@ public final class Mappings {
     public static final String LOGIN_ERROR = "/login-error";
     public static final String VERIFY_EMAIL = "/verify/email";
     public static final String LOGIN_DISABLED = "/login-disabled";
-
+    public static final String ACCOUNT_SETTINGS = "/account/settings";
+    public static final String ACCOUNT_SETTINGS_PASSWORD = "/account/settings/password";
+    public static final String ACCOUNT_SETTINGS_EMAIL = "/account/settings/email";
 
 
     // == constructors ==

@@ -16,7 +16,7 @@ public final class ViewNames {
     public static final String SEARCH= "search";
     public static final String LOGIN_VERIFIED= "search";
     public static final String LOGIN_ERROR= "search";
-
+    public static final String ACCOUNT = "account";
 
     // == constructors ==
     private ViewNames() {

@@ -48,6 +48,7 @@ public class DeckController {
         paths.put("flashcards", Mappings.SHOW_FLASHCARDS);
         paths.put("search", Mappings.SEARCH);
         paths.put("study", Mappings.STUDY_SESSION);
+        paths.put("account", Mappings.ACCOUNT_SETTINGS);
 
         return paths;
     }

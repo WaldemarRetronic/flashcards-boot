@@ -1,8 +1,6 @@
 package pl.valdemar.flashcardsboot.controller;
 
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Controller;
@@ -46,7 +44,7 @@ public class RegistrationController {
     public String register(Model model) {
         model.addAttribute("user", new UserDto());
         log.info("model: {}", model);
-        return "add-user";
+        return ViewNames.ADD_USER;
     }
 
     @PostMapping(Mappings.ADD_USER)
