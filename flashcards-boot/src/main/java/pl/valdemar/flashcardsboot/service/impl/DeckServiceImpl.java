@@ -57,4 +57,10 @@ public class DeckServiceImpl implements DeckService {
     public void deleteDeckById(Long deckId) {
         deckRepository.deleteById(deckId);
     }
+
+    @Override
+    public void deleteAll(Long userId) {
+        Iterable<Deck> decksByUserId = deckRepository.findDecksByUserId(userId);
+        deckRepository.deleteAll(decksByUserId);
+    }
 }

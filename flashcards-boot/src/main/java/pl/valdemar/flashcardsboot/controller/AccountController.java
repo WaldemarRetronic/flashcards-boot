@@ -14,6 +14,8 @@ import pl.valdemar.flashcardsboot.dto.PasswordDto;
 import pl.valdemar.flashcardsboot.dto.UserDto;
 import pl.valdemar.flashcardsboot.event.UserRegistrationEvent;
 import pl.valdemar.flashcardsboot.model.ApplicationUser;
+import pl.valdemar.flashcardsboot.service.DeckService;
+import pl.valdemar.flashcardsboot.service.FlashcardService;
 import pl.valdemar.flashcardsboot.service.UserService;
 import pl.valdemar.flashcardsboot.util.Mappings;
 import pl.valdemar.flashcardsboot.util.ViewNames;
@@ -32,6 +34,12 @@ public class AccountController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private DeckService deckService;
+
+    @Autowired
+    private FlashcardService flashcardService;
+
     // == model attributes ==
     @ModelAttribute(name = "paths")
     public Map<String, String> appPaths() {
@@ -45,6 +53,7 @@ public class AccountController {
         paths.put("account", Mappings.ACCOUNT_SETTINGS);
         paths.put("account-password", Mappings.ACCOUNT_SETTINGS_PASSWORD);
         paths.put("account-email", Mappings.ACCOUNT_SETTINGS_EMAIL);
+        paths.put("account-remove", Mappings.REMOVE_ACCOUNT);
         return paths;
     }
 
@@ -105,6 +114,27 @@ public class AccountController {
         log.info("current pass: {}", emailDto.getCurrentPassword());
         request.logout();
         return "redirect:" + Mappings.LOGIN;
+    }
+
+    @GetMapping(Mappings.REMOVE_ACCOUNT)
+    public String removeAccount() {
+        return ViewNames.REMOVE_ACCOUNT;
+    }
+
+    @PostMapping (Mappings.REMOVE_ACCOUNT)
+    public String removeAccount(@RequestParam("pass") String password, Principal principal, HttpServletRequest request) throws ServletException {
+        log.info("removeAccount called with password: {}", password);
+        // Your account has been successfully removed.
+        ApplicationUser applicationUser = userService.findByUsername(principal.getName());
+        if (!applicationUser.getPassword().equals(password)) {
+            return "redirect:" + Mappings.REMOVE_ACCOUNT + "?password_error";
+        }
+        Long userId = applicationUser.getId();
+        flashcardService.deleteAll(userId);
+        deckService.deleteAll(userId);
+        userService.delete(applicationUser);
+        request.logout();
+        return ViewNames.LOGIN;
     }
 
     private Long getUserId(Principal principal) {

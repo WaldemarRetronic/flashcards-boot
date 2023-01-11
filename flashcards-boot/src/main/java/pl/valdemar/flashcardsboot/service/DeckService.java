@@ -19,4 +19,6 @@ public interface DeckService {
 
     void deleteDeckById(Long deckId);
 
+    void deleteAll(Long userId);
+
 }

@@ -54,4 +54,10 @@ public class FlashcardServiceImpl implements FlashcardService {
     public Iterable<Flashcard> findAll(Long userId) {
         return flashcardRepository.findByUserId(userId);
     }
+
+    @Override
+    public void deleteAll(Long userId) {
+        Iterable<Flashcard> byUserId = flashcardRepository.findByUserId(userId);
+        flashcardRepository.deleteAll(byUserId);
+    }
 }

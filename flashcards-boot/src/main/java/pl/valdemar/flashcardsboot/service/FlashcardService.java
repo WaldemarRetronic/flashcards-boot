@@ -18,4 +18,6 @@ public interface FlashcardService {
     void deleteFlashcardById(Long id);
 
     Iterable<Flashcard> findAll(Long userId);
+
+    void deleteAll(Long userId);
 }

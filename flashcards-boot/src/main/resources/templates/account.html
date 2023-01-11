@@ -57,6 +57,9 @@
     <div th:if="${param.emails_mismatch}">
         <div class="alert alert-danger">Emails didn't match.</div>
     </div>
+    <div style="float:right;">
+        <a href="#" class="link-warning" th:href="@{${paths.get('account-remove')}}">Delete Account</a>
+    </div>
 
     <div class="row">
         <div class="col-md-3"></div>

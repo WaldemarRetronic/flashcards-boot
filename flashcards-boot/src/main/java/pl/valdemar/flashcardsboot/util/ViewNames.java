@@ -17,6 +17,7 @@ public final class ViewNames {
     public static final String LOGIN_VERIFIED= "search";
     public static final String LOGIN_ERROR= "search";
     public static final String ACCOUNT = "account";
+    public static final String REMOVE_ACCOUNT = "remove";
 
     // == constructors ==
     private ViewNames() {

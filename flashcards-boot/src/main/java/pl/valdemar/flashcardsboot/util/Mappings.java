@@ -25,7 +25,7 @@ public final class Mappings {
     public static final String ACCOUNT_SETTINGS = "/account/settings";
     public static final String ACCOUNT_SETTINGS_PASSWORD = "/account/settings/password";
     public static final String ACCOUNT_SETTINGS_EMAIL = "/account/settings/email";
-
+    public static final String REMOVE_ACCOUNT = "/account/remove";
 
     // == constructors ==
     private Mappings() {
