@@ -13,7 +13,7 @@
 <body>
 <nav class="navbar navbar-dark bg-dark navbar-expand-sm">
     <a class="navbar-brand brand-text" href="#">
-        <img src="/images/logo.png" width="30" height="30" alt="logo">
+        <img src="/images/logo.png" th:src="@{/images/logo.png}" width="30" height="30" alt="logo">
         Flashcards
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list"
@@ -54,6 +54,10 @@
             </div>
             <div th:case="*">
                 <h2 class="my-5">Your Decks</h2>
+                <div th:if="${param.deckEmpty}">
+                    <div class="alert alert-danger">Deck with name <b><span th:text="${param.deckEmpty}"/></b> is not empty.
+                    First delete all flashcards of this deck.</div>
+                </div>
                 <table class="table table-striped table-responsive-md">
                     <thead>
                     <tr>

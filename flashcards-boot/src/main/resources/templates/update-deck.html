@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
     <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/css/bootstrap.min.css"
           th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/custom.css}" />
 
 </head>
 <body>
 <nav class="navbar navbar-dark bg-dark navbar-expand-sm">
     <a class="navbar-brand brand-text" href="#">
-        <img src="/images/logo.png" width="30" height="30" alt="logo">
+        <img src="/images/logo.png" th:src="@{/images/logo.png}" width="30" height="30" alt="logo">
         Flashcards
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list"

@@ -8,7 +8,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.valdemar.flashcardsboot.dto.DeckDto;
 import pl.valdemar.flashcardsboot.model.Deck;
+import pl.valdemar.flashcardsboot.model.Flashcard;
 import pl.valdemar.flashcardsboot.service.DeckService;
+import pl.valdemar.flashcardsboot.service.FlashcardService;
 import pl.valdemar.flashcardsboot.service.UserService;
 import pl.valdemar.flashcardsboot.util.AttributeNames;
 import pl.valdemar.flashcardsboot.util.Mappings;
@@ -16,10 +18,7 @@ import pl.valdemar.flashcardsboot.util.ViewNames;
 
 import javax.validation.Valid;
 import java.security.Principal;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Slf4j
 @Controller
@@ -28,12 +27,14 @@ public class DeckController {
     // == fields ==
     private final DeckService deckService;
     private final UserService userService;
+    private final FlashcardService flashcardService;
 
     // == constructors ==
     @Autowired
-    public DeckController(DeckService deckService, UserService userService) {
+    public DeckController(DeckService deckService, UserService userService, FlashcardService flashcardService) {
         this.deckService = deckService;
         this.userService = userService;
+        this.flashcardService = flashcardService;
     }
 
     // == model attributes ==
@@ -83,7 +84,8 @@ public class DeckController {
             return ViewNames.ADD_DECK;
         }
         Long userId = getUserId(principal);
-        if (deckService.findDeckByDeckName(deckDto.getDeckName(), userId).isPresent()) {
+        Optional<Deck> deckByDeckName = deckService.findDeckByDeckName(deckDto.getDeckName(), userId);
+        if (deckByDeckName.isPresent()) {
             return "redirect:" + Mappings.ADD_DECK + "?already_exist";
         }
         deckService.createDeck(deckDto, userId);
@@ -104,7 +106,8 @@ public class DeckController {
             return ViewNames.UPDATE_DECK;
         }
         Long userId = getUserId(principal);
-        if (deckService.findDeckByDeckName(deck.getDeckName(), userId).isPresent()) {
+        Optional<Deck> deckByDeckName = deckService.findDeckByDeckName(deck.getDeckName(), userId);
+        if (deckByDeckName.isPresent() && (deckByDeckName.get().getId() != deck.getId())) {
             return "redirect:/update-deck/" + deck.getId() + "?already_exist=" + deck.getDeckName();
         }
         deck.setUserId(userId);
@@ -114,7 +117,12 @@ public class DeckController {
     }
 
     @DeleteMapping(Mappings.DELETE_DECK)
-    public String deleteDeck(@PathVariable("id") Long id) {
+    public String deleteDeck(@PathVariable("id") Long id, Principal principal) {
+        List<Flashcard> flashcards = (List<Flashcard>) flashcardService.findFlashcards(getUserId(principal), id);
+        if (flashcards.size() > 0) {
+            String deckName = deckService.findDeckById(id).get().getDeckName();
+            return "redirect:" + Mappings.INDEX + "?deckEmpty=" + deckName;
+        }
         deckService.deleteDeckById(id);
         return "redirect:" + Mappings.INDEX;
     }
