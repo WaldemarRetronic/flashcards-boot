@@ -44,13 +44,7 @@ public class AccountController {
     @ModelAttribute(name = "paths")
     public Map<String, String> appPaths() {
         Map<String, String> paths = new HashMap<>();
-        paths.put("index", Mappings.INDEX);
-        paths.put("add-deck", Mappings.ADD_DECK);
-        paths.put("logout", Mappings.LOGOUT);
-        paths.put("flashcards", Mappings.SHOW_FLASHCARDS);
-        paths.put("search", Mappings.SEARCH);
-        paths.put("study", Mappings.STUDY_SESSION);
-        paths.put("account", Mappings.ACCOUNT_SETTINGS);
+        DeckController.PathMapping(paths);
         paths.put("account-password", Mappings.ACCOUNT_SETTINGS_PASSWORD);
         paths.put("account-email", Mappings.ACCOUNT_SETTINGS_EMAIL);
         paths.put("account-remove", Mappings.REMOVE_ACCOUNT);
@@ -117,27 +111,30 @@ public class AccountController {
     }
 
     @GetMapping(Mappings.REMOVE_ACCOUNT)
-    public String removeAccount() {
+    public String removeAccount(Principal principal, Model model) {
+        ApplicationUser applicationUser = userService.findByUsername(principal.getName());
+        if (applicationUser.getPassword() == null) {
+            model.addAttribute("google_account", true);
+        }
         return ViewNames.REMOVE_ACCOUNT;
     }
 
+    @ResponseBody
     @PostMapping (Mappings.REMOVE_ACCOUNT)
     public String removeAccount(@RequestParam("pass") String password, Principal principal, HttpServletRequest request) throws ServletException {
         log.info("removeAccount called with password: {}", password);
-        // Your account has been successfully removed.
         ApplicationUser applicationUser = userService.findByUsername(principal.getName());
-        if (!applicationUser.getPassword().equals(password)) {
-            return "redirect:" + Mappings.REMOVE_ACCOUNT + "?password_error";
+        String pass = applicationUser.getPassword();
+        if (pass == null || pass.equals(password)) {
+            Long userId = applicationUser.getId();
+            flashcardService.deleteAll(userId);
+            deckService.deleteAll(userId);
+            userService.delete(applicationUser);
+            request.logout();
+            return "Your account has been successfully removed.";
+        } else {
+            return "Sorry, your password did not match our records. Please click back and try again.";
         }
-        Long userId = applicationUser.getId();
-        flashcardService.deleteAll(userId);
-        deckService.deleteAll(userId);
-        userService.delete(applicationUser);
-        request.logout();
-        return ViewNames.LOGIN;
     }
 
-    private Long getUserId(Principal principal) {
-        return userService.findByUsername(principal.getName()).getId();
-    }
 }

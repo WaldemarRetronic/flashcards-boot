@@ -50,7 +50,17 @@
         </div>
         <div class="col-md-3"></div>
     </div>
-    <h2 class="mb-5"></h2>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-7">
+            <div th:if="${param.already_exist}">
+                <div class="alert alert-danger ela">
+                    Deck with name: <span th:text="${param.already_exist}"/> exists.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-9">

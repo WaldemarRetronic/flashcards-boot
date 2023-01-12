@@ -58,8 +58,8 @@
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">
-            <div th:if="${param.password_error}">
-                <div class="alert alert-danger">Sorry, your password did not match our records.</div>
+            <div th:if="${google_account}">
+                <div class="alert alert-danger">You are logged in through Google account. Don't type in any password just hit remove button.</div>
             </div>
             <div class="alert alert-danger">
                 If you remove your account, all data associated with your account will be

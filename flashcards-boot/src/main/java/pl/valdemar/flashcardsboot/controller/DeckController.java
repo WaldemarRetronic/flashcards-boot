@@ -42,6 +42,12 @@ public class DeckController {
         Map<String, String> paths = new HashMap<>();
         paths.put("update", Mappings.UPDATE_DECK);
         paths.put("delete", Mappings.DELETE_DECK);
+        PathMapping(paths);
+
+        return paths;
+    }
+
+    static void PathMapping(Map<String, String> paths) {
         paths.put("index", Mappings.INDEX);
         paths.put("add-deck", Mappings.ADD_DECK);
         paths.put("logout", Mappings.LOGOUT);
@@ -49,8 +55,6 @@ public class DeckController {
         paths.put("search", Mappings.SEARCH);
         paths.put("study", Mappings.STUDY_SESSION);
         paths.put("account", Mappings.ACCOUNT_SETTINGS);
-
-        return paths;
     }
 
     // == handler methods ==
@@ -99,7 +103,11 @@ public class DeckController {
             deck.setId(id);
             return ViewNames.UPDATE_DECK;
         }
-        deck.setUserId(getUserId(principal));
+        Long userId = getUserId(principal);
+        if (deckService.findDeckByDeckName(deck.getDeckName(), userId).isPresent()) {
+            return "redirect:/update-deck/" + deck.getId() + "?already_exist=" + deck.getDeckName();
+        }
+        deck.setUserId(userId);
         log.info(deck.toString());
         deckService.updateDeck(deck);
         return "redirect:" + Mappings.INDEX;

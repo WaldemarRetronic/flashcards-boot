@@ -3,10 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Add Course</title>
+    <title>Add Deck</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
-    <link rel="stylesheet" type="text/css" th:href="@{/css/custom.css}"/>
+    <link rel="stylesheet" type="text/css" href="css/custom.css" th:href="@{/css/custom.css}"/>
     <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/css/bootstrap.min.css"
           th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
 
@@ -47,30 +47,39 @@
     </div>
 </nav>
 <div class="container my-5">
-    <div class="row">
+    <div class="box-1 row">
         <div class="col-md-3"></div>
         <div class="col-md-6"><h2 class="text-center mb-2">Add a Deck</h2></div>
         <div class="col-md-3"></div>
     </div>
     <div class="row">
         <div class="col-md-3"></div>
-        <div class="col-md-9">
-
+        <div class="col-md-7">
             <div th:if="${param.already_exist}">
-                <div class="alert alert-danger">Deck already exists.</div>
+                <div class="alert alert-danger ela">Deck already exists.</div>
             </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
 
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-9">
             <form action="#" th:action="@{${paths.get('add-deck')}}" th:object="${deck}" method="post">
                 <div class="form-row">
                     <div class="form-group col-md-9">
                         <label for="name" class="col-form-label">Name</label>
-                        <input type="text" th:field="*{deckName}" class="form-control" id="name" placeholder="Deck Name">
-                        <span th:if="${#fields.hasErrors('deckName')}" th:errors="*{deckName}" class="text-danger"></span>
+                        <input type="text" th:field="*{deckName}" class="form-control" id="name"
+                               placeholder="Deck Name">
+                        <span th:if="${#fields.hasErrors('deckName')}" th:errors="*{deckName}"
+                              class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-9">
                         <label for="category" class="col-form-label">Category</label>
-                        <input th:field="*{category}" class="form-control" id="category" placeholder="Deck Category"></input>
-                        <span th:if="${#fields.hasErrors('category')}" th:errors="*{category}" class="text-danger"></span>
+                        <input th:field="*{category}" class="form-control" id="category"
+                               placeholder="Deck Category"></input>
+                        <span th:if="${#fields.hasErrors('category')}" th:errors="*{category}"
+                              class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-9">
                         <label for="description" class="col-form-label">Description</label>

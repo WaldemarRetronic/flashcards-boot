@@ -48,15 +48,6 @@
 </nav>
 <div class="container my-5">
 
-    <div th:if="${param.password_error}">
-        <div class="alert alert-danger">Your current password was not correct.</div>
-    </div>
-    <div th:if="${param.passwords_mismatch}">
-        <div class="alert alert-danger">Provided passwords did not match.</div>
-    </div>
-    <div th:if="${param.emails_mismatch}">
-        <div class="alert alert-danger">Emails didn't match.</div>
-    </div>
     <div style="float:right;">
         <a href="#" class="link-warning" th:href="@{${paths.get('account-remove')}}">Delete Account</a>
     </div>
@@ -65,94 +56,124 @@
         <div class="col-md-3"></div>
         <div class="col-md-6">
             <h2 class="mb-1 text-center">Your Account</h2>
-            <p class="text-center">You are signed in as <strong><span th:text="${username}">w.strysik@interia.eu</span></strong>.</p>
+            <p class="text-center">You are signed in as <strong><span th:text="${username}">w.strysik@interia.eu</span></strong>.
+            </p>
         </div>
         <div class="col-md-3"></div>
     </div>
     <div class="row">
         <div class="col-md-2"></div>
-        <div class="col-md-8 border rounded-bottom border-dark p-3">
-            <ul class="nav nav-tabs" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link  active" data-toggle="tab" href="#password"
-                       role="tab">Change Password</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " data-toggle="tab" href="#email" role="tab">Change
-                        Email</a>
-                </li>
-            </ul>
-
-            <div class="form-group"></div>
-            <div class="tab-content">
-                <div class="tab-pane  active" id="password" role="tabpanel">
-                    <form action="#" th:action="@{${paths.get('account-password')}}"
-                          th:object="${password}" method="POST" th:method="put">
-
-                        <div class="row form-group">
-                            <label for="old-pass" class="col-4 col-form-label">Current password</label>
-                            <div class="col-8">
-                                <input type="password" id="old-pass" name="old-pass"  th:field="*{currentPassword}" class="form-control form-control-sm" placeholder="Old Password"/>
-                                <span th:if="${#fields.hasErrors('currentPassword')}" th:errors="*{currentPassword}" class="text-danger"></span>
-                            </div>
-                        </div>
-                        <div class="row form-group">
-                            <label for="new-pass" class="col-4 col-form-label">New password</label>
-                            <div class="col-8">
-                                <input type="password" name="new-pass" id="new-pass"  th:field="*{newPassword}" class="form-control form-control-sm" placeholder="New Password"/>
-                                <span th:if="${#fields.hasErrors('newPassword')}" th:errors="*{newPassword}" class="text-danger"></span>
-                            </div>
-                        </div>
-                        <div class="row form-group">
-                            <label for="confirm-pass" class="col-4 col-form-label">Confirm new password</label>
-                            <div class="col-8">
-                                <input type="password" name="confirm-pass" id="confirm-pass"  th:field="*{confirmPassword}" class="form-control form-control-sm" placeholder="New Password"/>
-                                <span th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}" class="text-danger"></span>
-                            </div>
-                        </div>
-
-                        <input type="submit" value="Update" class="btn btn-primary">
-                        <input type="hidden" name="mode" value="password">
-
-                    </form>
-                </div>
-                <div class="tab-pane " id="email" role="tabpanel">
-                    <form action="#" th:action="@{${paths.get('account-email')}}"
-                          th:object="${email}" method="POST" th:method="put">
-                        <div class="row form-group">
-                            <label for="pass" class="col-4 col-form-label">Current password</label>
-                            <div class="col-8">
-                                <input type="password" id="pass" name="pass" th:field="*{currentPassword}" class="form-control form-control-sm" placeholder="Password"/>
-                                <span th:if="${#fields.hasErrors('currentPassword')}" th:errors="*{currentPassword}" class="text-danger"></span>
-                            </div>
-                        </div>
-                        <div class="row form-group">
-                            <label for="new-email" class="col-4 col-form-label">New email</label>
-                            <div class="col-8">
-                                <input type="text" id="new-email" name="new-email" th:field="*{newEmail}" class="form-control form-control-sm" placeholder="New Email"/>
-                                <span th:if="${#fields.hasErrors('newEmail')}" th:errors="*{newEmail}" class="text-danger"></span>
-                            </div>
-                        </div>
-
-                        <div class="row form-group">
-                            <label for="confirm-email" class="col-4 col-form-label">Confirm email</label>
-                            <div class="col-8">
-                                <input type="text" id="confirm-email" name="confirm-email" th:field="*{confirmEmail}" class="form-control form-control-sm" placeholder="New Password"/>
-                                <span th:if="${#fields.hasErrors('confirmEmail')}" th:errors="*{confirmEmail}" class="text-danger"></span>
-                            </div>
-                        </div>
-                        <input type="hidden" name="mode" value="email">
-                        <input type="submit" value="Update" class="btn btn-primary">
-                    </form>
-                </div>
+        <div class="col-md-8 p-3">
+            <div th:if="${param.password_error}">
+                <div class="alert alert-danger">Your current password was not correct.</div>
+            </div>
+            <div th:if="${param.passwords_mismatch}">
+                <div class="alert alert-danger">Provided passwords did not match.</div>
+            </div>
+            <div th:if="${param.emails_mismatch}">
+                <div class="alert alert-danger">Emails didn't match.</div>
             </div>
         </div>
         <div class="col-md-2"></div>
     </div>
-</div>
-<script src="http://cdn.jsdelivr.net/webjars/jquery/3.3.1/jquery.min.js"
-        th:src="@{/webjars/jquery/jquery.min.js}"></script>
-<script src="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/js/bootstrap.min.js"
-        th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 border rounded-bottom border-dark p-3">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link  active" data-toggle="tab" href="#password"
+                           role="tab">Change Password</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " data-toggle="tab" href="#email" role="tab">Change
+                            Email</a>
+                    </li>
+                </ul>
+
+                <div class="form-group"></div>
+                <div class="tab-content">
+                    <div class="tab-pane  active" id="password" role="tabpanel">
+                        <form action="#" th:action="@{${paths.get('account-password')}}"
+                              th:object="${password}" method="POST" th:method="put">
+
+                            <div class="row form-group">
+                                <label for="old-pass" class="col-4 col-form-label">Current password</label>
+                                <div class="col-8">
+                                    <input type="password" id="old-pass" name="old-pass" th:field="*{currentPassword}"
+                                           class="form-control form-control-sm" placeholder="Old Password"/>
+                                    <span th:if="${#fields.hasErrors('currentPassword')}" th:errors="*{currentPassword}"
+                                          class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label for="new-pass" class="col-4 col-form-label">New password</label>
+                                <div class="col-8">
+                                    <input type="password" name="new-pass" id="new-pass" th:field="*{newPassword}"
+                                           class="form-control form-control-sm" placeholder="New Password"/>
+                                    <span th:if="${#fields.hasErrors('newPassword')}" th:errors="*{newPassword}"
+                                          class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label for="confirm-pass" class="col-4 col-form-label">Confirm new password</label>
+                                <div class="col-8">
+                                    <input type="password" name="confirm-pass" id="confirm-pass"
+                                           th:field="*{confirmPassword}" class="form-control form-control-sm"
+                                           placeholder="New Password"/>
+                                    <span th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}"
+                                          class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <input type="submit" value="Update" class="btn btn-primary">
+                            <input type="hidden" name="mode" value="password">
+
+                        </form>
+                    </div>
+                    <div class="tab-pane " id="email" role="tabpanel">
+                        <form action="#" th:action="@{${paths.get('account-email')}}"
+                              th:object="${email}" method="POST" th:method="put">
+                            <div class="row form-group">
+                                <label for="pass" class="col-4 col-form-label">Current password</label>
+                                <div class="col-8">
+                                    <input type="password" id="pass" name="pass" th:field="*{currentPassword}"
+                                           class="form-control form-control-sm" placeholder="Password"/>
+                                    <span th:if="${#fields.hasErrors('currentPassword')}" th:errors="*{currentPassword}"
+                                          class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label for="new-email" class="col-4 col-form-label">New email</label>
+                                <div class="col-8">
+                                    <input type="text" id="new-email" name="new-email" th:field="*{newEmail}"
+                                           class="form-control form-control-sm" placeholder="New Email"/>
+                                    <span th:if="${#fields.hasErrors('newEmail')}" th:errors="*{newEmail}"
+                                          class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <label for="confirm-email" class="col-4 col-form-label">Confirm email</label>
+                                <div class="col-8">
+                                    <input type="text" id="confirm-email" name="confirm-email"
+                                           th:field="*{confirmEmail}" class="form-control form-control-sm"
+                                           placeholder="New Password"/>
+                                    <span th:if="${#fields.hasErrors('confirmEmail')}" th:errors="*{confirmEmail}"
+                                          class="text-danger"></span>
+                                </div>
+                            </div>
+                            <input type="hidden" name="mode" value="email">
+                            <input type="submit" value="Update" class="btn btn-primary">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/3.3.1/jquery.min.js"
+            th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script src="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/js/bootstrap.min.js"
+            th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 </body>
 </html>
