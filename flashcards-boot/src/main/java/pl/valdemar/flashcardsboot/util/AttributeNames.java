@@ -5,6 +5,7 @@ public final class AttributeNames {
     public static final String DECKS = "decks";
     public static final String FLASHCARDS = "flashcards";
     public static final String FLASHCARD = "flashcard";
+    public static final String FLASHCARD_DTO = "flashcardDto";
     public static final String DECK = "deck";
     public static final String DECK_ID = "deckId";
     public static final String MAIN_MESSAGE = "mainMessage";

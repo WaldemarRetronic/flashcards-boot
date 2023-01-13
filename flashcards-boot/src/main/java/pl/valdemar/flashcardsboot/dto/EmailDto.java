@@ -1,16 +1,19 @@
 package pl.valdemar.flashcardsboot.dto;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 
 public class EmailDto {
 
     @NotEmpty(message = "Enter current password")
     private String currentPassword;
 
-    @NotEmpty(message = "Enter an email")
+    @Pattern(message = "Min 6 characters: 1-uppercase 1-lowercase, 1-number.",
+            regexp = "^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=[^0-9]*[0-9]).{6,}$")
     private String newEmail;
 
-    @NotEmpty(message = "Confirm your email")
+    @Pattern(message = "Min 6 characters: 1-uppercase 1-lowercase, 1-number.",
+            regexp = "^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=[^0-9]*[0-9]).{6,}$")
     private String confirmEmail;
 
     public EmailDto() {}

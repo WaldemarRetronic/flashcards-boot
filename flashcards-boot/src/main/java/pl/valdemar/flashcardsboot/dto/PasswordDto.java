@@ -1,16 +1,19 @@
 package pl.valdemar.flashcardsboot.dto;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 
 public class PasswordDto {
 
     @NotEmpty(message = "Enter current password")
     private String currentPassword;
 
-    @NotEmpty(message = "Enter a password")
+    @Pattern(message = "Min 6 characters: 1-uppercase 1-lowercase, 1-number.",
+            regexp = "^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=[^0-9]*[0-9]).{6,}$")
     private String newPassword;
 
-    @NotEmpty(message = "Confirm your password")
+    @Pattern(message = "Min 6 characters: 1-uppercase 1-lowercase, 1-number.",
+            regexp = "^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=[^0-9]*[0-9]).{6,}$")
     private String confirmPassword;
 
     public PasswordDto() {}

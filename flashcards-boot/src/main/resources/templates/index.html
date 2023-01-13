@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
     <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
     <link rel="stylesheet" type="text/css" th:href="@{/css/custom.css}" />
+    <link href='http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
 </head>
 <body>
-<nav class="navbar navbar-dark bg-dark navbar-expand-sm">
+<nav class="navbar navbar-dark navbar-custom navbar-expand-sm">
     <a class="navbar-brand brand-text" href="#">
         <img src="/images/logo.png" th:src="@{/images/logo.png}" width="30" height="30" alt="logo">
         Flashcards
@@ -74,7 +76,7 @@
                     <tr th:each="deck : ${decks}">
                         <td th:text="${deck.deckName}"></td>
                         <td th:text="${deck.category}"></td>
-                        <td th:text="${deck.description}"></td>
+                        <td class="desc" th:text="${deck.description}"></td>
                         <td><a th:href="@{${paths.get('study')}(id=${deck.id})}" class="btn btn-dark"><i class='fa fa-play' style='color:#4e9a06'></i></a></td>
                         <td><a th:href="@{${paths.get('update')}(id=${deck.id})}" class="btn btn-dark"><i class="fas fa-edit"></i></a></td>
                         <td><a th:href="@{${paths.get('flashcards')}(id=${deck.id})}" class="btn btn-dark"><i class="fas fa-edit"></i></a></td>

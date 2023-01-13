@@ -6,6 +6,10 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Getter
 @Setter
@@ -20,15 +24,27 @@ public class Deck {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @NotEmpty(message = "Deck's name can't be empty.")
+    @NotBlank(message = "Deck's name can't be blank.")
+    @Pattern(message = "Deck's name can't start and end with whitespace.", regexp = "(\\S.*\\S)")
+    @Size(min = 5,  max = 10, message = "Length of deck's name must be between 5 and 10.")
     @Column(name = "DECK_NAME")
     private String deckName;
 
+    @NotEmpty(message = "Description's can't be empty.")
+    @NotBlank(message = "Description's can't be blank")
+    @Pattern(message = "Description's name can't start and end with whitespace.", regexp = "(\\S.*\\S)")
+    @Size(min = 5,  max = 30, message = "Length of description's must be between 5 and 30.")
     @Column(name = "DESCRIPTION")
     private String description;
 
     @Column(name = "USER_ID")
     private long userId;
 
+    @NotEmpty(message = "Category's can't be empty.")
+    @NotBlank(message = "Category's can't be blank")
+    @Pattern(message = "Category's can't start and end with whitespace.", regexp = "(\\S.*\\S)")
+    @Size(min = 5,  max = 10, message = "Length of description's name must be between 5 and 10.")
     @Column(name = "CATEGORY")
     private String category;
 

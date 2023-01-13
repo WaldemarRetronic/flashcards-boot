@@ -9,10 +9,12 @@
     <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/css/bootstrap.min.css"
           th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
     <link rel="stylesheet" type="text/css" th:href="@{/css/custom.css}" />
+    <link href='http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
 </head>
 <body>
-<nav class="navbar navbar-dark bg-dark navbar-expand-sm">
+<nav class="navbar navbar-dark navbar-custom navbar-expand-sm">
     <a class="navbar-brand brand-text" href="#">
         <img src="/images/logo.png" th:src="@{/images/logo.png}" width="30" height="30" alt="logo">
         Flashcards
@@ -45,12 +47,9 @@
 <div class="container my-5">
     <div class="row">
         <div class="col-md-3"></div>
-        <div class="col-md-6">
-            <h2 class="text-center mb-2">Update Flashcard</h2>
-        </div>
+        <div class="col-md-6"><h2 class="text-center mb-2">Update Flashcard</h2></div>
         <div class="col-md-3"></div>
     </div>
-    <h2 class="mb-5"></h2>
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-9">
@@ -59,12 +58,12 @@
                 <div class="form-row">
                     <div class="form-group col-md-9">
                         <label for="foreignName" class="col-form-label">Front</label>
-                        <input type="text" th:field="*{foreignName}" class="form-control" id="foreignName" placeholder="Front"></input>
+                        <input th:field="*{foreignName}" class="form-control" id="foreignName" placeholder="Front"></input>
                         <span th:if="${#fields.hasErrors('foreignName')}" th:errors="*{foreignName}" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-9">
                         <label for="nativeName" class="col-form-label">Back</label>
-                        <input type="text" th:field="*{nativeName}" class="form-control" id="nativeName" placeholder="Back">
+                        <input th:field="*{nativeName}" class="form-control" id="nativeName" placeholder="Back">
                         <span th:if="${#fields.hasErrors('nativeName')}" th:errors="*{nativeName}" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-9">
@@ -75,8 +74,8 @@
                             <option th:value="type_in_answer">Type In Answer</option>
                         </select>
                     </div>
-                    <div class="form-group col-md-9" hidden="hidden">
-                        <input type="text" th:field="*{deckId}" class="form-control" id="deckId"></input>
+                    <div class="form-group col-md-9" >
+                        <input th:field="*{deckId}" class="form-control" id="deckId">
                     </div>
                 </div>
                 <div class="row">

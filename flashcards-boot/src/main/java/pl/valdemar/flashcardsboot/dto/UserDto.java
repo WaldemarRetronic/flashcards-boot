@@ -2,6 +2,7 @@ package pl.valdemar.flashcardsboot.dto;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 
 public class UserDto {
 
@@ -9,10 +10,12 @@ public class UserDto {
     @Email(message = "Email is not valid")
     private String username;
 
-    @NotEmpty(message = "Enter a password")
+    @Pattern(message = "Min 6 characters: 1-uppercase 1-lowercase, 1-number.",
+            regexp = "^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=[^0-9]*[0-9]).{6,}$")
     private String password;
 
-    @NotEmpty(message = "Confirm your password")
+    @Pattern(message = "Min 6 characters: 1-uppercase 1-lowercase, 1-number.",
+            regexp = "^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=[^0-9]*[0-9]).{6,}$")
     private String confirmPassword;
 
 

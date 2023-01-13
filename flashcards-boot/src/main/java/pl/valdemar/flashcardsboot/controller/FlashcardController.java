@@ -67,16 +67,18 @@ public class FlashcardController {
 
     @GetMapping(Mappings.ADD_FLASHCARD)
     public String create(@RequestParam Long deckId, Model model) {
-        model.addAttribute(AttributeNames.FLASHCARD, new FlashcardDto(deckId));
+        model.addAttribute(AttributeNames.FLASHCARD_DTO, new FlashcardDto(deckId));
         model.addAttribute(AttributeNames.DECK_ID, deckId);
         log.info("model: {}", model);
         return ViewNames.ADD_FLASHCARD;
     }
 
     @PostMapping(Mappings.ADD_FLASHCARD)
-    public String create(@Valid @ModelAttribute("flashcard") FlashcardDto flashcardDto,
-                         @RequestParam Long deckId, BindingResult result, Principal principal) {
+    public String create(@ModelAttribute(AttributeNames.FLASHCARD_DTO) @Valid FlashcardDto flashcardDto, BindingResult result,
+                         @RequestParam Long deckId, Model model, Principal principal) {
         if (result.hasErrors()) {
+            flashcardDto.setDeckId(deckId);
+            log.info("fc --- error");
             return ViewNames.ADD_FLASHCARD;
         }
         Long userId = getUserId(principal);
@@ -96,6 +98,7 @@ public class FlashcardController {
     public String updateFlashcard(@RequestParam("id") Long id, @Valid Flashcard flashcard, BindingResult result,
                                   Model model, Principal principal) {
         if (result.hasErrors()) {
+            log.info("update error");
             flashcard.setId(id);
             return ViewNames.UPDATE_FLASHCARD;
         }

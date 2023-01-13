@@ -6,6 +6,10 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Getter
 @Setter
@@ -20,9 +24,17 @@ public class Flashcard {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @NotEmpty(message = "Expression can't be empty.")
+    @NotBlank(message = "Expression can't be blank")
+    @Pattern(message = "Expression can't start and end with whitespace.", regexp = "(\\S.*\\S)")
+    @Size(min = 1,  max = 30, message = "Length of description's name must be between 1 and 30.")
     @Column(name = "NATIVE_NAME")
     private String nativeName;
 
+    @NotEmpty(message = "Expression can't be empty.")
+    @NotBlank(message = "Expression can't be blank")
+    @Pattern(message = "Expression can't start and end with whitespace.", regexp = "(\\S.*\\S)")
+    @Size(min = 1,  max = 30, message = "Length of description's name must be between 1 and 30.")
     @Column(name = "FOREIGN_NAME")
     private String foreignName;
 

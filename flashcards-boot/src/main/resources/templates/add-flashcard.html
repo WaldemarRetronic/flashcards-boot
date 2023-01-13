@@ -6,13 +6,15 @@
     <title>Add Course</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
-    <link rel="stylesheet" type="text/css" th:href="@{/css/custom.css}"/>
     <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/css/bootstrap.min.css"
           th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/custom.css}"/>
+    <link href='http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
 </head>
 <body>
-<nav class="navbar navbar-dark bg-dark navbar-expand-sm">
+<nav class="navbar navbar-dark navbar-custom navbar-expand-sm">
     <a class="navbar-brand brand-text" href="#">
         <img src="/images/logo.png" th:src="@{/images/logo.png}" width="30" height="30" alt="logo">
         Flashcards
@@ -30,11 +32,14 @@
                 <a class="nav-link" href="#" th:href="@{${paths.get('add-deck')}}">Add Deck</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" th:href="@{${paths.get('search')}}">Search</a>
+                <a class="nav-link" href="#" th:href="@{${paths.get('show-flashcards')}(id=${deckId})}">Flashcards</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#" th:href="@{${paths.get('show-flashcards')}(id=${deckId})}">Flashcards<span
+                <a class="nav-link" href="#" th:href="@{${paths.get('add-flashcard')}(id=${deckId})}">Add Flashcard<span
                         class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" th:href="@{${paths.get('search')}}">Search</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -58,7 +63,7 @@
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-9">
-            <form action="#" th:action="@{${paths.get('add-flashcard')}(deckId=*{deckId})}" th:object="${flashcard}" method="post">
+            <form action="#" th:action="@{${paths.get('add-flashcard')}(deckId=*{deckId})}" th:object="${flashcardDto}" method="post">
                 <div class="form-row">
                     <div class="form-group col-md-9">
                         <label for="foreignName" class="col-form-label">Front</label>

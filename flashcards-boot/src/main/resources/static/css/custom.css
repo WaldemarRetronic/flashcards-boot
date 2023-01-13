@@ -1,3 +1,7 @@
+body {
+    font-family: 'PT Sans', sans-serif;
+}
+
 .icon-color {
     background-color: black;
 }
@@ -38,7 +42,6 @@ input[type=text].type-in-answer,select{
     width:70%;
     border:1px solid #aaa;
     border-radius:4px;
-    margin:8px 50px;
     outline:none;
     padding:2px;
     box-sizing:border-box;
@@ -62,5 +65,52 @@ input[type=text].type-in-answer {
     font-style: normal;
     font-variant: normal;
     text-transform: none;
+}
+
+.navbar-custom {
+    background-color: #1775a1;
+    border-bottom: 1px solid white;
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    font-family: 'Lobster', cursive;
+    font-size: 2.2em;
+    margin-top: -3px;
+    color: white;
+}
+.navbar-custom .navbar-nav .nav-link {
+    color: rgba(255,255,255,.6);
+}
+
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: white;
+}
+.navbar-custom .navbar-brand:hover {
+    color: #a2c8d9;
+}
+
+/* Set the border color to the desired color */
+.navbar-toggler:hover {
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+}
+
+.navbar-custom .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(162, 200, 217, 100)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+table td.desc {
+    word-wrap: break-word;
+    word-break: break-word;
+    min-width: 300px;
 }
 
