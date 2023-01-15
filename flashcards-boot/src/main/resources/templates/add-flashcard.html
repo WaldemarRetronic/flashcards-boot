@@ -35,7 +35,7 @@
                 <a class="nav-link" href="#" th:href="@{${paths.get('show-flashcards')}(id=${deckId})}">Flashcards</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#" th:href="@{${paths.get('add-flashcard')}(id=${deckId})}">Add Flashcard<span
+                <a class="nav-link" href="#" th:href="@{${paths.get('add-flashcard')}(deckId=${deckId})}">Add Flashcard<span
                         class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
