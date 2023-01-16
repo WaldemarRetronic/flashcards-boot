@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.valdemar.flashcardsboot.dto.FlashcardDto;
+import pl.valdemar.flashcardsboot.model.Deck;
 import pl.valdemar.flashcardsboot.model.Flashcard;
 import pl.valdemar.flashcardsboot.service.DeckService;
 import pl.valdemar.flashcardsboot.service.FlashcardService;
@@ -53,6 +54,7 @@ public class FlashcardController {
         paths.put("search", Mappings.SEARCH);
         paths.put("add-deck", Mappings.ADD_DECK);
         paths.put("account", Mappings.ACCOUNT_SETTINGS);
+        paths.put("shared", Mappings.SHARED);
         return paths;
     }
 
@@ -63,6 +65,20 @@ public class FlashcardController {
         model.addAttribute(AttributeNames.FLASHCARDS, flashCards.isEmpty() ? Collections.EMPTY_LIST : flashCards);
         model.addAttribute(AttributeNames.DECK_ID, id);
         return ViewNames.FLASHCARDS;
+    }
+
+    @GetMapping(Mappings.FC_SHARED)
+    public String listSharedFlashcards(@RequestParam Long id, Model model, Principal principal) {
+        Deck deck = deckService.findDeckById(id).get();
+        Long userIdOfSharedDeck = deck.getUserId();
+        if (!deck.isShared() || (userIdOfSharedDeck == getUserId(principal))) {
+            model.addAttribute(AttributeNames.FLASHCARDS, Collections.EMPTY_LIST);
+            return ViewNames.FC_SHARED;
+        }
+        List<Flashcard> flashCards = (List<Flashcard>) flashCardService.findFlashcards(userIdOfSharedDeck, id);
+        model.addAttribute(AttributeNames.FLASHCARDS, flashCards.isEmpty() ? Collections.EMPTY_LIST : flashCards);
+        model.addAttribute(AttributeNames.DECK_ID, id);
+        return ViewNames.FC_SHARED;
     }
 
     @GetMapping(Mappings.ADD_FLASHCARD)
@@ -78,7 +94,6 @@ public class FlashcardController {
                          @RequestParam Long deckId, Model model, Principal principal) {
         if (result.hasErrors()) {
             flashcardDto.setDeckId(deckId);
-            log.info("fc --- error");
             return ViewNames.ADD_FLASHCARD;
         }
         Long userId = getUserId(principal);
@@ -110,7 +125,7 @@ public class FlashcardController {
     }
 
     @DeleteMapping(Mappings.DELETE_FLASHCARD)
-    public String deleteFlashcard(@RequestParam("id") Long id){
+    public String deleteFlashcard(@RequestParam("id") Long id, Principal principal){
         log.info("called deleteFlashcard");
         Long deckId = flashCardService.findFlashcardById(id).get().getDeckId();
         flashCardService.deleteFlashcardById(id);

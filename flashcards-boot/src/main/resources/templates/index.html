@@ -28,7 +28,7 @@
                 <a class="nav-link" href="#" th:href="@{${paths.get('index')}}">Decks <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" th:href="@{${paths.get('add-deck')}}">Add Deck</a>
+                <a class="nav-link" href="#" th:href="@{${paths.get('shared')}}">Shared Decks</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#" th:href="@{${paths.get('search')}}">Search</a>
@@ -66,6 +66,7 @@
                         <th>Deck Name</th>
                         <th>Deck Category</th>
                         <th>Deck Description</th>
+                        <th>Shared</th>
                         <th>Learn</th>
                         <th>Edit Deck</th>
                         <th>Edit Cards</th>
@@ -77,6 +78,7 @@
                         <td th:text="${deck.deckName}"></td>
                         <td th:text="${deck.category}"></td>
                         <td class="desc" th:text="${deck.description}"></td>
+                        <td th:text="${deck.shared}"></td>
                         <td><a th:href="@{${paths.get('study')}(id=${deck.id})}" class="btn btn-dark"><i class='fa fa-play' style='color:#4e9a06'></i></a></td>
                         <td><a th:href="@{${paths.get('update')}(id=${deck.id})}" class="btn btn-dark"><i class="fas fa-edit"></i></a></td>
                         <td><a th:href="@{${paths.get('flashcards')}(id=${deck.id})}" class="btn btn-dark"><i class="fas fa-edit"></i></a></td>

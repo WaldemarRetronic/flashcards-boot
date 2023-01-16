@@ -2,6 +2,7 @@ package pl.valdemar.flashcardsboot.dto;
 
 import lombok.Data;
 
+import javax.persistence.Column;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
@@ -27,5 +28,7 @@ public class DeckDto {
     @Pattern(message = "Category's can't start and end with whitespace.", regexp = "(\\S.*\\S)")
     @Size(min = 5,  max = 25, message = "Length of description's name must be between 5 and 25.")
     private String category;
+
+    private boolean shared;
 
 }

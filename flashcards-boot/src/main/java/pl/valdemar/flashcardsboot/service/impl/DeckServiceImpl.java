@@ -26,6 +26,7 @@ public class DeckServiceImpl implements DeckService {
         deck.setDescription(deckDto.getDescription());
         deck.setUserId(userId);
         deck.setCategory(deckDto.getCategory());
+        deck.setShared(deckDto.isShared());
         return deckRepository.save(deck);
     }
 
@@ -44,10 +45,6 @@ public class DeckServiceImpl implements DeckService {
         return deckRepository.findDecksByUserId(userId);
     }
 
-    public Iterable<Deck> findAllDecks() {
-        return deckRepository.findAll();
-    }
-
     @Override
     public Deck updateDeck(Deck deck) {
         return deckRepository.save(deck);
@@ -62,5 +59,10 @@ public class DeckServiceImpl implements DeckService {
     public void deleteAll(Long userId) {
         Iterable<Deck> decksByUserId = deckRepository.findDecksByUserId(userId);
         deckRepository.deleteAll(decksByUserId);
+    }
+
+    @Override
+    public Iterable<Deck> findDecksByShared(boolean shared, Long userId) {
+        return deckRepository.findDecksBySharedAndUserIdIsNot(shared, userId);
     }
 }

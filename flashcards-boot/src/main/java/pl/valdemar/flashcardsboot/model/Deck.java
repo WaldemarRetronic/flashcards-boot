@@ -48,6 +48,9 @@ public class Deck {
     @Column(name = "CATEGORY")
     private String category;
 
+    @Column(name = "SHARED")
+    private boolean shared;
+
     // == constructors ==
     public Deck() {
     }

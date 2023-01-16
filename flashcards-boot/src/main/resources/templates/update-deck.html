@@ -29,7 +29,7 @@
                 <a class="nav-link" href="#" th:href="@{${paths.get('index')}}">Decks</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" th:href="@{${paths.get('add-deck')}}">Add Deck</a>
+                <a class="nav-link" href="#" th:href="@{${paths.get('shared')}}">Shared Decks</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#" th:href="@{${paths.get('search')}}">Search</a>
@@ -88,6 +88,13 @@
                                   placeholder="Deck Description"></textarea>
                         <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"
                               class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-9">
+                        <label for="shared" class="col-form-label">Shared</label>
+                        <select th:field="*{shared}" class="form-control" id="shared">
+                            <option th:value="true">Yes</option>
+                            <option th:value="false">No</option>
+                        </select>
                     </div>
                 </div>
                 <div class="row">

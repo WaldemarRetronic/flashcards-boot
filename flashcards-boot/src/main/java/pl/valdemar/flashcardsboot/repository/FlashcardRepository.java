@@ -10,4 +10,5 @@ public interface FlashcardRepository extends CrudRepository<Flashcard, Long> {
     Iterable<Flashcard> findByUserIdAndDeckId(Long userId, Long deckId);
 
     Iterable<Flashcard> findByUserId(Long userId);
+
 }

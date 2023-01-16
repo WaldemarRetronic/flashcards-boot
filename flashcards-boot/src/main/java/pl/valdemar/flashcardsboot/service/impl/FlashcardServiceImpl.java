@@ -60,4 +60,5 @@ public class FlashcardServiceImpl implements FlashcardService {
         Iterable<Flashcard> byUserId = flashcardRepository.findByUserId(userId);
         flashcardRepository.deleteAll(byUserId);
     }
+
 }

@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import pl.valdemar.flashcardsboot.model.Deck;
 import pl.valdemar.flashcardsboot.model.Flashcard;
 import pl.valdemar.flashcardsboot.model.MessageGenerator;
 import pl.valdemar.flashcardsboot.service.DeckService;
@@ -68,10 +69,12 @@ public class StudyControl {
     @GetMapping(Mappings.STUDY_SESSION)
     public String flashcard(@RequestParam long id, Model model, Principal principal) {
         log.info("flashcard method called from Study controller");
-        log.info("flashcards from database = {}", flashcardService.findFlashcards(getUserId(principal), id).toString());
+        Deck deck = deckService.findDeckById(id).get();
+        Long userIdOfSharedDeck = deck.getUserId();
+        log.info("flashcards from database = {}", flashcardService.findFlashcards(userIdOfSharedDeck, id).toString());
         String deckName = deckService.findDeckById(id).get().getDeckName();
         model.addAttribute(AttributeNames.DECK_NAME, deckName);
-                studyService.setFlashcards((List<Flashcard>) flashcardService.findFlashcards(getUserId(principal), id));
+        studyService.setFlashcards((List<Flashcard>) flashcardService.findFlashcards(userIdOfSharedDeck, id));
         List<Flashcard> flashcards = studyService.getFlashcards();
         log.info("flashcards from StudyService = {}", flashcards.toString());
         if (flashcards.isEmpty()) {

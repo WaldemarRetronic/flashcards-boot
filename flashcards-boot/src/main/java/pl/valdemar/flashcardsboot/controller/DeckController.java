@@ -43,6 +43,7 @@ public class DeckController {
         Map<String, String> paths = new HashMap<>();
         paths.put("update", Mappings.UPDATE_DECK);
         paths.put("delete", Mappings.DELETE_DECK);
+        paths.put("fc-shared", Mappings.FC_SHARED);
         PathMapping(paths);
 
         return paths;
@@ -56,6 +57,7 @@ public class DeckController {
         paths.put("search", Mappings.SEARCH);
         paths.put("study", Mappings.STUDY_SESSION);
         paths.put("account", Mappings.ACCOUNT_SETTINGS);
+        paths.put("shared", Mappings.SHARED);
     }
 
     // == handler methods ==
@@ -69,6 +71,13 @@ public class DeckController {
         List<Deck> deckList = (List<Deck>) deckService.findDecksByUserId(getUserId(principal));
         model.addAttribute(AttributeNames.DECKS, deckList.isEmpty() ? Collections.EMPTY_LIST : deckList);
         return ViewNames.INDEX;
+    }
+
+    @GetMapping(Mappings.SHARED)
+    public String showSharedDecks(Model model, Principal principal) {
+        List<Deck> deckList = (List<Deck>) deckService.findDecksByShared(true, getUserId(principal));
+        model.addAttribute(AttributeNames.DECKS, deckList.isEmpty() ? Collections.EMPTY_LIST : deckList);
+        return ViewNames.SHARED;
     }
 
     @GetMapping(Mappings.ADD_DECK)

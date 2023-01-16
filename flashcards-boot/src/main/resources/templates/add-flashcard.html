@@ -29,14 +29,10 @@
                 <a class="nav-link" href="#" th:href="@{${paths.get('index')}}">Decks</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" th:href="@{${paths.get('add-deck')}}">Add Deck</a>
+                <a class="nav-link" href="#" th:href="@{${paths.get('shared')}}">Shared Decks</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#" th:href="@{${paths.get('show-flashcards')}(id=${deckId})}">Flashcards</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="#" th:href="@{${paths.get('add-flashcard')}(deckId=${deckId})}">Add Flashcard<span
-                        class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#" th:href="@{${paths.get('search')}}">Search</a>

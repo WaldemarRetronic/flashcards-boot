@@ -13,4 +13,6 @@ public interface DeckRepository extends CrudRepository<Deck, Long> {
     Optional<Deck> findByDeckNameAndUserId(String deckName, Long userId);
 
     Iterable<Deck> findDecksByUserId(Long userId);
+
+    Iterable<Deck> findDecksBySharedAndUserIdIsNot(boolean shared, long userId);
 }

@@ -26,6 +26,8 @@ public final class Mappings {
     public static final String ACCOUNT_SETTINGS_PASSWORD = "/account/settings/password";
     public static final String ACCOUNT_SETTINGS_EMAIL = "/account/settings/email";
     public static final String REMOVE_ACCOUNT = "/account/remove";
+    public static final String SHARED = "/shared";
+    public static final String FC_SHARED = "/flashcards-shared";
 
     // == constructors ==
     private Mappings() {

@@ -21,4 +21,5 @@ public interface DeckService {
 
     void deleteAll(Long userId);
 
+    Iterable<Deck> findDecksByShared(boolean shared, Long userId);
 }
