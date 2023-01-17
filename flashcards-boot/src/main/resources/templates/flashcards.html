@@ -54,7 +54,7 @@
                 <p class="text-success">Add a flashcard by clicking below!</p>
             </div>
             <div th:case="*">
-                <h2 class="my-5">Flashcards</h2>
+                <h2 class="my-5">Flashcards:<span class="text-info" th:text="${#lists.size(flashcards)}"></span></h2>
                 <table class="table table-striped table-responsive-md">
                     <thead>
                     <tr>

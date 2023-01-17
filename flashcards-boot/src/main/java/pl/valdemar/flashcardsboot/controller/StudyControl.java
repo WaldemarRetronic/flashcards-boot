@@ -60,8 +60,10 @@ public class StudyControl {
     public Map<String, String> appPaths() {
         Map<String, String> paths = new HashMap<>();
         paths.put("index", Mappings.INDEX);
-        paths.put("add-deck", Mappings.ADD_DECK);
         paths.put("logout", Mappings.LOGOUT);
+        paths.put("account", Mappings.ACCOUNT_SETTINGS);
+        paths.put("shared", Mappings.SHARED);
+        paths.put("search", Mappings.SEARCH);
         return paths;
     }
 
@@ -83,6 +85,7 @@ public class StudyControl {
             return ViewNames.STUDY_RESULT;
         }
         model.addAttribute(AttributeNames.START_MESSAGE, messageGenerator.getStartMessage());
+        model.addAttribute((AttributeNames.STUDY_NO_OF_FC), flashcards.size());
         return ViewNames.STUDY_SESSION;
     }
 

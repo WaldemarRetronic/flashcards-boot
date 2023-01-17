@@ -145,7 +145,7 @@ public class FlashcardController {
         List<Flashcard> foundFlashcards =
                 ((List<Flashcard>) flashCardService.findAll(getUserId(principal)))
                         .stream()
-                        .filter(flashCard -> flashCard.getForeignName().equals(keyword) || flashCard.getNativeName().equals(keyword))
+                        .filter(flashCard -> flashCard.getForeignName().contains(keyword) || flashCard.getNativeName().contains(keyword))
                         .map(flashCard -> {
                             flashCard.setDeckName(deckService.findDeckById(flashCard.getDeckId()).get().getDeckName());
                             return flashCard;

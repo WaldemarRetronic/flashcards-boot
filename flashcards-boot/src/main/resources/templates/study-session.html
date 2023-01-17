@@ -6,8 +6,9 @@
     <title>Error</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
-    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
-    <link rel="stylesheet" type="text/css" th:href="@{/css/custom.css}" />
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/custom.css}"/>
     <link href='http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=PT+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
@@ -36,6 +37,9 @@
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
+                <a class="nav-link" href="#" th:href="@{${paths.get('account')}}">Account</a>
+            </li>
+            <li class="nav-item">
                 <form id="logoutForm" th:action="@{${paths.get('logout')}}" method="post">
                     <button class="btn btn-danger" type="submit">logout</button>
                 </form>
@@ -46,9 +50,12 @@
 <div class="wrapper container-fluid my-5">
     <div class="row">
         <div class="col-md-3 "></div>
-        <div class="col-md-6 card my-5 border-info text-center">
+        <div class="col-md-6 card my-3 border-info text-center">
             <div class="card-header">
-                <h5 th:text="${deckName}">Deck Name</h5>
+                <h5 class="text-info" th:text="${deckName}">Deck Name</h5>
+                <div class="text-muted">
+                    <h5><span id="fc-study-size">0</span>/<span th:text="${numberOfFlashcards}"></span></h5>
+                </div>
             </div>
             <div class="card-body">
 
@@ -61,7 +68,7 @@
                 </div>
 
                 <div id="backDiv" hidden="hidden">
-                    <hr class="dividing-line" />
+                    <hr class="dividing-line"/>
                     <h5 class="card-text mb-5" id="back">Back</h5>
                 </div>
                 <!-- typeAnswer div-->

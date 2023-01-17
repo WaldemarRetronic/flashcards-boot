@@ -12,6 +12,7 @@ public final class AttributeNames {
     public static final String START_MESSAGE = "startMessage";
     public static final String RESULT_MESSAGE = "resultMessage";
     public static final String DECK_NAME = "deckName";
+    public static final String STUDY_NO_OF_FC = "numberOfFlashcards";
 
     // == constructors ==
     private AttributeNames() {}

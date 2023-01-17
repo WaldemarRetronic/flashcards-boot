@@ -18,6 +18,7 @@ window.onload = function () {
                 if (json.finished === "false") {
                     U.$("front").innerHTML = json.frontSide;
                     U.$("back").innerHTML = json.backSide;
+                    incNumOfCardsReviewed();
                     console.log("variety = ", json.variety);
                     if (json.variety === "type_in_answer") {
                         U.$("typeAnswerDiv").removeAttribute("hidden");
@@ -128,4 +129,12 @@ window.onload = function () {
 
 
     }
+
+    function incNumOfCardsReviewed() {
+        let fcReviewedText = U.$("fc-study-size")
+        let numOfFlashcardsReviewed = parseInt(fcReviewedText.innerText);
+        console.log(numOfFlashcardsReviewed);
+        fcReviewedText.innerHTML = (++numOfFlashcardsReviewed).toString();
+    }
+
 }; // Koniec funkcji anonimowej dla onload.
