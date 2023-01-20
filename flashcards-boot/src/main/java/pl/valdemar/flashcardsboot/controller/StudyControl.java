@@ -47,7 +47,8 @@ public class StudyControl {
     private final DeckService deckService;
 
     // == constructors ==
-    public StudyControl(FlashcardService flashcardService, JSONObject json, MessageGenerator messageGenerator, UserService userService, DeckService deckService) {
+    public StudyControl(FlashcardService flashcardService, JSONObject json, MessageGenerator messageGenerator,
+                        UserService userService, DeckService deckService) {
         this.flashcardService = flashcardService;
         this.json = json;
         this.messageGenerator = messageGenerator;

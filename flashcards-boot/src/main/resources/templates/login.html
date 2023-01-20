@@ -10,13 +10,13 @@
     <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/css/bootstrap.min.css"
           th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/custom.css}" />
-    <link href='http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=PT+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
 </head>
 
 <body>
-<nav class="navbar navbar-dark navbar-custom navbar-expand-sm">
+<nav class="navbar navbar-dark navbar-custom navbar-expand-sm fixed-top">
     <a class="navbar-brand brand-text" href="#">
         <img src="/images/logo.png" th:src="@{/images/logo.png}" width="30" height="30" alt="logo">
         Flashcards
@@ -40,7 +40,7 @@
         </ul>
     </div>
 </nav>
-<div class="container my-5">
+<div class="container my-5 wrapper">
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6 bg-dark text-light text-center border rounded-top border-bottom-0 border-dark p-1">
@@ -77,8 +77,8 @@
                     <a class="btn btn-success" href="#" th:href="@{${paths.get('add-user')}}">Register</a>
                 </div>
                 <div class="text-center pt-4">
-<!--                     <a class="btn btn-block btn-dark" href="/flashcards/oauth2/authorization/google">Login with Google</a> -->
-                    <a class="btn btn-block btn-dark" href="/oauth2/authorization/google">Login with Google</a>
+                    <a class="btn btn-block btn-dark" href="/flashcards/oauth2/authorization/google">Login with Google</a>
+<!--                     <a class="btn btn-block btn-dark" href="/oauth2/authorization/google">Login with Google</a> -->
                 </div>
 
             </form>

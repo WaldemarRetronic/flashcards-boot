@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
     <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
     <link rel="stylesheet" type="text/css" th:href="@{/css/custom.css}" />
-    <link href='http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=PT+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
 </head>
 <body>
-<nav class="navbar navbar-dark navbar-custom navbar-expand-sm">
+<nav class="navbar navbar-dark navbar-custom navbar-expand-sm fixed-top">
     <a class="navbar-brand brand-text" href="#">
         <img src="/images/logo.png" th:src="@{/images/logo.png}" width="30" height="30" alt="logo">
         Flashcards
@@ -46,16 +46,16 @@
         </ul>
     </div>
 </nav>
-<div th:switch="${#lists.size(decks)}" class="container my-5">
+<div th:switch="${#lists.size(decks)}" class="container my-5 wrapper">
     <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-10">
             <div th:case="'0'">
-                <h2>You haven't added any deck yet!</h2>
+                <h2 class="my-4">You haven't added any deck yet!</h2>
                 <p class="text-success">Add a deck by clicking below!</p>
             </div>
             <div th:case="*">
-                <h2 class="my-5">Your Decks</h2>
+                <h2 class="my-4">Your Decks</h2>
                 <div th:if="${param.deckEmpty}">
                     <div class="alert alert-danger">Deck with name <b><span th:text="${param.deckEmpty}"/></b> is not empty.
                     First delete all flashcards of this deck.</div>

@@ -9,12 +9,12 @@
     <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/css/bootstrap.min.css"
           th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
     <link href="css/custom.css" rel="stylesheet" type="text/css" th:href="@{/css/custom.css}"/>
-    <link href='http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=PT+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
 </head>
 <body>
-<nav class="navbar navbar-dark navbar-custom navbar-expand-sm">
+<nav class="navbar navbar-dark navbar-custom navbar-expand-sm fixed-top">
     <a class="navbar-brand brand-text" href="#">
         <img src="/images/logo.png" th:src="@{/images/logo.png}" width="30" height="30" alt="logo">
         Flashcards
@@ -49,12 +49,12 @@
     </div>
 </nav>
 
-<div th:switch=" ${#lists.size(flashcards)}" class="container my-5">
+<div th:switch=" ${#lists.size(flashcards)}" class="container my-5 wrapper">
     <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-10">
             <form action="#" th:action="@{${paths.get('search')}}" class="search" method="post">
-                <div class="input-group mb-4">
+                <div class="input-group my-4">
                     <input type="search" name="keyword" placeholder="Find a flashcard..." aria-describedby="button-addon5"
                            class="form-control">
                     <div class="input-group-append">

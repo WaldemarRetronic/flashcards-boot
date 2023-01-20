@@ -1,9 +1,7 @@
 package pl.valdemar.flashcardsboot.model;
 
 import com.google.common.base.Objects;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -11,9 +9,9 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-@Getter
-@Setter
-@ToString
+@Data
+@NoArgsConstructor
+@EqualsAndHashCode(of = {"id"})
 @Entity
 @Table(name = "FLASHCARDS")
 public class Flashcard {
@@ -50,28 +48,12 @@ public class Flashcard {
     @Column(name = "DECK_NAME")
     private String deckName;
 
-    public Flashcard() {
-    }
-
     public Flashcard(String nativeName, String foreignName, int userId, int deckId, String variety) {
         this.nativeName = nativeName;
         this.foreignName = foreignName;
         this.userId = userId;
         this.deckId = deckId;
         this.variety = variety;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Flashcard)) return false;
-        Flashcard flashCard = (Flashcard) o;
-        return Objects.equal(nativeName, flashCard.nativeName) && Objects.equal(foreignName, flashCard.foreignName);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(nativeName, foreignName);
     }
 
 }

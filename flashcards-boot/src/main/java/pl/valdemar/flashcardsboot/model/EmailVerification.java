@@ -1,6 +1,7 @@
 package pl.valdemar.flashcardsboot.model;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -10,9 +11,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Data
+@NoArgsConstructor
+@EqualsAndHashCode(of = {"verificationId", "username"})
 @Entity
 @Table(name = "EMAIL_VERIFICATIONS")
-@NoArgsConstructor
 public class EmailVerification {
 
     @Id

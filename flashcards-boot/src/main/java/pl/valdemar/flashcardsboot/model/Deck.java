@@ -1,9 +1,7 @@
 package pl.valdemar.flashcardsboot.model;
 
 import com.google.common.base.Objects;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -11,9 +9,9 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-@Getter
-@Setter
-@ToString
+@Data
+@NoArgsConstructor
+@EqualsAndHashCode(of = {"deckName", "userId"})
 @Entity
 @Table(name = "DECKS")
 public class Deck {
@@ -52,32 +50,12 @@ public class Deck {
     private boolean shared;
 
     // == constructors ==
-    public Deck() {
-    }
 
-    public Deck(String deckName, String description, int userId, String category) {
+    public Deck(String deckName, String description, long userId, String category, boolean shared) {
         this.deckName = deckName;
         this.description = description;
         this.userId = userId;
         this.category = category;
+        this.shared = shared;
     }
-
-    public Deck(String deckName, String description) {
-        this.deckName = deckName;
-        this.description = description;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Deck)) return false;
-        Deck deck = (Deck) o;
-        return Objects.equal(deckName, deck.deckName);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(deckName);
-    }
-
 }

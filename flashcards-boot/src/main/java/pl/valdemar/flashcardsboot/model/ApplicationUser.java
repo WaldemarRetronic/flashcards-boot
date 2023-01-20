@@ -31,9 +31,13 @@ public class ApplicationUser implements UserDetails {
     @Column(name = "ACC_CRED_EXPIRED")
     private boolean accountCredentialsExpired;
 
-    public ApplicationUser(String username, String password) {
+    public ApplicationUser(String username, String password, boolean verified, boolean locked,
+                           boolean accountCredentialsExpired) {
         this.username = username;
         this.password = password;
+        this.verified = verified;
+        this.locked = locked;
+        this.accountCredentialsExpired = accountCredentialsExpired;
     }
 
     public ApplicationUser(String username) {
