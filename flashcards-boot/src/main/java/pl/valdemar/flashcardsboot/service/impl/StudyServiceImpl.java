@@ -6,9 +6,6 @@ import org.springframework.stereotype.Service;
 import pl.valdemar.flashcardsboot.model.Flashcard;
 import pl.valdemar.flashcardsboot.service.StudyService;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -16,8 +13,6 @@ import java.util.stream.Collectors;
 
 @Slf4j
 @Service
-//@SessionScope
-//@Scope(value = WebApplicationContext.SCOPE_SESSION, proxyMode = ScopedProxyMode.TARGET_CLASS)
 @Scope("session")
 public class StudyServiceImpl implements StudyService {
 
@@ -38,13 +33,10 @@ public class StudyServiceImpl implements StudyService {
 
     @Override
     public Flashcard getNextFlashcard() {
-        log.info("size = {}", flashcards.size());
         if (flashcards.isEmpty()) return null;
         int idx = random.nextInt(flashcards.size());
-        log.info("index = {}", idx);
         Flashcard flashcard = flashcards.get(idx);
         flashcards.remove(idx);
-        log.info("size = {}", flashcards.size());
         return flashcard;
     }
 
@@ -92,16 +84,6 @@ public class StudyServiceImpl implements StudyService {
         wrong = 0;
     }
 
-    @PostConstruct
-    public void init() {
-        log.info("StudyServiceImpl created");
-    }
-
-    @PreDestroy
-    public void shutdown() {
-        log.info("StudyServiceImpl to be deleted");
-    }
-
     // == private methods ==
     private double calculateRatio() {
         return correct * 100 / (correct + wrong);
@@ -113,6 +95,7 @@ public class StudyServiceImpl implements StudyService {
                 .map(this::reverseFlashcard)
                 .collect(Collectors.toList());
     }
+
     private Flashcard reverseFlashcard(Flashcard flashCard) {
         Flashcard reversedFlashcard = new Flashcard();
         reversedFlashcard.setForeignName(flashCard.getNativeName());

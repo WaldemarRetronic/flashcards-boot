@@ -1,7 +1,8 @@
 package pl.valdemar.flashcardsboot.model;
 
-import com.google.common.base.Objects;
-import lombok.*;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -25,14 +26,14 @@ public class Flashcard {
     @NotEmpty(message = "Expression can't be empty.")
     @NotBlank(message = "Expression can't be blank")
     @Pattern(message = "Expression can't start and end with whitespace.", regexp = "(\\S.*\\S)")
-    @Size(min = 1,  max = 250, message = "Length of description's name must be between 1 and 250.")
+    @Size(min = 1, max = 250, message = "Length of description's name must be between 1 and 250.")
     @Column(name = "NATIVE_NAME")
     private String nativeName;
 
     @NotEmpty(message = "Expression can't be empty.")
     @NotBlank(message = "Expression can't be blank")
     @Pattern(message = "Expression can't start and end with whitespace.", regexp = "(\\S.*\\S)")
-    @Size(min = 1,  max = 250, message = "Length of description's name must be between 1 and 250.")
+    @Size(min = 1, max = 250, message = "Length of description's name must be between 1 and 250.")
     @Column(name = "FOREIGN_NAME")
     private String foreignName;
 

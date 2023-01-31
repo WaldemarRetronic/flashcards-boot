@@ -85,7 +85,6 @@ public class FlashcardController {
     public String create(@RequestParam Long deckId, Model model) {
         model.addAttribute(AttributeNames.FLASHCARD_DTO, new FlashcardDto(deckId));
         model.addAttribute(AttributeNames.DECK_ID, deckId);
-        log.info("model: {}", model);
         return ViewNames.ADD_FLASHCARD;
     }
 
@@ -113,11 +112,9 @@ public class FlashcardController {
     public String updateFlashcard(@RequestParam("id") Long id, @Valid Flashcard flashcard, BindingResult result,
                                   Model model, Principal principal) {
         if (result.hasErrors()) {
-            log.info("update error");
             flashcard.setId(id);
             return ViewNames.UPDATE_FLASHCARD;
         }
-        log.info("called updateFlashcard", flashcard.toString());
         flashcard.setUserId(getUserId(principal));
         log.info(flashcard.toString());
         flashCardService.updateFlashcard(flashcard);
@@ -125,8 +122,7 @@ public class FlashcardController {
     }
 
     @DeleteMapping(Mappings.DELETE_FLASHCARD)
-    public String deleteFlashcard(@RequestParam("id") Long id, Principal principal){
-        log.info("called deleteFlashcard");
+    public String deleteFlashcard(@RequestParam("id") Long id) {
         Long deckId = flashCardService.findFlashcardById(id).get().getDeckId();
         flashCardService.deleteFlashcardById(id);
         return "redirect:" + Mappings.SHOW_FLASHCARDS + "?id=" + deckId;
@@ -141,7 +137,6 @@ public class FlashcardController {
 
     @PostMapping(Mappings.SEARCH)
     public String search(@RequestParam String keyword, Principal principal, Model model) {
-        log.info("search called with keyword: {}", keyword);
         List<Flashcard> foundFlashcards =
                 ((List<Flashcard>) flashCardService.findAll(getUserId(principal)))
                         .stream()
@@ -151,7 +146,6 @@ public class FlashcardController {
                             return flashCard;
                         })
                         .collect(Collectors.toList());
-        log.info("foundFlashcards: {}", foundFlashcards.size());
         model.addAttribute("hidden", "false");
         model.addAttribute(AttributeNames.FLASHCARDS, foundFlashcards.isEmpty() ? Collections.EMPTY_LIST : foundFlashcards);
         return ViewNames.SEARCH;

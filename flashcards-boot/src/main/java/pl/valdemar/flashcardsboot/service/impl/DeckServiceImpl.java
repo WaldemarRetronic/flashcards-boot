@@ -12,7 +12,7 @@ import java.util.Optional;
 @Service
 public class DeckServiceImpl implements DeckService {
 
-    private DeckRepository deckRepository;
+    private final DeckRepository deckRepository;
 
     @Autowired
     public DeckServiceImpl(DeckRepository deckRepository) {

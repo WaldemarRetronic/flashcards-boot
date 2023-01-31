@@ -14,14 +14,14 @@ import java.io.IOException;
 @Service
 public class CustomAuthenticationFailureHandler implements AuthenticationFailureHandler {
 
-	private DefaultRedirectStrategy defaultRedirectStrategy = new DefaultRedirectStrategy();
-	
+    private DefaultRedirectStrategy defaultRedirectStrategy = new DefaultRedirectStrategy();
+
     public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException, ServletException {
-        
-    	if(exception instanceof DisabledException) {
-    		defaultRedirectStrategy.sendRedirect(request, response, "/login-disabled");
-    		return;
-    	}
-    	defaultRedirectStrategy.sendRedirect(request, response, "/login-error");
+
+        if (exception instanceof DisabledException) {
+            defaultRedirectStrategy.sendRedirect(request, response, "/login-disabled");
+            return;
+        }
+        defaultRedirectStrategy.sendRedirect(request, response, "/login-error");
     }
 }

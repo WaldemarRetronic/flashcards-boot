@@ -7,7 +7,10 @@ import pl.valdemar.flashcardsboot.model.ApplicationUser;
 public interface UserService {
 
     ApplicationUser createUser(UserDto userDto);
+
     ApplicationUser save(ApplicationUser applicationUser);
+
     ApplicationUser findByUsername(String username);
+
     void delete(ApplicationUser applicationUser);
 }

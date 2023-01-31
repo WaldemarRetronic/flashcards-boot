@@ -8,5 +8,6 @@ import pl.valdemar.flashcardsboot.model.EmailVerification;
 public interface EmailVerificationRepository extends CrudRepository<EmailVerification, String> {
 
     EmailVerification findByUsername(String userName);
+
     boolean existsByUsername(String userName);
 }

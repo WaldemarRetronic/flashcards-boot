@@ -83,7 +83,6 @@ public class DeckController {
     @GetMapping(Mappings.ADD_DECK)
     public String create(Model model) {
         model.addAttribute(AttributeNames.DECK, new DeckDto());
-        log.info("model: {}", model);
         return ViewNames.ADD_DECK;
     }
 

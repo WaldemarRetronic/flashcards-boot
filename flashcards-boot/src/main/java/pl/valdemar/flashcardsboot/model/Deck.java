@@ -1,7 +1,8 @@
 package pl.valdemar.flashcardsboot.model;
 
-import com.google.common.base.Objects;
-import lombok.*;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -25,14 +26,14 @@ public class Deck {
     @NotEmpty(message = "Deck's name can't be empty.")
     @NotBlank(message = "Deck's name can't be blank.")
     @Pattern(message = "Deck's name can't start and end with whitespace.", regexp = "(\\S.*\\S)")
-    @Size(min = 5,  max = 25, message = "Length of deck's name must be between 5 and 25.")
+    @Size(min = 5, max = 25, message = "Length of deck's name must be between 5 and 25.")
     @Column(name = "DECK_NAME")
     private String deckName;
 
     @NotEmpty(message = "Description's can't be empty.")
     @NotBlank(message = "Description's can't be blank")
     @Pattern(message = "Description's name can't start and end with whitespace.", regexp = "(\\S.*\\S)")
-    @Size(min = 5,  max = 250, message = "Length of description's must be between 5 and 250.")
+    @Size(min = 5, max = 250, message = "Length of description's must be between 5 and 250.")
     @Column(name = "DESCRIPTION")
     private String description;
 
@@ -42,7 +43,7 @@ public class Deck {
     @NotEmpty(message = "Category's can't be empty.")
     @NotBlank(message = "Category's can't be blank")
     @Pattern(message = "Category's can't start and end with whitespace.", regexp = "(\\S.*\\S)")
-    @Size(min = 5,  max = 25, message = "Length of description's name must be between 5 and 25.")
+    @Size(min = 5, max = 25, message = "Length of description's name must be between 5 and 25.")
     @Column(name = "CATEGORY")
     private String category;
 

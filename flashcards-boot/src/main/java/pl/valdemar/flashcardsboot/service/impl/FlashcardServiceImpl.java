@@ -12,7 +12,7 @@ import java.util.Optional;
 @Service
 public class FlashcardServiceImpl implements FlashcardService {
 
-    private FlashcardRepository flashcardRepository;
+    private final FlashcardRepository flashcardRepository;
 
     @Autowired
     public FlashcardServiceImpl(FlashcardRepository flashcardRepository) {

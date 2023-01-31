@@ -24,11 +24,14 @@ import java.util.Map;
 @Controller
 public class RegistrationController {
 
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
 
-    @Autowired
-    private ApplicationEventPublisher eventPublisher;
+    private final ApplicationEventPublisher eventPublisher;
+
+    public RegistrationController(UserService userService, ApplicationEventPublisher eventPublisher) {
+        this.userService = userService;
+        this.eventPublisher = eventPublisher;
+    }
 
     // == model attributes ==
     @ModelAttribute(name = "paths")
@@ -43,7 +46,6 @@ public class RegistrationController {
     @GetMapping(Mappings.ADD_USER)
     public String register(Model model) {
         model.addAttribute("user", new UserDto());
-        log.info("model: {}", model);
         return ViewNames.ADD_USER;
     }
 
@@ -52,9 +54,7 @@ public class RegistrationController {
         if (result.hasErrors()) {
             return ViewNames.ADD_USER;
         }
-        log.info("called adduser POST");
         if (!userDto.getPassword().equals(userDto.getConfirmPassword())) {
-            log.info("password equals");
             return "redirect:" + Mappings.ADD_USER + "?error";
         }
         if (userService.findByUsername(userDto.getUsername()) != null) {
@@ -66,7 +66,6 @@ public class RegistrationController {
 
         }
         ApplicationUser applicationUser = userService.createUser(userDto);
-        log.info(String.valueOf(applicationUser));
         eventPublisher.publishEvent(new UserRegistrationEvent(applicationUser));
         return "redirect:" + Mappings.ADD_USER + "?validate";
     }

@@ -40,7 +40,7 @@ public class MessageGeneratorImpl implements MessageGenerator {
         String result = "You got correct " + studyService.getCorrect() + ", and " + studyService.getWrong() + " wrong answers.\n";
         if (ratio <= 10.0) {
             return result + "Complete disaster. What is wrong with you man!!!";
-        } else if (ratio <= 25 ) {
+        } else if (ratio <= 25) {
             return result + "Very very very bad!!!";
         } else if (ratio <= 50) {
             return result + "You could do it better!";

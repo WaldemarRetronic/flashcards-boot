@@ -1,18 +1,13 @@
 package pl.valdemar.flashcardsboot.controller;
 
 import lombok.extern.slf4j.Slf4j;
-import org.bouncycastle.math.raw.Mod;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import pl.valdemar.flashcardsboot.dto.DeckDto;
 import pl.valdemar.flashcardsboot.dto.EmailDto;
 import pl.valdemar.flashcardsboot.dto.PasswordDto;
-import pl.valdemar.flashcardsboot.dto.UserDto;
-import pl.valdemar.flashcardsboot.event.UserRegistrationEvent;
 import pl.valdemar.flashcardsboot.model.ApplicationUser;
 import pl.valdemar.flashcardsboot.service.DeckService;
 import pl.valdemar.flashcardsboot.service.FlashcardService;
@@ -31,14 +26,16 @@ import java.util.Map;
 @Controller
 public class AccountController {
 
-    @Autowired
-    private UserService userService;
+    // == fields ==
+    private final UserService userService;
+    private final DeckService deckService;
+    private final FlashcardService flashcardService;
 
-    @Autowired
-    private DeckService deckService;
-
-    @Autowired
-    private FlashcardService flashcardService;
+    public AccountController(UserService userService, DeckService deckService, FlashcardService flashcardService) {
+        this.userService = userService;
+        this.deckService = deckService;
+        this.flashcardService = flashcardService;
+    }
 
     // == model attributes ==
     @ModelAttribute(name = "paths")
@@ -50,6 +47,8 @@ public class AccountController {
         paths.put("account-remove", Mappings.REMOVE_ACCOUNT);
         return paths;
     }
+
+    // == handler methods ==
 
     @GetMapping(Mappings.ACCOUNT_SETTINGS)
     public String changeSettings(Model model, Principal principal) {
@@ -64,22 +63,17 @@ public class AccountController {
                                  BindingResult result, Principal principal, Model model, HttpServletRequest request) throws ServletException {
         if (result.hasErrors()) {
             model.addAttribute("email", new EmailDto());
-            log.info("password errors");
             return ViewNames.ACCOUNT;
         }
         ApplicationUser applicationUser = userService.findByUsername(principal.getName());
-        if (!passwordDto.getCurrentPassword().equals(applicationUser.getPassword())) {
+        if (!new BCryptPasswordEncoder().matches(passwordDto.getCurrentPassword(), applicationUser.getPassword())) {
             return "redirect:" + Mappings.ACCOUNT_SETTINGS + "?password_error";
         }
         if (!passwordDto.getNewPassword().equals(passwordDto.getConfirmPassword())) {
             return "redirect:" + Mappings.ACCOUNT_SETTINGS + "?passwords_mismatch";
         }
-        applicationUser.setPassword(passwordDto.getNewPassword());
+        applicationUser.setPassword(new BCryptPasswordEncoder().encode(passwordDto.getNewPassword()));
         userService.save(applicationUser);
-        log.info("called changeSettings with mode: {}", mode);
-        log.info("new pass: {}", passwordDto.getNewPassword());
-        log.info("confirm pass: {}", passwordDto.getConfirmPassword());
-        log.info("current pass: {}", passwordDto.getCurrentPassword());
         request.logout();
         return "redirect:" + Mappings.LOGIN;
     }
@@ -89,12 +83,11 @@ public class AccountController {
                               BindingResult result, Principal principal, Model model, HttpServletRequest request) throws ServletException {
         if (result.hasErrors()) {
             model.addAttribute("password", new PasswordDto());
-            log.info("email errors");
             return ViewNames.ACCOUNT;
         }
         ApplicationUser applicationUser = userService.findByUsername(principal.getName());
 
-        if (!emailDto.getCurrentPassword().equals(applicationUser.getPassword())) {
+        if (!new BCryptPasswordEncoder().matches(emailDto.getCurrentPassword(),applicationUser.getPassword())) {
             return "redirect:" + Mappings.ACCOUNT_SETTINGS + "?password_error";
         }
         if (!emailDto.getNewEmail().equals(emailDto.getConfirmEmail())) {
@@ -102,10 +95,6 @@ public class AccountController {
         }
         applicationUser.setUsername(emailDto.getNewEmail());
         userService.save(applicationUser);
-        log.info("called changeSettings with mode: {}", mode);
-        log.info("new email: {}", emailDto.getNewEmail());
-        log.info("confirm email: {}", emailDto.getConfirmEmail());
-        log.info("current pass: {}", emailDto.getCurrentPassword());
         request.logout();
         return "redirect:" + Mappings.LOGIN;
     }
@@ -120,12 +109,11 @@ public class AccountController {
     }
 
     @ResponseBody
-    @PostMapping (Mappings.REMOVE_ACCOUNT)
+    @PostMapping(Mappings.REMOVE_ACCOUNT)
     public String removeAccount(@RequestParam("pass") String password, Principal principal, HttpServletRequest request) throws ServletException {
-        log.info("removeAccount called with password: {}", password);
         ApplicationUser applicationUser = userService.findByUsername(principal.getName());
         String pass = applicationUser.getPassword();
-        if (pass == null || pass.equals(password)) {
+        if (pass == null || new BCryptPasswordEncoder().matches(password, pass)) {
             Long userId = applicationUser.getId();
             flashcardService.deleteAll(userId);
             deckService.deleteAll(userId);

@@ -15,5 +15,6 @@ public final class AttributeNames {
     public static final String STUDY_NO_OF_FC = "numberOfFlashcards";
 
     // == constructors ==
-    private AttributeNames() {}
+    private AttributeNames() {
+    }
 }

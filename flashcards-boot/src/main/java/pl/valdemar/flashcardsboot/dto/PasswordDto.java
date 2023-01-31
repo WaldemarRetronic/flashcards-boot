@@ -16,7 +16,8 @@ public class PasswordDto {
             regexp = "^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=[^0-9]*[0-9]).{6,}$")
     private String confirmPassword;
 
-    public PasswordDto() {}
+    public PasswordDto() {
+    }
 
     public PasswordDto(String currentPassword, String newPassword, String confirmPassword) {
         this.currentPassword = currentPassword;

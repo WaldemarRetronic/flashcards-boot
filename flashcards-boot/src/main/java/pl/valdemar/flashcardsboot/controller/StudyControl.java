@@ -27,19 +27,12 @@ import java.util.Map;
 
 @Slf4j
 @Controller
-/**
- * MessageGenerator, StudyService have session scope.
- * Crucially, the controller in this approach MUST be request scoped. The default is for Spring to create a global
- * singleton instance of the controller, and this would not work as a singleton is shared by all requests (you can’t
- * inject session scoped objects into singleton scoped objects anyway).
- */
 @Scope("request")
 public class StudyControl {
 
     // == fields ==
     @Autowired
     private StudyService studyService;
-
     private final FlashcardService flashcardService;
     private final JSONObject json;
     private final MessageGenerator messageGenerator;
@@ -70,18 +63,14 @@ public class StudyControl {
 
     // == handler methods ==
     @GetMapping(Mappings.STUDY_SESSION)
-    public String flashcard(@RequestParam long id, Model model, Principal principal) {
-        log.info("flashcard method called from Study controller");
+    public String flashcard(@RequestParam long id, Model model) {
         Deck deck = deckService.findDeckById(id).get();
         Long userIdOfSharedDeck = deck.getUserId();
-        log.info("flashcards from database = {}", flashcardService.findFlashcards(userIdOfSharedDeck, id).toString());
         String deckName = deckService.findDeckById(id).get().getDeckName();
         model.addAttribute(AttributeNames.DECK_NAME, deckName);
         studyService.setFlashcards((List<Flashcard>) flashcardService.findFlashcards(userIdOfSharedDeck, id));
         List<Flashcard> flashcards = studyService.getFlashcards();
-        log.info("flashcards from StudyService = {}", flashcards.toString());
         if (flashcards.isEmpty()) {
-            log.info("flashcards is empty");
             model.addAttribute(AttributeNames.MAIN_MESSAGE, messageGenerator.getEmptyDeckMessage());
             return ViewNames.STUDY_RESULT;
         }
@@ -93,8 +82,6 @@ public class StudyControl {
     @ResponseBody
     @PostMapping(Mappings.STUDY)
     public String getFlashcard(@RequestBody Map<String, String> resultMap) {
-        log.info("getFlashcard method called");
-        log.info("correct = {}", resultMap.get("correct"));
         if (!resultMap.get("correct").equals("start")) {
             studyService.update(resultMap.get("correct"));
         }
@@ -107,8 +94,6 @@ public class StudyControl {
             json.put("backSide", backSide);
             json.put("finished", "false");
             json.put("variety", variety);
-            log.info("frontSide = {}", frontSide);
-            log.info("backSide = {}", backSide);
         } else {
             json.put("finished", "true");
         }
@@ -121,22 +106,7 @@ public class StudyControl {
         model.addAttribute(AttributeNames.RESULT_MESSAGE, messageGenerator.getResultMessage());
         model.addAttribute(AttributeNames.RESULT_MESSAGE, messageGenerator.getResultMessage());
         studyService.reset();
-        log.info("result method called");
         return ViewNames.STUDY_RESULT;
-    }
-
-    private Long getUserId(Principal principal) {
-        return userService.findByUsername(principal.getName()).getId();
-    }
-
-    @PostConstruct
-    public void init() {
-        log.info("StudyControl created");
-    }
-
-    @PreDestroy
-    public void shutdown() {
-        log.info("StudyControl to be deleted");
     }
 
 }
