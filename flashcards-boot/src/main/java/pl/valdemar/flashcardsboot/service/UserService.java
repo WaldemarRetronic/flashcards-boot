@@ -13,4 +13,6 @@ public interface UserService {
     ApplicationUser findByUsername(String username);
 
     void delete(ApplicationUser applicationUser);
+
+    boolean exist(String username);
 }

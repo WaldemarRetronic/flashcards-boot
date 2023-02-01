@@ -19,6 +19,7 @@ public class UserServiceImpl implements UserService {
         this.passwordEncoder = passwordEncoder;
     }
 
+    @Override
     public ApplicationUser createUser(UserDto userDto) {
         ApplicationUser applicationUser = new ApplicationUser();
         applicationUser.setUsername(userDto.getUsername());
@@ -27,10 +28,12 @@ public class UserServiceImpl implements UserService {
         return userRepository.save(applicationUser);
     }
 
+    @Override
     public ApplicationUser save(ApplicationUser applicationUser) {
         return userRepository.save(applicationUser);
     }
 
+    @Override
     public ApplicationUser findByUsername(String username) {
         return userRepository.findByUsername(username);
     }
@@ -38,5 +41,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public void delete(ApplicationUser applicationUser) {
         userRepository.delete(applicationUser);
+    }
+
+    @Override
+    public boolean exist(String username) {
+        return userRepository.existsByUsername(username);
     }
 }

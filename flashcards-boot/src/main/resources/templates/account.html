@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Login</title>
+    <title>Account</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
     <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/css/bootstrap.min.css"
@@ -76,6 +76,9 @@
             </div>
             <div th:if="${param.emails_mismatch}">
                 <div class="alert alert-danger">Emails didn't match.</div>
+            </div>
+            <div th:if="${param.already_exists}">
+                <div class="alert alert-danger">Email already exists.</div>
             </div>
         </div>
         <div class="col-md-2"></div>

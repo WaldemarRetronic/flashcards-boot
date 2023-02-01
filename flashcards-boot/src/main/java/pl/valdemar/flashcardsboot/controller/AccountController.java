@@ -2,6 +2,7 @@ package pl.valdemar.flashcardsboot.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -30,11 +31,13 @@ public class AccountController {
     private final UserService userService;
     private final DeckService deckService;
     private final FlashcardService flashcardService;
+    private final PasswordEncoder encoder;
 
-    public AccountController(UserService userService, DeckService deckService, FlashcardService flashcardService) {
+    public AccountController(UserService userService, DeckService deckService, FlashcardService flashcardService, PasswordEncoder encoder) {
         this.userService = userService;
         this.deckService = deckService;
         this.flashcardService = flashcardService;
+        this.encoder = encoder;
     }
 
     // == model attributes ==
@@ -63,16 +66,17 @@ public class AccountController {
                                  BindingResult result, Principal principal, Model model, HttpServletRequest request) throws ServletException {
         if (result.hasErrors()) {
             model.addAttribute("email", new EmailDto());
+            model.addAttribute("username", principal.getName());
             return ViewNames.ACCOUNT;
         }
         ApplicationUser applicationUser = userService.findByUsername(principal.getName());
-        if (!new BCryptPasswordEncoder().matches(passwordDto.getCurrentPassword(), applicationUser.getPassword())) {
+        if (!encoder.matches(passwordDto.getCurrentPassword(), applicationUser.getPassword())) {
             return "redirect:" + Mappings.ACCOUNT_SETTINGS + "?password_error";
         }
         if (!passwordDto.getNewPassword().equals(passwordDto.getConfirmPassword())) {
             return "redirect:" + Mappings.ACCOUNT_SETTINGS + "?passwords_mismatch";
         }
-        applicationUser.setPassword(new BCryptPasswordEncoder().encode(passwordDto.getNewPassword()));
+        applicationUser.setPassword(encoder.encode(passwordDto.getNewPassword()));
         userService.save(applicationUser);
         request.logout();
         return "redirect:" + Mappings.LOGIN;
@@ -83,16 +87,21 @@ public class AccountController {
                               BindingResult result, Principal principal, Model model, HttpServletRequest request) throws ServletException {
         if (result.hasErrors()) {
             model.addAttribute("password", new PasswordDto());
+            model.addAttribute("username", principal.getName());
             return ViewNames.ACCOUNT;
         }
         ApplicationUser applicationUser = userService.findByUsername(principal.getName());
 
-        if (!new BCryptPasswordEncoder().matches(emailDto.getCurrentPassword(),applicationUser.getPassword())) {
+        if (!encoder.matches(emailDto.getCurrentPassword(),applicationUser.getPassword())) {
             return "redirect:" + Mappings.ACCOUNT_SETTINGS + "?password_error";
         }
         if (!emailDto.getNewEmail().equals(emailDto.getConfirmEmail())) {
             return "redirect:" + Mappings.ACCOUNT_SETTINGS + "?emails_mismatch";
         }
+        if (userService.exist(emailDto.getNewEmail())) {
+            return "redirect:" + Mappings.ACCOUNT_SETTINGS + "?already_exists";
+        }
+
         applicationUser.setUsername(emailDto.getNewEmail());
         userService.save(applicationUser);
         request.logout();
@@ -113,7 +122,7 @@ public class AccountController {
     public String removeAccount(@RequestParam("pass") String password, Principal principal, HttpServletRequest request) throws ServletException {
         ApplicationUser applicationUser = userService.findByUsername(principal.getName());
         String pass = applicationUser.getPassword();
-        if (pass == null || new BCryptPasswordEncoder().matches(password, pass)) {
+        if (pass == null || encoder.matches(password, pass)) {
             Long userId = applicationUser.getId();
             flashcardService.deleteAll(userId);
             deckService.deleteAll(userId);

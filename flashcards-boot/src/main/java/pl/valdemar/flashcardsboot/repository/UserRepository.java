@@ -6,5 +6,6 @@ import pl.valdemar.flashcardsboot.model.ApplicationUser;
 public interface UserRepository extends CrudRepository<ApplicationUser, Long> {
 
     ApplicationUser findByUsername(String username);
+    boolean existsByUsername(String username);
 
 }
