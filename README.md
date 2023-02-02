@@ -3,7 +3,7 @@ Web application to create and share basic text-only cards and review them. Appli
 
 Flashcards
 
-Flashcard is a pair of a question and answer. This is based on a paper flashcard with a question on one side and the answer on the back. After thinking, you click the show button, and will be shown answer with the question remains visible. After confirming that you are correct or wrong will be displayed next card. Each flashcard can have different type:
+Flashcard is a pair of a question and answer. This is based on a paper flashcard with a question on one side and the answer on the back. After thinking, you click the Check button, and will be shown answer with the question remains visible. After confirming that you are correct or wrong will be displayed next card. Each flashcard can have different type:
   - basic - flashcard will be reviewed showing front as question and back as answer
   - reversed - flashcard will be reviewed twice, once like a basic and once showing back as question and front as answer
   - type_in_answer - front of flashcard is a question and answer has to be typed in
